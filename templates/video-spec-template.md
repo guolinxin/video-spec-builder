@@ -7,6 +7,8 @@ description: Skeleton template for video-spec.md. Copy the full text, replace ea
 
 Copy the entire code block below and save it as `video-spec.md` in the project root. Each `[bracket]` is a placeholder — replace the brackets and the instructional text inside with your actual content.
 
+Write the spec in English by default. Narration copy and on-screen text are the exception: they hold the literal words in the finished video, so write them in the video's display language (see SKILL.md [Output Language]).
+
 Reference docs while filling in:
 
 - Field constraints / spec consistency checks / pre-delivery checklist → `references/spec-rules.md`

@@ -9,6 +9,7 @@ description: Field constraints, spec consistency checks, and pre-delivery self-r
 
 General principles:
 
+- Author the spec in English by default — section headings, field values, visual descriptions, motion notes, asset notes, open questions. Narration copy and on-screen text are the only fields that may be non-English: they hold the literal words in the finished video, so they follow the video's display language (see SKILL.md [Output Language]). Override only if the user explicitly asks for the whole spec in another language.
 - Time precision unified to 0.1s
 - Each shot's `component` ID must be a real ID registered in `components-catalog.md` — no inventing your own
 - Only write into the spec what the user explicitly stated; inferred content tagged `[Pending user confirmation]`, pure gaps tagged `[Pending]`, don't fill in from nothing
@@ -109,6 +110,7 @@ Special rules:
 
 Before outputting video-spec.md, go through each item:
 
+- [ ] Spec authored in English (headings / field values / descriptions / motion / asset notes); only narration & on-screen copy may be non-English, matching the video's display language
 - [ ] First line of body is "Please generate a video according to the following script…"
 - [ ] § 1 Video Fundamentals fields all filled; unknowns written as `[Pending]`, no blanks
 - [ ] Spec consistency checks all pass (see above)

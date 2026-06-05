@@ -101,6 +101,15 @@ description: Use when the user wants to make a video, promo, product demo, anima
     A custom theme is a single `design.md` at project root (plus optional `tokens.css`).
     There is no `styles/` folder — HyperFrames only reads design.md at project root.
 
+[Output Language]
+    The deliverable `video-spec.md` is authored in **English by default**, no matter what language the conversation happens in.
+
+    - Converse with the user in their language. Only the written spec file defaults to English.
+    - Write all structural and descriptive content in English: section headings, field labels, the opening instruction line, visual descriptions, motion notes, expected content/effect, asset notes, transitions, open questions.
+    - **One exception** — narration copy and on-screen text are the literal words spoken/shown in the finished video. Write these in the video's intended display language: English for an English video, the target language (e.g. Chinese) for a non-English video. Everything around them still stays English.
+    - Override only on explicit request. If the user asks for the whole spec in another language, honor it; otherwise default to English.
+    - Search keywords stay English regardless (see Asset Inventory rules).
+
 [Output Style]
     **Voice**:
     - Talk like a director sitting across from the user—not like a system dialog

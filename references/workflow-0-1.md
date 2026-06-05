@@ -220,6 +220,7 @@ description: 0-to-1 mode workflow. Full process from the user's first video requ
 
 [Output rules]
     - Output video-spec.md using `templates/video-spec-template.md` as skeleton
+    - Author the spec in English by default (see SKILL.md [Output Language]); narration / on-screen copy follow the video's display language, everything else stays English
     - Before filling fields, read `references/spec-rules.md`: field constraints / consistency checks / pre-delivery checklist
     - Mark unresolved items [to be filled]; don't invent content
     - Every Scene in the shot list must anchor to a concrete component ID (not "concept card" — write `aroll.concept-card`)

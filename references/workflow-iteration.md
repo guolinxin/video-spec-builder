@@ -92,6 +92,7 @@ Load existing video-spec.md. If the new request conflicts with existing content,
 
 [Discipline]
     - Edit the original spec precisely (don't save a new file)
+    - Keep the spec's existing authoring language; for new content default to English (see SKILL.md [Output Language]) unless the spec is already written in another language
     - Don't change markdown structure (heading levels / list style)
     - Don't delete user comments / notes
     - If shot list changed → re-run `references/spec-rules.md` field constraints and [pre-delivery checklist]
