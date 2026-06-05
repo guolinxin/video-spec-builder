@@ -1,311 +1,311 @@
 ---
 name: pacing-rules
-description: 视频节奏与时长规范。
+description: Video pacing and duration standards.
 ---
 
-# 节奏规范
+# Pacing Rules
 
-[使用时机]
-    - 选定信息密度后（Phase 1.5）
-    - 分配每个 Scene 时长时
-    - 决定转场密度时
-    - 校验总时长时
-    - 判断 hook 镜头是否合格时
+[When to use]
+    - After selecting information density (Phase 1.5)
+    - When allocating each Scene's duration
+    - When deciding transition density
+    - When validating total duration
+    - When judging whether a hook shot qualifies
 
-[核心命题]
-    节奏不是"感觉"，是每秒承载多少信息的数学问题。
-    - 高密度 = 每秒一个信息点
-    - 低密度 = 每 5-8 秒一个信息点 + 中间用情绪填充
-    - 节奏 ↔ 平台 互相约束（抖音不允许慢节奏，发布会不允许 hook 型）
+[Core proposition]
+    Pacing isn't a "feeling" — it's math about how much information each second carries.
+    - High density = one information point per second
+    - Low density = one information point every 5–8 seconds + emotional fill in between
+    - Pacing ↔ platform constrain each other (Douyin doesn't allow slow pacing; keynotes don't allow hook-style)
 
 ---
 
-## [三档节奏]
+## [Three Pacing Tiers]
 
-按主导节奏给出每镜头时长 / 每分钟镜头数 / 转场频率 / 留白比例。
+Per dominant pacing tier: shot duration / shots per minute / major transition frequency / negative space ratio.
 
 ```
-[hook 型 · 高密度]
-    适用：短视频开头 / 抖音 / 广告 / 产品发布
-    每镜头：0.8 - 2.0s
-    每分钟镜头数：30 - 60
-    大转场频率：每 4-6s 一次
-    留白：< 5%
-    旁白字数：≈ 1.5-2 字/秒（60s ≈ 90-130 字）
-    典型应用：YouTube Shorts 30s · TikTok 15s · 信息流广告 6s
-    音频：BGM 必须有强节拍，每镜头切换对应一个 beat
+[Hook-style · High density]
+    Use for: short-form openings / Douyin / ads / product launches
+    Per shot: 0.8 - 2.0s
+    Shots per minute: 30 - 60
+    Major transition frequency: every 4-6s
+    Negative space: < 5%
+    Narration word count: ≈ 1.5-2 chars/sec (60s ≈ 90-130 Chinese chars)
+    Typical use: YouTube Shorts 30s · TikTok 15s · feed ads 6s
+    Audio: BGM must have strong beat; each shot cut aligns to a beat
 
-[教程型 · 中等密度]
-    适用：科普 / 教程 / 产品演示 / B 站知识区
-    每镜头：2.0 - 5.0s
-    每分钟镜头数：15 - 30
-    大转场频率：每 10-15s 一次
-    留白：10-15%
-    旁白字数：≈ 2-3 字/秒（3min ≈ 400-550 字）
-    典型应用：B 站知识区 3-5min · 教程视频 · 产品演示 60-90s
-    音频：BGM 偏柔，旁白为主，关键节点留呼吸感
+[Tutorial-style · Medium density]
+    Use for: explainer / tutorial / product demo / Bilibili knowledge content
+    Per shot: 2.0 - 5.0s
+    Shots per minute: 15 - 30
+    Major transition frequency: every 10-15s
+    Negative space: 10-15%
+    Narration word count: ≈ 2-3 chars/sec (3min ≈ 400-550 Chinese chars)
+    Typical use: Bilibili knowledge 3-5min · tutorial videos · product demo 60-90s
+    Audio: softer BGM, narration primary, breathing room at key beats
 
-[纪录型 · 慢节奏]
-    适用：vlog / 纪录片 / 品牌片 / 慢叙事
-    每镜头：3.0 - 8.0s
-    每分钟镜头数：8 - 15
-    大转场频率：每 20-30s 一次
-    留白：20-30%
-    旁白字数：≈ 1.5-2.5 字/秒（90s ≈ 140-220 字，可大段无旁白）
-    典型应用：品牌片 90s · 纪录片 5min+ · 电影预告 60-120s
-    音频：氛围乐 / 情绪音 / 旁白慢语速 / 留白
+[Documentary-style · Slow pacing]
+    Use for: vlog / documentary / brand film / slow narrative
+    Per shot: 3.0 - 8.0s
+    Shots per minute: 8 - 15
+    Major transition frequency: every 20-30s
+    Negative space: 20-30%
+    Narration word count: ≈ 1.5-2.5 chars/sec (90s ≈ 140-220 Chinese chars; long stretches without narration OK)
+    Typical use: brand film 90s · documentary 5min+ · movie trailer 60-120s
+    Audio: ambient / emotional sound / slow narration / negative space
 ```
 
-[Rhythm 命名]
-    具体 rhythm pattern（如 fast-fast-SLOW / hook-PUNCH-hold-CTA）后续视觉富化阶段定。
-    本文件只管时长基准 + 总时长校验。
+[Rhythm naming]
+    Specific rhythm patterns (e.g. fast-fast-SLOW / hook-PUNCH-hold-CTA) are decided in the visual enrichment stage.
+    This file only governs duration baselines + total duration validation.
 
 ---
 
-## [总时长校验]
+## [Total Duration Validation]
 
-按目标时长反推镜头数 + 转场密度。
+Reverse-engineer shot count + transition density from target duration.
 
-| 时长 | 镜头数 | 大转场 | 反白闪屏 | hook 时点 | 典型场景 |
+| Duration | Shots | Major transitions | Inversion flash | Hook timing | Typical scenario |
 |---|---|---|---|---|---|
-| < 3s | — | — | — | — | 拒做（信息载荷不够） |
-| 3-5s | 1-2 | 0 | 0 | 全镜即 hook | 微视频封面 / 极短广告 |
-| 5-10s | 3-7 | 0-1 | ≤ 1 | 全片即 hook | 抖音封面 / Twitter / Story |
-| 15-20s | 8-15 | 1-3 | ≤ 1 | 开头 3s | 抖音单条 / 信息流广告 |
-| 30s | 12-25 | 2-4 | ≤ 2 | 开头 3-5s + 结尾 2-3s CTA | 抖音长版 / 产品宣传 |
-| 60-90s | 18-40 | 3-6 | ≤ 2 | 中段允许小章节切换 | 发布会片头 / 品牌片 / Vlog |
-| 3-5min | 50-150 | 6-12 | 章节卡分隔 | 每 30-45s 一次节奏重置 | YouTube / B 站知识区 |
-| 5-10min | 90-300 | 12-30 | 章节卡分隔 | 每章节独立 hook | YouTube 长视频 / B 站深度 |
-| 10-30min | 拆 spec | — | — | 每 episode 独立 hook | 拆为 2-4 个独立 spec |
-| ≥ 30min | 拆系列 | — | — | — | 不在单 spec 范围内 |
+| < 3s | — | — | — | — | Reject (insufficient information load) |
+| 3-5s | 1-2 | 0 | 0 | Entire shot is hook | Micro-video cover / ultra-short ad |
+| 5-10s | 3-7 | 0-1 | ≤ 1 | Entire piece is hook | Douyin cover / Twitter / Story |
+| 15-20s | 8-15 | 1-3 | ≤ 1 | First 3s | Douyin single / feed ad |
+| 30s | 12-25 | 2-4 | ≤ 2 | First 3-5s + ending 2-3s CTA | Douyin extended / product promo |
+| 60-90s | 18-40 | 3-6 | ≤ 2 | Mid-section allows mini chapter switches | Keynote opener / brand film / vlog |
+| 3-5min | 50-150 | 6-12 | Chapter card separators | Rhythm reset every 30-45s | YouTube / Bilibili knowledge |
+| 5-10min | 90-300 | 12-30 | Chapter card separators | Independent hook per chapter | YouTube long-form / Bilibili deep dive |
+| 10-30min | Split spec | — | — | Independent hook per episode | Split into 2-4 independent specs |
+| ≥ 30min | Split series | — | — | — | Outside single-spec scope |
 
-[平台对照]
+[Platform reference]
 
-| 平台 | 节奏类型 | 每镜头时长 | hook 时点 | 画幅 |
+| Platform | Pacing type | Per-shot duration | Hook timing | Aspect ratio |
 |---|---|---|---|---|
-| 抖音 / TikTok | hook 型 | 0.8-2s | 前 3s（强制字幕） | 9:16 |
-| YouTube Shorts | hook 型 | 1-2.5s | 前 3s | 9:16 |
-| YouTube 主频道 | 教程型 | 2.5-5s | 前 15s（章节标记） | 16:9 |
-| B 站知识区 | 教程型 | 2-4s | 前 10s（章节卡） | 16:9 |
-| 发布会大屏 | 纪录型 | 3-8s | 前 5s（建立氛围） | 16:9 |
-| 品牌官网 hero | loop 友好 | 5-15s | 首尾帧相似 | 16:9 |
+| Douyin / TikTok | Hook-style | 0.8-2s | First 3s (subtitles mandatory) | 9:16 |
+| YouTube Shorts | Hook-style | 1-2.5s | First 3s | 9:16 |
+| YouTube main channel | Tutorial-style | 2.5-5s | First 15s (chapter markers) | 16:9 |
+| Bilibili knowledge | Tutorial-style | 2-4s | First 10s (chapter cards) | 16:9 |
+| Keynote screen | Documentary-style | 3-8s | First 5s (establish mood) | 16:9 |
+| Brand site hero | Loop-friendly | 5-15s | First/last frame similar | 16:9 |
 
-[时长推算公式]
-    镜头数 N = 总时长 T ÷ 平均镜头时长
-    转场总时长 ≈ N × 0.2-0.5s（粗估）
-    实际镜头总时长 = T − 转场总时长
-    误差 ±0.5s 允许。
+[Duration estimation formula]
+    Shot count N = total duration T ÷ average shot duration
+    Total transition time ≈ N × 0.2-0.5s (rough estimate)
+    Actual shot total duration = T − total transition time
+    ±0.5s error allowed.
 
-    举例：
-    - hook 型 30s → N ≈ 30/1.5 ≈ 20 镜，转场占用 2-3s
-    - 教程型 3min → N ≈ 180/3.5 ≈ 51 镜，转场占用 8-10s
-    - 纪录型 90s → N ≈ 90/5 ≈ 18 镜，转场占用 5-8s
-
----
-
-## [Hook 镜头]
-
-第一镜决定用户停留还是滑走，是整支视频最贵的镜头。
-
-```
-[第一镜定生死]
-    - 0-3s 内必须建立"看下去的理由"
-    - hook 镜头时长 ≤ 2s（短平快）
-    - 必须有强视觉刺激：大字 / 数字 / 强反差 / 转场闪屏
-    - 不允许第一镜是"安静的标题卡"
-    - 不允许 logo 单独占第一镜（logo 是片尾，不是 hook）
-    - 不允许"黑屏 + 渐入文字"超过 1s（除非是极端慢叙事）
-
-[hook 推荐组件]
-    1. broll-hero.big-type        文字 hook
-    2. broll-hero.big-number      数据 hook
-    3. broll-hero.inversion-flash 视觉切入
-    4. aroll.subtitle-highlight   口语 hook
-    5. broll-charts.bar-chart     数据反差 hook
-
-[hook 反例]
-    × 第一镜放品牌 logo 渐入 3 秒
-    × 第一镜放黑屏 + "故事开始于一个夜晚..."
-    × 第一镜放主持人自我介绍
-    × 第一镜放安静的产品图（除非是奢侈品片）
-```
+    Examples:
+    - Hook-style 30s → N ≈ 30/1.5 ≈ 20 shots, transitions take 2-3s
+    - Tutorial-style 3min → N ≈ 180/3.5 ≈ 51 shots, transitions take 8-10s
+    - Documentary-style 90s → N ≈ 90/5 ≈ 18 shots, transitions take 5-8s
 
 ---
 
-## [转场密度]
+## [Hook Shots]
 
-转场不是装饰，是节奏的换气符号。用错了眩晕，用少了平。
+The first shot decides whether the user stays or swipes — it's the most expensive shot in the entire video.
 
 ```
-[硬切 / 软转 / 大转场比例]
-    - 80% 硬切（场景之间瞬切）
-    - 15% 软转（B-roll 之间）
-    - 5% 大转场（反白闪屏 / shader / wipe，章节切换专用）
-    具体 crossfade / shader duration 后续视觉富化阶段定。
+[First shot is make-or-break]
+    - Must establish "reason to keep watching" within 0-3s
+    - Hook shot duration ≤ 2s (short and punchy)
+    - Must have strong visual stimulus: big type / number / high contrast / transition flash
+    - First shot cannot be a "quiet title card"
+    - Logo alone cannot occupy first shot (logo belongs at end, not as hook)
+    - "Black screen + fade-in text" cannot exceed 1s (unless extreme slow narrative)
 
-[反白闪屏纪律]
-    - 每支视频 ≤ 2 次（硬规则）
-    - 不允许连续使用（间隔 ≥ 8s）
-    - 用于"章节切换"或"修辞停顿"，不用作日常切换
-    - 反白瞬间不允许有内容（纯白屏即可）
+[Recommended hook components]
+    1. broll-hero.big-type        Text hook
+    2. broll-hero.big-number      Data hook
+    3. broll-hero.inversion-flash Visual entry
+    4. aroll.subtitle-highlight   Spoken hook
+    5. broll-charts.bar-chart     Data contrast hook
 
-[同组件连续切换]
-    例：连续 3 个 broll-charts.bar-chart 展示季度数据
-    - 用软切 + 组件自带 stagger 让数据变化看起来连贯
-    - 不要每次都"重新出现一个新图表"
-    - 让组件框架不变、内部数据更新，类似 dashboard 切换
-
-[shader 转场纪律]
-    - 仅用于节奏巨大转折点（hook → 主体 / 主体 → 高潮 / 高潮 → 收尾）
-    - 每支视频 ≤ 1 次（30s 以下）或 ≤ 2 次（60s 以上）
-    - shader 风格要匹配视频调性（液态/像素/分形 vs 极简风冲突）
-    - 具体 shader ID 后续视觉富化阶段定
+[Hook anti-patterns]
+    × First shot: brand logo fade-in for 3 seconds
+    × First shot: black screen + "The story begins on a night..."
+    × First shot: host self-introduction
+    × First shot: quiet product image (unless luxury film)
 ```
 
 ---
 
-## [信息密度]
+## [Transition Density]
 
-判断每个 Scene 能不能存在的核心标准。
-
-```
-[每个 Scene 的信息承载]
-    - hook 型：1 个核心信息 + 0 个支撑信息（专注一击）
-    - 教程型：1 个核心信息 + 1-2 个支撑信息（标题 + 1-2 个细节）
-    - 纪录型：1 个核心信息 + 0-1 个氛围信息
-
-[禁止空帧]
-    - 每个 Scene 都必须承载至少 1 个信息
-    - 不允许"过渡黑屏 3 秒"（除非是 hook 前的悬念，最多 0.5s）
-    - 留白要承载"喘息"而非"等待"
-    - 用户说"这里安静一下" → 追问"安静要承载什么？静默是一种信息，不是空白"
-
-[文字密度]
-    - 每屏文字 ≤ 12 字（中文）或 ≤ 8 词（英文）
-    - 引用块例外，可到 30 字 / 20 词
-    - 数据图表的标签除外
-    - 超限 → 拆成两个镜头 + crossfade
-
-[数据密度]
-    - 单屏数据 ≤ 3 个数字（hook 镜头 ≤ 1 个大数字）
-    - 图表轴标签 ≤ 7 个
-    - 表格 ≤ 5 行 × 4 列（超出拆成多镜头）
-```
-
----
-
-## [微视频策略 · ≤ 10s]
-
-抖音封面、Twitter 短帖、Story / Reels 封面、信息流 hover 等场景。
-极短时长意味着信息载荷必须收敛到 1-2 个点，否则观众消化不动。
+Transitions aren't decoration — they're breathing marks in the rhythm. Wrong use causes dizziness; too few feels flat.
 
 ```
-[时长决策]
-    - < 3s：拒做。告诉用户改用静图或加长到 5s+
-    - 3-5s：单镜或双镜，每镜 2-3s。纯 hero 大字 / 数据冲击。hook 即全部
-    - 5-10s：hook 型，每镜 0.8-1.5s，3-7 镜。hook + 小展开 + 收尾大字
+[Hard cut / soft transition / major transition ratio]
+    - 80% hard cuts (instant switch between scenes)
+    - 15% soft transitions (between B-roll shots)
+    - 5% major transitions (inversion flash / shader / wipe — chapter switches only)
+    Specific crossfade / shader duration decided in visual enrichment stage.
 
-[追加要求]
-    - 结构 = hook + CTA（或 hook + hero takeaway），不分"展开/高潮"
-    - 反白闪屏 ≤ 1 次（5s 内 2 次过密，眼睛吃不消）
-    - 文字密度 ≤ 8 字/屏（停留时间短，超 8 字读不完）
-    - 旁白控制：
-        - ≤ 5s：无旁白，纯视觉 + 大字
-        - 5-10s：≤ 25 字旁白，或纯字幕无旁白
-    - 必须无声友好（静音状态下用户也能 get 到信息）
-    - 必须有强视觉刺激（大字 / 大数字 / 强反差 / 反白闪屏，4 选 1）
+[Inversion flash discipline]
+    - ≤ 2 times per video (hard rule)
+    - No consecutive use (interval ≥ 8s)
+    - For "chapter switch" or "rhetorical pause" — not daily switching
+    - No content during flash instant (pure white screen is fine)
 
-[反例]
-    × 5s 视频塞 3 段旁白 → 旁白未完用户已划走
-    × 8s 视频用 4 个 1.5s 镜头讲 4 件事 → 信息过载，1 个也记不住
-    × 3s 视频用淡入淡出 → 转场吃掉 1s，浪费 1/3 时长
+[Same-component consecutive cuts]
+    Example: 3 consecutive broll-charts.bar-chart showing quarterly data
+    - Use soft cut + component's built-in stagger so data changes feel continuous
+    - Don't "introduce a brand new chart" every time
+    - Keep component frame stable, update internal data — like dashboard switching
+
+[Shader transition discipline]
+    - Only for major rhythm turning points (hook → body / body → climax / climax → close)
+    - ≤ 1 time per video (under 30s) or ≤ 2 times (60s+)
+    - Shader style must match video tone (liquid/pixel/fractal vs minimal conflict)
+    - Specific shader ID decided in visual enrichment stage
 ```
 
 ---
 
-## [长视频策略 · ≥ 5min]
+## [Information Density]
 
-长视频拆 episode（章节），不要单 spec 写完一坨。
-拆章节带来：每章节独立 hook（重复抓回观众）+ 节奏 reset 点（快慢交替更明显）+ 渲染失败可独立重做。
+Core criterion for whether each Scene can exist.
 
 ```
-[时长决策]
-    - ≤ 5min：单 spec 完整覆盖
-    - 5-10min：单 spec，分镜表必须分 3-5 章节（每章节有独立节拍 + 高潮点）
-    - 10-30min：拆成 2-4 个独立 spec（每个 5-10min），用 episode 信息串起
-        - 每个 spec 在 § 1 视频基本盘注明「episode 1/4 · 系列名 <series-name>」
-        - 各 episode 独立可渲染，但共用主题 / accent / 组件白名单
-    - ≥ 30min：建议拆系列视频（不在单 spec 范围内），先做 trailer + 第一集
+[Information load per Scene]
+    - Hook-style: 1 core information point + 0 supporting points (single focused hit)
+    - Tutorial-style: 1 core information point + 1-2 supporting points (headline + 1-2 details)
+    - Documentary-style: 1 core information point + 0-1 atmospheric point
 
-[追加要求]
-    - 每章节独立 hook（每 60-90s 重复抓回观众，否则注意力流失）
-    - 每章节有节奏 reset 点（章节内快-慢交替更明显，不允许全章节同速）
-    - 章节之间用 shader 转场或反白闪屏作章节卡分隔（章节卡内有章节编号 + 标题）
-    - 总镜头数 = 60-180 个（5-10min 区间），按 2-4s/镜均速估算
-    - 章节间用 timeline-row 或 chapter-marker 做"目前进度"提示（强信息流场景必加）
-    - BGM 必须有 2-3 个 motif 切换（不能 5min 同一段循环 30 遍）
+[No empty frames]
+    - Every Scene must carry at least 1 information point
+    - No "transition black screen for 3 seconds" (unless pre-hook suspense, max 0.5s)
+    - Negative space must carry "breathing room" not "waiting"
+    - User says "quiet moment here" → probe "what should the quiet carry? Silence is information, not blank space"
 
-[章节结构推荐]
-    - 总览 hook（5-10%）：抛出整片要解决的问题
-    - 章节 1（25%）：第一个论点 + 论据 + 小高潮
-    - 章节 2（25%）：第二个论点 + 论据 + 小高潮
-    - 章节 3（25%）：第三个论点 / 反转 / 综合
-    - 收束 CTA（10-15%）：复述核心 takeaway + 行动召唤
+[Text density]
+    - On-screen text ≤ 12 Chinese characters or ≤ 8 English words
+    - Pull-quote exception: up to 30 Chinese characters / 20 English words
+    - Data chart labels excepted
+    - Over limit → split into two shots + crossfade
 
-[反例]
-    × 8min 视频从头到尾没有章节卡 → 观众 3min 就走神
-    × 章节都是相同节奏（3s/镜）→ 没有 reset 点，观众疲劳
-    × BGM 一首循环到底 → 听觉单调
+[Data density]
+    - Single screen ≤ 3 numbers (hook shot ≤ 1 big number)
+    - Chart axis labels ≤ 7
+    - Table ≤ 5 rows × 4 columns (beyond that, split into multiple shots)
 ```
 
 ---
 
-## [节奏校验自检]
+## [Micro-Video Strategy · ≤ 10s]
 
-生成 video-spec.md 之前必须过一遍。
+Douyin covers, Twitter short posts, Story / Reels covers, feed hover previews, etc.
+Ultra-short duration means information load must converge to 1-2 points — otherwise viewers can't digest.
 
 ```
-□ 第一镜在 2s 内（hook 型）/ 5s 内（教程型）/ 8s 内（纪录型）
-□ 总镜头数符合节奏类型基准
-□ 反白闪屏 ≤ 2 次且不连续
-□ shader 转场 ≤ 2 次
-□ 没有空帧（除 < 0.5s 悬念）
-□ 文字密度 ≤ 12 字/屏
-□ 每个 Scene 都承载至少 1 个信息
-□ 转场比例：80% 硬切 / 15% 软转 / 5% 大转场
-□ 总时长 = Σ镜头时长 + Σ转场时长（误差 ±0.5s）
-□ 节奏类型与平台匹配（抖音不允许慢节奏，发布会不允许 hook 型）
-□ hook 镜头有强视觉刺激
-□ CTA 镜头时长 2-3s（不超不少）
-□ 中长视频（≥ 60s）有节奏重置点
+[Duration decisions]
+    - < 3s: Reject. Tell user to use a static image or extend to 5s+
+    - 3-5s: Single or dual shot, 2-3s each. Pure hero big type / data impact. Hook is everything
+    - 5-10s: Hook-style, 0.8-1.5s per shot, 3-7 shots. Hook + brief expansion + closing big type
+
+[Additional requirements]
+    - Structure = hook + CTA (or hook + hero takeaway) — no separate "expansion/climax"
+    - Inversion flash ≤ 1 time (2 times in 5s is too dense — hard on the eyes)
+    - Text density ≤ 8 chars per screen (short dwell time — over 8 chars unreadable)
+    - Narration control:
+        - ≤ 5s: No narration, pure visual + big type
+        - 5-10s: ≤ 25 chars narration, or subtitles only without narration
+    - Must be mute-friendly (viewers on silent must still get the message)
+    - Must have strong visual stimulus (big type / big number / high contrast / inversion flash — pick 1)
+
+[Anti-patterns]
+    × 5s video with 3 narration segments → narration unfinished, user already swiped
+    × 8s video with 4 shots at 1.5s each telling 4 things → information overload, remembers none
+    × 3s video with fade in/out → transition eats 1s, wastes 1/3 of duration
 ```
 
 ---
 
-## [常见错误]
+## [Long-Form Strategy · ≥ 5min]
+
+Long videos split into episodes (chapters) — don't write one monolithic spec.
+Chapter splits bring: independent hook per chapter (re-grab audience) + rhythm reset points (fast-slow alternation more visible) + render failure can redo independently.
 
 ```
-[第一镜慢入]
-    诊断：第一镜超过 2s 还没有视觉冲击
-    修正：换成 hook 推荐组件中的任一个，或把节奏从 hook 改为慢节奏（仅当不是社媒平台）
+[Duration decisions]
+    - ≤ 5min: Single spec covers fully
+    - 5-10min: Single spec, shot list must divide into 3-5 chapters (each with independent beat + climax)
+    - 10-30min: Split into 2-4 independent specs (each 5-10min), linked with episode info
+        - Each spec notes in § 1 Video Fundamentals: "episode 1/4 · series name <series-name>"
+        - Each episode independently renderable, but shared theme / accent / component whitelist
+    - ≥ 30min: Recommend splitting into series (outside single-spec scope) — do trailer + episode 1 first
 
-[连续反白闪屏]
-    诊断：两次反白闪屏间隔 < 8s
-    修正：保留一次，把另一次改为硬切或 crossfade
+[Additional requirements]
+    - Independent hook per chapter (re-grab every 60-90s or attention drains)
+    - Rhythm reset point per chapter (fast-slow alternation within chapter more visible — no same-speed entire chapter)
+    - Between chapters: shader transition or inversion flash as chapter card separator (chapter number + title inside card)
+    - Total shots = 60-180 (5-10min range), estimate at 2-4s/shot average
+    - Between chapters use timeline-row or chapter-marker for "current progress" (mandatory for high-information scenarios)
+    - BGM must have 2-3 motif switches (can't loop same track 30 times over 5min)
 
-[总时长不对]
-    诊断：Σ镜头时长 + Σ转场时长 ≠ 目标时长
-    修正：调整镜头时长，优先压缩中段非关键镜头
+[Recommended chapter structure]
+    - Overview hook (5-10%): pose the problem the whole piece solves
+    - Chapter 1 (25%): first argument + evidence + mini climax
+    - Chapter 2 (25%): second argument + evidence + mini climax
+    - Chapter 3 (25%): third argument / twist / synthesis
+    - Close CTA (10-15%): restate core takeaway + call to action
 
-[信息密度为零]
-    诊断：某个 Scene 时长 ≥ 3s 但没有具体信息载荷
-    修正：要么砍掉，要么加内容（文字 / 数据 / 视觉细节）
+[Anti-patterns]
+    × 8min video with no chapter cards → viewer zones out at 3min
+    × All chapters same rhythm (3s/shot) → no reset points, viewer fatigue
+    × BGM one track looped start to finish → auditory monotony
+```
 
-[转场过多]
-    诊断：30s 视频用了 5 个反白闪屏
-    修正：保留 2 个（章节切换 + 高潮），其他改为硬切
+---
 
-[节奏与平台错配]
-    诊断：抖音视频用慢节奏，发布会用 hook 型快剪
-    修正：节奏对齐平台基准
+## [Pacing Validation Self-Review]
+
+Must pass before generating video-spec.md.
+
+```
+□ First shot within 2s (hook-style) / 5s (tutorial-style) / 8s (documentary-style)
+□ Total shot count matches pacing tier baseline
+□ Inversion flash ≤ 2 times and not consecutive
+□ Shader transitions ≤ 2 times
+□ No empty frames (except < 0.5s suspense)
+□ Text density ≤ 12 chars/screen
+□ Every Scene carries at least 1 information point
+□ Transition ratio: 80% hard cut / 15% soft / 5% major
+□ Total duration = Σ shot durations + Σ transition durations (error ±0.5s)
+□ Pacing type matches platform (Douyin doesn't allow slow pacing; keynotes don't allow hook-style)
+□ Hook shot has strong visual stimulus
+□ CTA shot duration 2-3s (not more, not less)
+□ Mid/long video (≥ 60s) has rhythm reset points
+```
+
+---
+
+## [Common Errors]
+
+```
+[Slow first shot]
+    Diagnosis: First shot exceeds 2s without visual impact
+    Fix: Swap to one of recommended hook components, or change pacing from hook to slow (only when not social platform)
+
+[Consecutive inversion flashes]
+    Diagnosis: Two inversion flashes interval < 8s
+    Fix: Keep one, change the other to hard cut or crossfade
+
+[Total duration mismatch]
+    Diagnosis: Σ shot durations + Σ transition durations ≠ target duration
+    Fix: Adjust shot durations, prioritize compressing non-critical mid-section shots
+
+[Zero information density]
+    Diagnosis: A Scene ≥ 3s with no concrete information load
+    Fix: Cut it, or add content (text / data / visual detail)
+
+[Too many transitions]
+    Diagnosis: 30s video used 5 inversion flashes
+    Fix: Keep 2 (chapter switch + climax), change rest to hard cuts
+
+[Pacing-platform mismatch]
+    Diagnosis: Douyin video with slow pacing; keynote with hook-style fast cuts
+    Fix: Align pacing to platform baseline
 ```

@@ -1,13 +1,13 @@
 /* ================================================================
-   sections/broll-charts.jsx — 06 · A 类 · 数据图表 12 款
+   sections/broll-charts.jsx — 06 · Type A · Data charts (12 variants)
    line / multi-line / bar / hbar / stacked / area / donut /
    scatter / heatmap / gauge / sparkline / sankey
    ================================================================ */
 
 function ChartsSection() {
   return (
-    <Section id="charts" num="06" title="B-roll · 数据图表"
-      desc="讲<b>数字 · 趋势 · 占比 · 流量</b>时用。所有图共用一套渲染语法：<em>hairline 坐标轴 · mono 数字 · 单 accent 高亮关键点</em>。每屏最多 1 个主信息 + 2-3 个数据点。">
+    <Section id="charts" num="06" title="B-roll · Data Charts"
+      desc="Use when presenting <b>numbers · trends · proportions · flow</b>. All charts share one rendering syntax: <em>hairline axes · mono numerals · single-accent highlight on key points</em>. Max one primary message + 2–3 data points per screen.">
       <LineChart /><MultiLine /><BarChart /><HBarChart />
       <StackedBar /><AreaChart /><Donut /><Scatter />
       <Heatmap /><Gauge /><Sparkline /><Sankey />
@@ -42,7 +42,7 @@ function Axis({ xLabels, yMax = 100, yStep = 25, padX = 80, padY = 60, w = 1000,
   );
 }
 
-/* ── A1 · 折线图 ── */
+/* ── A1 · Line chart ── */
 function LineChart() {
   const pts = [12, 28, 22, 45, 38, 62, 78, 71, 88];
   const labels = ['W1','W2','W3','W4','W5','W6','W7','W8','W9'];
@@ -50,11 +50,11 @@ function LineChart() {
   const innerW = w - padX * 2, innerH = h - padY * 2;
   const path = pts.map((v, i) => `${i === 0 ? 'M' : 'L'} ${padX + (i / (pts.length - 1)) * innerW} ${h - padY - (v / 100) * innerH}`).join(' ');
   return (
-    <SubSec name="A1 · 折线图 · Line Chart" tag="TREND OVER TIME">
+    <SubSec name="A1 · Line Chart" tag="TREND OVER TIME">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A1">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>WEEKLY · ACTIVE USERS</div>
-          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>9 周增长 +633%</div>
+          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>9-week growth +633%</div>
         </div>
         <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid meet" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           <Axis xLabels={labels} />
@@ -73,14 +73,14 @@ function LineChart() {
       <Params rows={[
         { k: 'AXIS', v: '1px rgba(255,255,255,.06) hairline' },
         { k: 'LINE', v: '3px accent · round join' },
-        { k: 'POINT', v: '4px (常规) · 8px (端点高亮)' },
-        { k: 'LABEL', v: '末端标数字 + mono 字体' },
+        { k: 'POINT', v: '4px (default) · 8px (endpoint highlight)' },
+        { k: 'LABEL', v: 'end-point value label · mono typeface' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A2 · 多线对比 ── */
+/* ── A2 · Multi-line comparison ── */
 function MultiLine() {
   const series = [
     { name: 'GPT-4',     data: [22, 38, 45, 58, 64, 71, 78, 82, 86], color: 'var(--accent)' },
@@ -91,11 +91,11 @@ function MultiLine() {
   const padX = 80, padY = 60, w = 1000, h = 500;
   const innerW = w - padX * 2, innerH = h - padY * 2;
   return (
-    <SubSec name="A2 · 多线对比 · Multi-line" tag="MODEL COMPARISON">
+    <SubSec name="A2 · Multi-line" tag="MODEL COMPARISON">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A2">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>BENCHMARK · MMLU SCORE</div>
-          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>三家模型 9 月成绩</div>
+          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>Three-model benchmark, September</div>
         </div>
         <div style={{ position: 'absolute', top: '8%', right: '6%', display: 'flex', flexDirection: 'column', gap: 10 }}>
           {series.map(s => (
@@ -114,15 +114,15 @@ function MultiLine() {
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'HIERARCHY', v: '主线 accent 3px · 次线 70% 白 2px · 三线 35% 白 2px' },
-        { k: 'LEGEND', v: '右上角 · 18px 横杠 + mono 名' },
-        { k: 'RULE', v: '<b>最多 3 条线</b> · 4 条以上拆图' },
+        { k: 'HIERARCHY', v: 'primary accent 3px · secondary 70% white 2px · tertiary 35% white 2px' },
+        { k: 'LEGEND', v: 'top-right · 18px dash + mono label' },
+        { k: 'RULE', v: '<b>max 3 lines</b> · split into separate charts beyond 4' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A3 · 柱形图 ── */
+/* ── A3 · Bar chart ── */
 function BarChart() {
   const data = [
     { l: 'JAN', v: 38 }, { l: 'FEB', v: 52 }, { l: 'MAR', v: 41 },
@@ -130,11 +130,11 @@ function BarChart() {
   ];
   const max = 100;
   return (
-    <SubSec name="A3 · 柱形图 · Bar Chart" tag="DISCRETE QUANTITIES">
+    <SubSec name="A3 · Bar Chart" tag="DISCRETE QUANTITIES">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A3">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>MONTHLY · API CALLS (M)</div>
-          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>5 月峰值 84M</div>
+          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>May peak 84M</div>
         </div>
         <div style={{ position: 'absolute', inset: '34% 8% 14% 8%', display: 'flex', alignItems: 'flex-end', gap: 24 }}>
           {data.map((d, i) => {
@@ -152,16 +152,16 @@ function BarChart() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'BAR', v: '默认 18% 白 · 峰值 accent' },
-        { k: 'GAP', v: '24px · 不超过柱宽 50%' },
-        { k: 'VALUE', v: '柱顶 mono · 峰值字色 accent' },
-        { k: 'RADIUS', v: '顶部 2px (柔化)' },
+        { k: 'BAR', v: 'default 18% white · peak accent' },
+        { k: 'GAP', v: '24px · no more than 50% of bar width' },
+        { k: 'VALUE', v: 'mono value atop bar · accent color on peak' },
+        { k: 'RADIUS', v: '2px top radius (softened)' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A4 · 横向条形 ── */
+/* ── A4 · Horizontal bar ── */
 function HBarChart() {
   const data = [
     { l: 'GitHub Copilot', v: 92 },
@@ -171,11 +171,11 @@ function HBarChart() {
     { l: 'Windsurf',       v: 41 },
   ];
   return (
-    <SubSec name="A4 · 横向条形 · H-Bar" tag="RANKING">
+    <SubSec name="A4 · Horizontal Bar · H-Bar" tag="RANKING">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A4">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>2025 DEV TOOL ADOPTION %</div>
-          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>开发者用得最多的 AI 工具</div>
+          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>Most-used AI tools among developers</div>
         </div>
         <div style={{ position: 'absolute', inset: '30% 8% 10% 8%', display: 'flex', flexDirection: 'column', gap: 18 }}>
           {data.map((d, i) => (
@@ -190,16 +190,16 @@ function HBarChart() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'LAYOUT', v: '3 列：标签 / 条 / 数值' },
-        { k: 'SORT', v: '降序 · 第一名 accent' },
-        { k: 'BAR HEIGHT', v: '18px (粗壮便于看清)' },
-        { k: 'TRACK', v: '5% 白底打底 (空槽可见)' },
+        { k: 'LAYOUT', v: '3 columns: label / bar / value' },
+        { k: 'SORT', v: 'descending · #1 accent' },
+        { k: 'BAR HEIGHT', v: '18px (thick for visibility)' },
+        { k: 'TRACK', v: '5% white track (empty slot visible)' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A5 · 堆叠条/柱 ── */
+/* ── A5 · Stacked bar ── */
 function StackedBar() {
   const months = [
     { l: 'Q1', segs: [42, 28, 18] },
@@ -210,11 +210,11 @@ function StackedBar() {
   const colors = ['var(--accent)', 'rgba(255,255,255,.55)', 'rgba(255,255,255,.22)'];
   const names = ['Inference', 'Training', 'Storage'];
   return (
-    <SubSec name="A5 · 堆叠柱 · Stacked" tag="COMPOSITION OVER TIME">
+    <SubSec name="A5 · Stacked Bar · Stacked" tag="COMPOSITION OVER TIME">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A5">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>COMPUTE COST · $M</div>
-          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>四季度构成变化</div>
+          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>Quarterly composition change</div>
         </div>
         <div style={{ position: 'absolute', top: '8%', right: '6%', display: 'flex', flexDirection: 'column', gap: 10 }}>
           {names.map((n, i) => (
@@ -243,15 +243,15 @@ function StackedBar() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'COLOR ORDER', v: '主项 accent · 次项 55% 白 · 三项 22% 白' },
-        { k: 'TOTAL', v: '柱顶 mono · 累计值' },
-        { k: 'STACK', v: '主项<b>放底部</b>视觉锚定' },
+        { k: 'COLOR ORDER', v: 'primary accent · secondary 55% white · tertiary 22% white' },
+        { k: 'TOTAL', v: 'mono total atop bar · cumulative value' },
+        { k: 'STACK', v: 'place primary segment <b>at bottom</b> as visual anchor' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A6 · 面积图 ── */
+/* ── A6 · Area chart ── */
 function AreaChart() {
   const pts = [10, 18, 28, 22, 38, 52, 48, 68, 84];
   const labels = ['1','2','3','4','5','6','7','8','9'];
@@ -260,11 +260,11 @@ function AreaChart() {
   const pathLine = pts.map((v, i) => `${i === 0 ? 'M' : 'L'} ${padX + (i / (pts.length - 1)) * innerW} ${h - padY - (v / 100) * innerH}`).join(' ');
   const pathFill = pathLine + ` L ${w - padX} ${h - padY} L ${padX} ${h - padY} Z`;
   return (
-    <SubSec name="A6 · 面积图 · Area" tag="ACCUMULATED VOLUME">
+    <SubSec name="A6 · Area Chart · Area" tag="ACCUMULATED VOLUME">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A6">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>CONTEXT WINDOW · K TOKENS</div>
-          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>模型上下文增长曲线</div>
+          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>Model context window growth curve</div>
         </div>
         <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid meet" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           <Axis xLabels={labels} />
@@ -279,15 +279,15 @@ function AreaChart() {
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'FILL', v: 'accent 42% → 0% 渐变 (唯一允许的渐变)' },
-        { k: 'STROKE', v: '顶线 3px accent' },
-        { k: 'USE', v: '强调"累积量 / 容量"' },
+        { k: 'FILL', v: 'accent 42% → 0% gradient (only permitted gradient)' },
+        { k: 'STROKE', v: 'top stroke 3px accent' },
+        { k: 'USE', v: 'emphasize "cumulative volume / capacity"' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A7 · 环形图 ── */
+/* ── A7 · Donut chart ── */
 function Donut() {
   const data = [
     { l: 'Retrieval', v: 52, c: 'var(--accent)' },
@@ -299,7 +299,7 @@ function Donut() {
   const C = 2 * Math.PI * r;
   let acc = 0;
   return (
-    <SubSec name="A7 · 环形图 · Donut" tag="PROPORTION (≤ 4 SLICES)">
+    <SubSec name="A7 · Donut Chart · Donut" tag="PROPORTION (≤ 4 SLICES)">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A7">
         <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', padding: '6% 8%' }}>
           <div style={{ position: 'relative', width: 320, height: 320 }}>
@@ -330,16 +330,16 @@ function Donut() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'RING', v: '36px stroke · 半径 140' },
-        { k: 'CENTER', v: '主项数字 mono 800 · 56px · accent' },
-        { k: 'LEGEND', v: '右栏 3 列：色块 / 名 / 数值' },
-        { k: 'RULE', v: '<b>≤ 4 块</b>，多了换柱形' },
+        { k: 'RING', v: '36px stroke · radius 140' },
+        { k: 'CENTER', v: 'primary value mono 800 · 56px · accent' },
+        { k: 'LEGEND', v: 'right column 3 fields: swatch / name / value' },
+        { k: 'RULE', v: '<b>≤ 4 segments</b>; use bar chart if more' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A8 · 散点图 ── */
+/* ── A8 · Scatter plot ── */
 function Scatter() {
   // x = cost (0-100), y = quality (0-100), size = adoption
   const pts = [
@@ -354,11 +354,11 @@ function Scatter() {
   const padX = 90, padY = 70, w = 1000, h = 500;
   const innerW = w - padX * 2, innerH = h - padY * 2;
   return (
-    <SubSec name="A8 · 散点图 · Scatter" tag="CORRELATION / DISTRIBUTION">
+    <SubSec name="A8 · Scatter Plot · Scatter" tag="CORRELATION / DISTRIBUTION">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A8">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>COST × QUALITY · MODEL LANDSCAPE</div>
-          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>模型 D 是甜蜜点</div>
+          <div className="cn" style={{ fontSize: 32, fontWeight: 800, marginTop: 6 }}>Model D is the sweet spot</div>
         </div>
         <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid meet" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           <Axis xLabels={['LOW','','','MID','','','HIGH']} />
@@ -376,15 +376,15 @@ function Scatter() {
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'AXES', v: '双坐标 · 角落注 LOW/HIGH' },
-        { k: 'POINT SIZE', v: '映射第三维度（如采用量）' },
-        { k: 'HIGHLIGHT', v: '主点 accent · 其余 14% 白填' },
+        { k: 'AXES', v: 'dual axes · LOW/HIGH corner labels' },
+        { k: 'POINT SIZE', v: 'maps third dimension (e.g. adoption)' },
+        { k: 'HIGHLIGHT', v: 'primary point accent · others 14% white fill' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A9 · 热力图 ── */
+/* ── A9 · Heatmap ── */
 function Heatmap() {
   const rows = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   const cols = ['0','3','6','9','12','15','18','21'];
@@ -396,11 +396,11 @@ function Heatmap() {
     return Math.min(100, Math.round(base + (Math.sin(r * c) * 12)));
   }));
   return (
-    <SubSec name="A9 · 热力图 · Heatmap" tag="2D INTENSITY">
+    <SubSec name="A9 · Heatmap" tag="2D INTENSITY">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A9">
         <div style={{ position: 'absolute', top: '6%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>API USAGE · WEEKDAY × HOUR</div>
-          <div className="cn" style={{ fontSize: 28, fontWeight: 800, marginTop: 6 }}>工作日中午为高峰</div>
+          <div className="cn" style={{ fontSize: 28, fontWeight: 800, marginTop: 6 }}>Weekday midday is the peak</div>
         </div>
         <div style={{ position: 'absolute', inset: '32% 8% 10% 8%', display: 'grid', gridTemplateRows: 'repeat(7, 1fr)', gap: 4 }}>
           {grid.map((row, ri) => (
@@ -422,15 +422,15 @@ function Heatmap() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'CELL', v: '阶梯填色：< 70 灰阶 · ≥ 70 accent' },
-        { k: 'GAP', v: '4px · 让格子边界清晰' },
-        { k: 'LABELS', v: '行 · 列 mono caps 14px' },
+        { k: 'CELL', v: 'stepped fill: < 70 grayscale · ≥ 70 accent' },
+        { k: 'GAP', v: '4px · keeps cell boundaries clear' },
+        { k: 'LABELS', v: 'row · column mono caps 14px' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A10 · 仪表盘 ── */
+/* ── A10 · Gauge ── */
 function Gauge() {
   const value = 73;
   const startA = -200, endA = 20;  // sweep 220°
@@ -443,7 +443,7 @@ function Gauge() {
   };
   const [x1, y1] = arc(startA), [x2, y2] = arc(endA);
   return (
-    <SubSec name="A10 · 仪表盘 · Gauge" tag="SINGLE METRIC">
+    <SubSec name="A10 · Gauge" tag="SINGLE METRIC">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A10">
         <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', padding: '6% 10%' }}>
           <div style={{ position: 'relative', width: 340, height: 240 }}>
@@ -458,21 +458,21 @@ function Gauge() {
           </div>
           <div>
             <div className="meta" style={{ color: 'var(--accent)', marginBottom: 10 }}>RAG · ANSWER FIDELITY</div>
-            <div className="cn" style={{ fontSize: 30, fontWeight: 800, lineHeight: 1.2, marginBottom: 14 }}>距离目标还差 <span style={{ color: 'var(--accent)' }}>7 个点</span></div>
-            <div className="cn" style={{ fontSize: 18, color: 'var(--fg-2)', lineHeight: 1.6 }}>本周新版 retrieval 上线后从 64 → 73。<br/>计划下周做 reranker 验证。</div>
+            <div className="cn" style={{ fontSize: 30, fontWeight: 800, lineHeight: 1.2, marginBottom: 14 }}>Still <span style={{ color: 'var(--accent)' }}>7 points</span> shy of target</div>
+            <div className="cn" style={{ fontSize: 18, color: 'var(--fg-2)', lineHeight: 1.6 }}>New retrieval shipped this week: 64 → 73.<br/>Reranker validation planned for next week.</div>
           </div>
         </div>
       </Stage>
       <Params rows={[
-        { k: 'SWEEP', v: '220° · 起始 -200° → 终止 20°' },
-        { k: 'STROKE', v: '22px round cap · 留底色 10% 白' },
+        { k: 'SWEEP', v: '220° · start -200° → end 20°' },
+        { k: 'STROKE', v: '22px round cap · 10% white track beneath' },
         { k: 'NUMBER', v: '72px mono 800 · accent' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A11 · 迷你图 ── */
+/* ── A11 · Sparkline ── */
 function Sparkline() {
   const cards = [
     { l: 'DAU',    v: '12.4K', d: '+8.2%', up: true,  pts: [40, 38, 52, 48, 62, 70, 78] },
@@ -481,11 +481,11 @@ function Sparkline() {
     { l: 'COST',  v: '$3.8K', d: '+2.1%', up: false, pts: [42, 48, 44, 52, 50, 58, 62] },
   ];
   return (
-    <SubSec name="A11 · 迷你图 · Sparkline" tag="DENSE METRIC CARDS">
+    <SubSec name="A11 · Sparkline" tag="DENSE METRIC CARDS">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A11">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>WEEKLY DASHBOARD</div>
-          <div className="cn" style={{ fontSize: 28, fontWeight: 800, marginTop: 6 }}>4 项关键指标</div>
+          <div className="cn" style={{ fontSize: 28, fontWeight: 800, marginTop: 6 }}>4 key metrics</div>
         </div>
         <div style={{ position: 'absolute', inset: '32% 6% 12% 6%', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
           {cards.map((c, i) => {
@@ -507,21 +507,21 @@ function Sparkline() {
       </Stage>
       <Params rows={[
         { k: 'CARD', v: '1px hairline · 22px padding · 6px radius' },
-        { k: 'METRIC', v: 'mono 30/800 主数 + 14px delta' },
-        { k: 'LINE', v: '2.5px · 颜色映射趋势 (绿=好 / 橙=糟)' },
+        { k: 'METRIC', v: 'mono 30/800 primary value + 14px delta' },
+        { k: 'LINE', v: '2.5px · color maps trend (green = good / orange = bad)' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── A12 · Sankey 流图 ── */
+/* ── A12 · Sankey flow ── */
 function Sankey() {
   // 3 sources -> 2 mid -> 1 sink, simplified rectangles + bezier
   const w = 1000, h = 460;
   const cols = [
-    { x: 80,  nodes: [{ y: 80, h: 140, l: '搜索 · 56%' }, { y: 240, h: 80, l: '社交 · 24%' }, { y: 340, h: 60, l: '直接 · 20%' }] },
-    { x: 470, nodes: [{ y: 80, h: 180, l: '试用 · 65%' }, { y: 280, h: 120, l: '流失 · 35%' }] },
-    { x: 860, nodes: [{ y: 80, h: 220, l: '留存 · 28%' }] },
+    { x: 80,  nodes: [{ y: 80, h: 140, l: 'Search · 56%' }, { y: 240, h: 80, l: 'Social · 24%' }, { y: 340, h: 60, l: 'Direct · 20%' }] },
+    { x: 470, nodes: [{ y: 80, h: 180, l: 'Trial · 65%' }, { y: 280, h: 120, l: 'Churn · 35%' }] },
+    { x: 860, nodes: [{ y: 80, h: 220, l: 'Retention · 28%' }] },
   ];
   const flows = [
     { a: [0, 0], b: [1, 0], w: 100, hot: true },
@@ -542,11 +542,11 @@ function Sankey() {
     return `M ${x1} ${y1 - f.w / 2} C ${mx} ${y1 - f.w / 2}, ${mx} ${y2 - f.w / 2}, ${x2} ${y2 - f.w / 2} L ${x2} ${y2 + f.w / 2} C ${mx} ${y2 + f.w / 2}, ${mx} ${y1 + f.w / 2}, ${x1} ${y1 + f.w / 2} Z`;
   };
   return (
-    <SubSec name="A12 · Sankey 流图" tag="FLOW DISTRIBUTION">
+    <SubSec name="A12 · Sankey Flow · Sankey" tag="FLOW DISTRIBUTION">
       <Stage pattern="graph" label="● B-ROLL · DATA" labelR="06.A12">
         <div style={{ position: 'absolute', top: '6%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>USER ACQUISITION FUNNEL</div>
-          <div className="cn" style={{ fontSize: 28, fontWeight: 800, marginTop: 6 }}>10,000 流量到 28% 留存</div>
+          <div className="cn" style={{ fontSize: 28, fontWeight: 800, marginTop: 6 }}>10,000 visitors to 28% retention</div>
         </div>
         <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid meet" style={{ position: 'absolute', inset: '26% 0 0 0', width: '100%', height: '74%' }}>
           {flows.map((f, i) => (
@@ -564,10 +564,10 @@ function Sankey() {
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'NODE', v: '18px 宽矩形 · accent / 62% 白' },
-        { k: 'FLOW', v: 'bezier · accent 32% / 白 42% opacity' },
-        { k: 'WIDTH', v: '映射流量大小' },
-        { k: 'USE', v: '讲漏斗 / 转化 / 资源分配' },
+        { k: 'NODE', v: '18px-wide rect · accent / 62% white' },
+        { k: 'FLOW', v: 'bezier · accent 32% / white 42% opacity' },
+        { k: 'WIDTH', v: 'width maps flow volume' },
+        { k: 'USE', v: 'for funnel / conversion / resource allocation' },
       ]} />
     </SubSec>
   );

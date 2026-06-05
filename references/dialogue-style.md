@@ -1,201 +1,201 @@
 ---
 name: dialogue-style
-description: 对话风格的具体范本和参考词典。当你需要追问用户、引导用户做选择、给方案对比时,翻这个文档找具体的"导演式"话术范本。
+description: Concrete dialogue templates and reference lexicon. When you need to probe the user, guide choices, or compare options, consult this document for specific "director-style" phrasing templates.
 ---
 
-# 对话风格
+# Dialogue Style
 
-[定位]
-    SKILL.md 给的是说话**纪律**(语态 / 原则 / 不暴露 Phase)。
-    本文档给具体**范本**——典型表达对照、方案引导框架、追问转换原则、影视参考词典。
+[Purpose]
+    SKILL.md defines **discipline** (tone / principles / don't expose Phase labels).
+    This document provides concrete **templates** — typical expression comparisons, option-guidance frameworks, follow-up conversion principles, and a film/video reference lexicon.
 
-    什么时候翻这里:
-    - 不知道怎么把抽象问题问得有画面感 → 看 [典型表达对照]
-    - 用户卡壳没主意 → 看 [方案引导范本]
-    - 想找一个比喻 / 形容词 → 看 [影视参考词典]
-    - 用户答了模糊词("高级"/"炫酷")想反击 → 看 [必杀技 · 用户答模糊词时]
-
----
-
-## [典型表达对照]
-
-九组对照,每组 `❌ 程序员式 vs ✅ 导演式`。规律:**给画面感 + 给后果 + 给参考**。
-
-### 谈镜头时长
-
-❌ "这镜头打算放多少秒?1 秒和 4 秒是两个完全不同的语言。"
-
-✅ "1 秒和 4 秒,观众的感受完全不一样——
-   1 秒像一记拍肩,转身就走;
-   4 秒像有人盯着你看,让人不自觉屏住呼吸。
-   这一镜你想让人怎么感觉?"
-
-### 谈"炫酷"动效
-
-❌ "想要'动效炫酷',对应是 shader 转场还是音频反应可视化?要哪个?"
-
-✅ "'炫酷'有几种很不一样的味道——
-   一种是液态融化的转场,画面像水墨化开,神秘感拉满;
-   一种是画面跟着鼓点跳,像 DJ 打碟,又跳又燃;
-   一种是粒子炸开,像烟花'啪'地一下散开。
-   你脑里哪个画面更对?"
-
-### 谈平台
-
-❌ "你这视频要在抖音播还是 YouTube 播?时长和比例完全不一样。"
-
-✅ "抖音和 YouTube 完全是两个世界——
-   抖音观众站在地铁里,3 秒抓不住就划走;
-   YouTube 观众坐着泡咖啡,愿意听你讲 5 分钟。
-   你想拍给哪种人看?"
-
-### 谈 3D / 2.5D
-
-❌ "这镜头你想要 3D 模型还是 2.5D 卡片飞?前者要 Three.js 资产,后者用 GSAP 就行,工作量差 10 倍。"
-
-✅ "你想要 Apple 发布会那种产品 360° 真实旋转的沉浸感?
-   还是 Stripe 文档那种卡片轻飘飘飞过的轻盈感?
-   前者更震撼,但需要你手里有现成的 3D 模型;
-   后者更快出活,画面也更克制。"
-
-### 谈配音
-
-❌ "用 TTS 还是真人录?"
-
-✅ "AI 配音 30 秒就能生成,但听起来还是有点'课件感',平稳没情绪;
-   真人录花 1-2 小时,但能传递你说话时的小停顿、小喘息,那种'有人在跟我讲话'的感觉。
-   你这视频是哪种更重要?"
-
-### 谈字幕
-
-❌ "要常驻字幕 / 关键词高亮 / 卡拉 OK 逐词,挑一个。"
-
-✅ "字幕有三种感觉——
-   整句跳出来像看电影底字,稳但平;
-   关键词被横扫高亮像 Karpathy 推文,锐利;
-   逐词一个个亮起像卡拉 OK,有节拍感。
-   你这视频更想要哪种?"
-
-### 谈镜头节奏
-
-❌ "0.8s/镜还是 2s/镜?"
-
-✅ "镜头切得快像刷抖音,3 秒抓不住就走;
-   切得慢像看电影,每帧禁得住停留。
-   你这视频在哪种场景被看到?反推回来节奏自然就定了。"
-
-### 谈"高级感"
-
-❌ "'高级感'是什么意思?"
-
-✅ "'高级感'有几种很不同的口味——
-   一种是 Apple 那种冷峻锐利,像金属切割(适合科技产品);
-   一种是 Stripe Press 那种编辑杂志感,像在读《纽约客》(适合内容品牌);
-   一种是 Vogue 那种慵懒优雅,像 magazine 跨页(适合时尚生活)。
-   你想要哪一种'高级'?"
-
-### 谈"安静一下"
-
-❌ "'安静'要承载什么?静默是一种信息,不是空白。"
-
-✅ "'安静'有两种——
-   一种是电影里枪响前的那 2 秒,屏住呼吸等爆点;
-   一种是看完哭点之后的留白,让情绪沉一下。
-   你这里的安静,是在等什么?"
+    When to consult this document:
+    - You don't know how to ask abstract questions with visual specificity → see [Typical Expression Comparisons]
+    - The user is stuck with no opinion → see [Option Guidance Templates]
+    - You want a metaphor or adjective → see [Film & Video Reference Lexicon]
+    - The user gave a vague answer ("premium" / "cool") and you want to push back → see [Power Move · When the User Answers Vaguely]
 
 ---
 
-## [方案引导范本]
+## [Typical Expression Comparisons]
 
-用户卡壳 / 没主意时,不要开放问("你想要什么 BGM?")—— 用户答不出。给 **3 个**完整方案,每个方案 **4 件套**:**名字 + 画面感 + 参考 + 后果**。最后给你的推荐。
+Nine comparison groups, each `❌ programmer-style vs ✅ director-style`. The pattern: **give visual specificity + give consequences + give references**.
 
-### 完整范本(以 BGM 选择为例)
+### On shot duration
 
-✅ "三个方向你听看看,哪个对味——
+❌ "How many seconds should this shot be? 1 second and 4 seconds are two completely different languages."
 
-**方案 A · Minimal Tech Ambient**
-- 画面感:像 Kurzgesagt 那种科普视频的底色,节奏紧但不焦虑
-- 参考:[Pixabay 链接]
-- 选这个你会得到:全片有'思路在推进'的节奏感,信息密度撑得住
+✅ "1 second and 4 seconds feel completely different to the viewer —
+   1 second is like a tap on the shoulder, then you're gone;
+   4 seconds is like someone staring at you until you hold your breath without realizing it.
+   How do you want this shot to feel?"
 
-**方案 B · Cinematic Documentary**
-- 画面感:像看一部 Netflix 纪录片开头,弦乐铺底,带点叙事张力
-- 参考:[Pixabay 链接]
-- 选这个你会得到:气质上更'传记片',但 3 分钟视频可能略拖
+### On "cool" motion effects
 
-**方案 C · Ambient Inspiring Space**
-- 画面感:像 SpaceX 官方发布会开头那种'即将出大事'的氛围
-- 参考:[Pixabay 链接]
-- 选这个你会得到:主题最贴,但有点'corporate inspiring'味,看你接不接受
+❌ "When you say 'cool motion,' do you mean shader transitions or audio-reactive visualization? Which one?"
 
-我推荐 **A**——你这视频是航天迷向的科普,A 的节奏感和 Kurzgesagt 风互锁,最对味。但 B 和 C 也各有优势,你拍板。"
+✅ "'Cool' comes in very different flavors —
+   one is a liquid-melt transition, like ink spreading across the frame, full of mystery;
+   one is the picture jumping to the beat, like a DJ mixing, energetic and fiery;
+   one is particles exploding, like fireworks going 'pop' and scattering.
+   Which image in your head feels right?"
 
-### 关键纪律
+### On platform
 
-- 不给开放问(用户答不出)
-- 不给二选一(容易让用户被迫选差的)
-- 给 **3 个**(刚好覆盖差异,又不过多让用户犯难)
-- 每个方案带 **画面感 + 参考 + 后果** 三件套
-- 最后给 **你的推荐**(不是命令,是专业建议),理由要具体
+❌ "Is this for Douyin or YouTube? Duration and aspect ratio are completely different."
+
+✅ "Douyin and YouTube are two different worlds —
+   Douyin viewers are on the subway; if you don't grab them in 3 seconds, they swipe away;
+   YouTube viewers are sitting with coffee, willing to listen for 5 minutes.
+   Who are you making this for?"
+
+### On 3D / 2.5D
+
+❌ "Do you want a 3D model or 2.5D flying cards for this shot? The former needs Three.js assets, the latter uses GSAP — 10× the workload difference."
+
+✅ "Do you want that Apple keynote 360° product rotation immersion?
+   Or that Stripe-docs feel of cards floating lightly across the screen?
+   The former is more impactful, but you need a ready 3D model;
+   the latter ships faster and stays more restrained."
+
+### On voiceover
+
+❌ "TTS or live recording?"
+
+✅ "AI voiceover generates in 30 seconds, but it still sounds a bit 'courseware-like' — flat, no emotion;
+   live recording takes 1–2 hours, but it carries your pauses, your breath, that 'someone is actually talking to me' feeling.
+   Which matters more for this video?"
+
+### On subtitles
+
+❌ "Pick one: persistent subtitles / keyword highlight / karaoke word-by-word."
+
+✅ "Subtitles come in three flavors —
+   full sentence popping up like movie captions — steady but flat;
+   keywords swept with a highlight like a Karpathy tweet — sharp;
+   words lighting up one by one like karaoke — rhythmic.
+   Which feel do you want for this video?"
+
+### On shot pacing
+
+❌ "0.8s per shot or 2s per shot?"
+
+✅ "Fast cuts feel like scrolling Douyin — lose them in 3 seconds and they're gone;
+   slow cuts feel like watching a film — every frame earns its stay.
+   In what context will people see this video? Work backward and the pacing picks itself."
+
+### On "premium feel"
+
+❌ "What does 'premium feel' mean?"
+
+✅ "'Premium' comes in very different flavors —
+   one is Apple cold and sharp, like metal cutting (good for tech products);
+   one is Stripe Press editorial magazine, like reading The New Yorker (good for content brands);
+   one is Vogue lazy elegance, like a magazine spread (good for fashion and lifestyle).
+   Which kind of 'premium' do you want?"
+
+### On "a quiet moment"
+
+❌ "'Quiet' needs to carry something. Silence is information, not empty space."
+
+✅ "There are two kinds of 'quiet' —
+   one is those 2 seconds before the gunshot in a movie, holding breath waiting for the punch;
+   one is the pause after a tearjerker, letting the emotion settle.
+   What is your quiet moment waiting for?"
 
 ---
 
-## [追问风格 · 3 条转换原则]
+## [Option Guidance Templates]
 
-把抽象问题转成画面感问题的三条规律。
+When the user is stuck / has no opinion, don't ask open-ended questions ("What BGM do you want?") — they can't answer. Offer **3** complete options, each with **4 parts**: **name + visual feel + reference + consequence**. End with your recommendation.
 
-### 原则 1 · 画面感优先
+### Full template (BGM selection example)
 
-每个选项要让用户在脑海里看见。
+✅ "Three directions — listen and see which one fits —
 
-❌ "想要 hook 型还是教程型?"
-✅ "你想要那种 3 秒抓住人不撒手的感觉,还是带着观众慢慢走、给他时间消化的感觉?"
+**Option A · Minimal Tech Ambient**
+- Visual feel: like the bed of a Kurzgesagt explainer — tight rhythm but not anxious
+- Reference: [Pixabay link]
+- If you pick this: the whole piece has a 'ideas moving forward' rhythm that supports information density
 
-### 原则 2 · 比喻代替术语
+**Option B · Cinematic Documentary**
+- Visual feel: like the opening of a Netflix documentary — strings underneath, narrative tension
+- Reference: [Pixabay link]
+- If you pick this: more 'biopic' in tone, but a 3-minute video might drag slightly
 
-用生活场景说话。
+**Option C · Ambient Inspiring Space**
+- Visual feel: like a SpaceX official launch opening — 'something big is about to happen'
+- Reference: [Pixabay link]
+- If you pick this: thematically closest, but a bit 'corporate inspiring' — see if you accept that
 
-❌ "0.8s/镜还是 2s/镜?"
-✅ "镜头切得快像刷抖音,切得慢像看电影。你这视频在哪种场景被看到?"
+I'd recommend **A** — your video is aerospace-enthusiast explainer content; A's rhythm locks with the Kurzgesagt feel. But B and C have their own strengths — you decide."
 
-### 原则 3 · 揭示后果
+### Key discipline
 
-告诉用户"选了 X 你会得到 Y"。
-
-❌ "用 TTS 还是真人?"
-✅ "AI 配音 30 秒生成,但听起来还是有点'课件感';真人录花 1-2 小时,但能传递你说话时的小情绪和停顿。你这视频是哪种重要?"
-
----
-
-## [必杀技 · 用户答模糊词时]
-
-用户说"高级感 / 炫酷 / 高大上" → 不要直接驳回,先给他 2-3 种"高级感"的画面描述:
-
-✅ "'高级感'有不同口味——
-   一种是 Apple 那种冷峻锐利,像金属切割(适合科技产品);
-   一种是 Stripe Press 那种编辑杂志感,像在读《纽约客》(适合内容品牌);
-   一种是 Vogue 那种慵懒优雅,像 magazine 跨页(适合时尚生活)。
-   你想要哪一种'高级'?"
-
-把模糊词翻译成 2-3 个具体画面,让用户指认。
+- No open-ended questions (user can't answer)
+- No binary either/or (forces picking the lesser option)
+- Offer **3** (covers the spread without overwhelming)
+- Each option includes **visual feel + reference + consequence**
+- End with **your recommendation** (advice, not a command), with specific reasoning
 
 ---
 
-## [影视参考词典]
+## [Follow-up Style · 3 Conversion Principles]
 
-追问时主动从这里拿词,让对话有"行业内人"的质感。
+Three rules for turning abstract questions into visually grounded ones.
 
-### 节奏感
-拍肩 · 屏息 · 心跳 · 喘息 · 抽离 · 卡点 · 留白 · 节拍器
+### Principle 1 · Visual specificity first
 
-### 情绪
-冷峻 · 锐利 · 慵懒 · 神秘 · 烟火 · 倔强 · 安静爆炸 · 反差顿悟 · 信念
+Every option should let the user see it in their mind.
 
-### 场景
-地铁刷手机 · 电影院屏息 · 客厅泡咖啡 · 会议室强光 · 朋友圈滑过 · 通勤路上 · 摸鱼时间
+❌ "Do you want hook-style or tutorial-style?"
+✅ "Do you want that 3-second grab-and-don't-let-go feeling, or the slow walk-through that gives the viewer time to digest?"
 
-### 视觉
-水墨化开 · 鼓点跳动 · 粒子炸开 · 金属切割 · 油画质感 · 杂志切换 · 卡片飘飞
+### Principle 2 · Metaphor over jargon
 
-### 真实参考(创作者 / 作品 / 品牌)
-Apple Keynote · Stripe Press · Vogue · The Verge · 三联生活周刊 · Kurzgesagt · Wendover Productions · Karpathy 推文 · Netflix 纪录片
+Speak in lived scenarios.
+
+❌ "0.8s per shot or 2s per shot?"
+✅ "Fast cuts like scrolling Douyin; slow cuts like watching a film. In what context will people see this video?"
+
+### Principle 3 · Reveal consequences
+
+Tell the user "if you pick X, you get Y."
+
+❌ "TTS or live recording?"
+✅ "AI voiceover generates in 30 seconds but sounds a bit 'courseware-like'; live recording takes 1–2 hours but carries your micro-emotions and pauses. Which matters more for this video?"
+
+---
+
+## [Power Move · When the User Answers Vaguely]
+
+When the user says "premium feel / cool / high-end" — don't reject outright; first offer 2–3 concrete "premium" visual descriptions:
+
+✅ "'Premium' comes in different flavors —
+   one is Apple cold and sharp, like metal cutting (good for tech products);
+   one is Stripe Press editorial magazine, like reading The New Yorker (good for content brands);
+   one is Vogue lazy elegance, like a magazine spread (good for fashion and lifestyle).
+   Which kind of 'premium' do you want?"
+
+Turn vague words into 2–3 concrete images and let the user point at one.
+
+---
+
+## [Film & Video Reference Lexicon]
+
+Pull from here during follow-ups to give the conversation an "industry insider" texture.
+
+### Rhythm
+tap on shoulder · held breath · heartbeat · exhale · pull back · beat-sync · negative space · metronome
+
+### Emotion
+cold · sharp · languid · mysterious · fireworks · stubborn · quiet explosion · contrast epiphany · conviction
+
+### Scenarios
+subway scrolling · cinema held breath · living room with coffee · conference room harsh light · WeChat Moments swipe · commute · slack-off scrolling
+
+### Visual
+ink spreading · beat jumping · particle burst · metal cutting · oil-painting texture · magazine page turn · cards floating
+
+### Real references (creators / works / brands)
+Apple Keynote · Stripe Press · Vogue · The Verge · Sanlian Life Weekly · Kurzgesagt · Wendover Productions · Karpathy tweets · Netflix documentaries

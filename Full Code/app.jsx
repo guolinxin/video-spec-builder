@@ -5,17 +5,17 @@
 const { useState, useEffect, useRef } = React;
 
 const SECTIONS = [
-  { id: 'foundation', num: '00', name: '视觉地基', Comp: () => <FoundationSection /> },
+  { id: 'foundation', num: '00', name: 'Visual Foundation', Comp: () => <FoundationSection /> },
   { id: 'aroll',      num: '01', name: 'A-roll',  Comp: () => <ARollSection /> },
-  { id: 'structure',  num: '02', name: '结构图',  Comp: () => <StructureSection /> },
-  { id: 'ui',         num: '03', name: '仿真 UI', Comp: () => <FakeUISection /> },
-  { id: 'hero',       num: '04', name: '重锤',    Comp: () => <HeroSection /> },
-  { id: 'abstract',   num: '05', name: '抽象兜底', Comp: () => <AbstractSection /> },
-  { id: 'charts',     num: '06', name: '数据图表', Comp: () => <ChartsSection /> },
-  { id: 'flows',      num: '07', name: '流程图',   Comp: () => <FlowsSection /> },
-  { id: 'structures2',num: '08', name: '关系结构', Comp: () => <Structures2Section /> },
-  { id: 'thinking',   num: '09', name: '结构化思考', Comp: () => <ThinkingSection /> },
-  { id: 'illustrations', num: '10', name: '插画',  Comp: () => <IllustrationsSection /> },
+  { id: 'structure',  num: '02', name: 'Structure Diagrams',  Comp: () => <StructureSection /> },
+  { id: 'ui',         num: '03', name: 'Simulated UI', Comp: () => <FakeUISection /> },
+  { id: 'hero',       num: '04', name: 'Heavy Hit',    Comp: () => <HeroSection /> },
+  { id: 'abstract',   num: '05', name: 'Abstract Fallback', Comp: () => <AbstractSection /> },
+  { id: 'charts',     num: '06', name: 'Data Charts', Comp: () => <ChartsSection /> },
+  { id: 'flows',      num: '07', name: 'Flow Charts',   Comp: () => <FlowsSection /> },
+  { id: 'structures2',num: '08', name: 'Relationship Structures', Comp: () => <Structures2Section /> },
+  { id: 'thinking',   num: '09', name: 'Structured Thinking', Comp: () => <ThinkingSection /> },
+  { id: 'illustrations', num: '10', name: 'Illustrations',  Comp: () => <IllustrationsSection /> },
 ];
 
 /* ---------- Tweaks defaults ---------- */
@@ -49,7 +49,7 @@ function Hero() {
           A SYSTEM<br/>FOR <span className="hero__accent">VIDEO</span><span style={{ color: 'var(--accent)' }}>.</span>
         </h1>
         <div className="hero__sub cn">
-          为 AI 教程视频量身打造 · <span style={{ color: 'var(--accent)' }}>极简 / 几何 / 单色</span> · 上镜可读 · 单 accent 可调
+          Built for AI tutorial videos · <span style={{ color: 'var(--accent)' }}>minimal / geometric / monochrome</span> · camera-readable · single adjustable accent
         </div>
       </div>
       <div className="hero__meta">
@@ -162,7 +162,7 @@ function App() {
       <TweaksPanel title="Tweaks">
         <TweakSection title="Accent">
           <TweakColor
-            label="主色"
+            label="Primary color"
             value={t.accent}
             onChange={(v) => setTweak('accent', v)}
             options={['#FFFFFF', '#FF6B3D', '#1D9BF0', '#E8C547', '#00E0FF', '#FF3333']}
@@ -170,7 +170,7 @@ function App() {
         </TweakSection>
         <TweakSection title="Layout">
           <TweakToggle
-            label="装饰元素（角标·tick·grid）"
+            label="Decorative elements (corner marks · ticks · grid)"
             value={t.showDeco}
             onChange={(v) => setTweak('showDeco', v)}
           />

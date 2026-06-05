@@ -1,111 +1,111 @@
-# Spec Mono · 逐组件细规格
+# Spec Mono · Per-Component Specs
 
-`design.md` 是主题的品牌契约(颜色 / 字体 / 全局规则)。本文件是它的**配套细则** ——
-69 个组件在 Spec Mono 下的精确渲染规格,提取自原始设计系统(`assets/v2/sections/`)。
+`design.md` is the theme's brand contract (colors / typography / global rules). This file is its **companion detail** ——
+exact rendering specs for all 69 components under Spec Mono, extracted from the original design system (`assets/v2/sections/`).
 
-做某个具体镜头时查对应条目,照着写 HTML/CSS/GSAP,成品才精确贴合设计意图。
-全局规则(0 阴影 / 0 渐变 / 单 accent / 1px 描边 / 跳过字重 500)始终适用,见 `design.md`。
+When building a specific shot, look up the matching entry and write HTML/CSS/GSAP accordingly so the output matches design intent.
+Global rules (0 shadow / 0 gradient / single accent / 1px stroke / skip weight 500) always apply; see `design.md`.
 
-组件 ID 与「内容期待」字段见 `.claude/skills/video-spec-builder/references/components-catalog.md`。
+Component IDs and "content expectations" fields are in `.claude/skills/video-spec-builder/references/components-catalog.md`.
 
 ---
 
-## aroll · 出镜叠加层
+## aroll · On-Camera Overlay
 
-- **subtitle-highlight**：思源黑体 800 · clamp 28-56px。默认 `fg 42%`,念到 accent,念过纯白。强调**仅 3px accent 底线**(`scaleX` 入场),无底色块。下 14% / 左右 8% padding。
-- **keyword-sticker**：反白(白底 / 黑字)或卡片(`surface` 底 / 1px 强 hairline 边),二选一。padding 14/22px · 圆角 6px · tilt ±1.5°。入场 `scale .92→1` + tilt 归零 · 320ms spring。**同屏 ≤ 3 个,间距 ≥ 200px。**
-- **concept-card**：`surface` 底 · 1px hairline + 4 角十字针脚 · 圆角 8px · padding 32/36px · 宽约 50% 画面。标题 cn 38/800(挑一字换 serif italic)+ 28×2px accent 短分隔 + 正文 cn 16/400。底部 hairline 分隔来源注脚。**0 阴影,一卡一概念,正文 ≤ 3 行。** 入场 700ms ease-out。
+- **subtitle-highlight**: Source Han Sans SC 800 · clamp 28–56px. Default `fg 42%`, spoken word accent, spoken words pure white. Emphasis is **accent underline only, 3px** (`scaleX` entrance), no background block. Bottom 14% / left-right 8% padding.
+- **keyword-sticker**: Inverted (white bg / black text) or card (`surface` bg / 1px strong hairline border), pick one. Padding 14/22px · radius 6px · tilt ±1.5°. Entrance `scale .92→1` + tilt to zero · 320ms spring. **≤ 3 per screen, spacing ≥ 200px.**
+- **concept-card**: `surface` bg · 1px hairline + 4 corner registration crosses · radius 8px · padding 32/36px · ~50% frame width. Title cn 38/800 (one character swapped to serif italic) + 28×2px accent short divider + body cn 16/400. Bottom hairline separates source footnote. **0 shadow, one card one concept, body ≤ 3 lines.** Entrance 700ms ease-out.
 
-## broll-hero · 重锤
+## broll-hero · Heavy Hitters
 
-- **big-type**：Barlow Semi Condensed 800 · 4K 下 180-220px。挑一字换 Instrument Serif italic + accent。chrome = 左上 idx + 右上 rule + 底刻度尺 + 时码。主字入场 1100ms,角标延迟 280ms。
-- **big-number**：数字 cond · 280-360px · accent · tabular-nums。单位 0.32em · 纯白 · 上偏 0.6em。caption 28/800 + 32×2px accent 短杠。chrome = 左 finding / 右 method / 底 dashed connector。
-- **pull-quote**：Instrument Serif italic · 76px。一关键词换 accent,弱化句换 `fg 66%`。巨型左引号 opacity 0.18 装饰。byline = mono caps + 36px 短杠。
-- **inversion-flash**：黑 ↔ 白用 `steps(1)` 瞬切。6-12 帧(200-400ms)。**每支视频 ≤ 2 次,不连续。**
+- **big-type**: Barlow Semi Condensed 800 · 180–220px at 4K. One character swapped to Instrument Serif italic + accent. Chrome = top-left idx + top-right rule + bottom tick ruler + timecode. Main type entrance 1100ms, corner marks delayed 280ms.
+- **big-number**: Condensed numerals · 280–360px · accent · tabular-nums. Unit 0.32em · pure white · shifted up 0.6em. Caption 28/800 + 32×2px accent short bar. Chrome = left finding / right method / bottom dashed connector.
+- **pull-quote**: Instrument Serif italic · 76px. One keyword accent, weakened clause `fg 66%`. Giant left quote mark opacity 0.18 as decoration. Byline = mono caps + 36px short bar.
+- **inversion-flash**: Black ↔ white via `steps(1)` instant cut. 6–12 frames (200–400ms). **≤ 2 times per video, not consecutive.**
 
-## broll-charts · 数据图表
+## broll-charts · Data Charts
 
-轴线 1px `rgba(255,255,255,.06)` hairline。数字一律 mono + tabular-nums。
+Axes 1px `rgba(255,255,255,.06)` hairline. Numbers always mono + tabular-nums.
 
-- **line**：线 3px accent · round join;端点 8px、常规点 4px;末端标数字。
-- **multi-line**：主线 accent 3px / 次线 70% 白 2px / 三线 35% 白 2px。**最多 3 条。**
-- **bar**：默认柱 18% 白,峰值 accent;柱间距 24px;柱顶标值,顶部 2px 圆角。
-- **h-bar**：标签 / 条 / 数值三列;降序,第一名 accent;条高 18px;5% 白底打底。
-- **stacked**：主项 accent 放底部锚定 / 次项 55% 白 / 三项 22% 白;柱顶标累计值。
-- **area**：填充 `accent 42% → 0%`(**全系统唯一允许的渐变**);顶线 3px accent。
-- **donut**：环 36px stroke · 半径 140;中心数字 mono 800 · 56px · accent;右栏三列图例。**≤ 4 块。**
-- **scatter**：双轴角落注 LOW/HIGH;点大小映射第三维度;主点 accent,其余 14% 白填。
-- **heatmap**：阶梯填色 < 70 走灰阶、≥ 70 走 accent;格间距 4px;行列标 mono caps 14px。
-- **gauge**：220° 扫角(-200°→20°);stroke 22px round,底色 10% 白;数字 72px mono 800 accent。
-- **sparkline**：卡片 1px hairline · padding 22px · 圆角 6px;主数 mono 30/800 + 14px delta;迷你线 2.5px,颜色映射趋势(绿好 / 橙糟)。
-- **sankey**：节点 18px 宽矩形(accent / 62% 白);流条 bezier,宽度映射流量,accent 32% / 白 42% opacity。
+- **line**: Line 3px accent · round join; endpoints 8px, regular points 4px; label value at end.
+- **multi-line**: Primary accent 3px / secondary 70% white 2px / tertiary 35% white 2px. **Max 3 lines.**
+- **bar**: Default bars 18% white, peak accent; bar gap 24px; value at bar top, 2px top radius.
+- **h-bar**: Label / bar / value three columns; descending order, first place accent; bar height 18px; 5% white base track.
+- **stacked**: Primary accent anchored at bottom / secondary 55% white / tertiary 22% white; cumulative value at bar top.
+- **area**: Fill `accent 42% → 0%` (**sole gradient allowed system-wide**); top line 3px accent.
+- **donut**: Ring 36px stroke · radius 140; center number mono 800 · 56px · accent; right column three-column legend. **≤ 4 segments.**
+- **scatter**: Dual-axis corner labels LOW/HIGH; point size maps third dimension; primary point accent, others 14% white fill.
+- **heatmap**: Stepped fill < 70 grayscale, ≥ 70 accent; cell gap 4px; row/column labels mono caps 14px.
+- **gauge**: 220° sweep (-200°→20°); stroke 22px round, base 10% white; number 72px mono 800 accent.
+- **sparkline**: Card 1px hairline · padding 22px · radius 6px; main number mono 30/800 + 14px delta; mini line 2.5px, color maps trend (green good / orange bad).
+- **sankey**: Nodes 18px wide rectangles (accent / 62% white); flow ribbons bezier, width maps flow, accent 32% / white 42% opacity.
 
-## broll-flows · 流程图
+## broll-flows · Flow Diagrams
 
-通用:节点 hairline 边框,hot 段填 accent;箭头 1px line + 7px 三角。
+Common: nodes with hairline borders, hot segments filled accent; arrows 1px line + 7px triangle.
 
-- **complex**：节点 170×108 · mono 副 + 中文 label;双虚线导轨;hot 段同时点亮 tick / latency;重点段虚线框 + 反白标签圈出。
-- **branching**：决策点菱形 + 中心问句;YES/NO 标在线中点 mono caps;主路径 accent。
-- **decision-tree**：根 → 决策菱形 → 叶矩形;推荐叶 accent;推荐路径全程 accent。
-- **state-machine**：圆形节点 + mono caps 名;箭头上方标事件名;自循环用弧线。
-- **sequence**：actor 顶部矩形 + 下垂虚线生命线;实线=同步、虚线=响应/异步;关键调用 accent。
-- **swimlane**：横泳道,左侧 mono 标号 + 中文角色名;跨泳道箭头 = 责任移交。
-- **fork-join**：fork/join 用 6×20 实心 accent 条;worker 并排堆叠,数量 = 并发度。
-- **loop**：4 节点环形排列(不要排成线);弧线闭环;中心写 ∞ + 退出条件。
+- **complex**: Nodes 170×108 · mono sub + semantic label; dual dashed guide rails; hot segment lights tick / latency together; key segment dashed box + inverted label callout.
+- **branching**: Decision diamond + center question; YES/NO labeled at line midpoint mono caps; primary path accent.
+- **decision-tree**: Root → decision diamond → leaf rectangle; recommended leaf accent; recommended path fully accent.
+- **state-machine**: Circular nodes + mono caps names; event names above arrows; self-loops use arcs.
+- **sequence**: Actors as top rectangles + hanging dashed lifelines; solid = sync, dashed = response/async; key calls accent.
+- **swimlane**: Horizontal lanes, left mono index + role name; cross-lane arrows = handoff.
+- **fork-join**: Fork/join use 6×20 solid accent bars; workers stacked side by side, count = concurrency.
+- **loop**: 4 nodes in ring layout (not linear); arc closes loop; center shows ∞ + exit condition.
 
-## broll-structure / structures2 · 结构图
+## broll-structure / structures2 · Structure Diagrams
 
-- **flow-chart**：节点 hairline → hot 实心 accent;箭头 1px + 7px 三角;推进 900ms/步;past 线变 accent、future 透明度 0.5。
-- **pyramid**：三层宽度 32/52/72%(黄金比),层间距 8px 不重叠;顶层标签 accent。
-- **funnel**：四级宽度 80→58→40→22%;末级 accent 边框;右列 mono 数字右对齐。
-- **concentric**：半径 60/120/180/240;标签在环顶右对齐 mono+cn 双行;核心填 surface + accent 描边。
-- **node-graph**：边 1px 强 hairline、不加箭头美化;节点圆角 6px、padding 8/14;hot 节点 accent 描边 + surface 填充。
-- **spectrum(structure)**：轴 1px 强 hairline 全宽;两极点 7px 圆 `fg 66%`;marker 14px 圆 accent。
-- **tree**：上下三层(根→类→实例);直线连接,主分支 accent;层级越深矩形越小。
-- **mind-map**：中心实心 accent 圆、主题字反色;一级文字 800、二级 14px;主分支均匀放射。
-- **matrix-2x2**：十字 hairline 轴 + 四角象限名;点 = 色块+标签,重点项 accent+800;理想象限角落加 ★。
-- **venn**：圆半透明填充 + hairline 描边;主圈 accent 18%、其它白 6%;交集中心 ★ + 灵魂名词。
-- **layered-stack**：上窄下宽视错觉(实际等高);左侧 L 编号 mono 自上而下递减;focus 层 accent 边框。
-- **hub-spoke**：中心实心 accent 圆 80px,永远居中;6 向 spoke,重点连实线、其余虚线。
-- **grid-map**：12×6 单元格、间距 8px;色映射状态(active accent / idle 16% 白 / error red);active 单元呼吸 pulse、错位 delay。
+- **flow-chart**: Nodes hairline → hot solid accent; arrows 1px + 7px triangle; advance 900ms/step; past lines turn accent, future opacity 0.5.
+- **pyramid**: Three tiers width 32/52/72% (golden ratio), tier gap 8px no overlap; top tier label accent.
+- **funnel**: Four tiers width 80→58→40→22%; bottom tier accent border; right column mono numbers right-aligned.
+- **concentric**: Radii 60/120/180/240; labels top-right of ring mono+cn two lines; core fill surface + accent stroke.
+- **node-graph**: Edges 1px strong hairline, no arrow styling; nodes radius 6px, padding 8/14; hot node accent stroke + surface fill.
+- **spectrum(structure)**: Axis 1px strong hairline full width; poles 7px circle `fg 66%`; marker 14px circle accent.
+- **tree**: Three tiers top-down (root→class→instance); straight connectors, main branch accent; deeper tiers smaller rectangles.
+- **mind-map**: Center solid accent circle, topic text inverted; tier-1 text 800, tier-2 14px; main branches evenly radial.
+- **matrix-2x2**: Cross hairline axes + quadrant names in four corners; points = color block + label, key item accent+800; ideal quadrant corner gets ★.
+- **venn**: Circles semi-transparent fill + hairline stroke; primary circle accent 18%, others white 6%; intersection center ★ + key noun.
+- **layered-stack**: Narrow-top-wide-bottom illusion (equal height); left L index mono descending top to bottom; focus layer accent border.
+- **hub-spoke**: Center solid accent circle 80px, always centered; 6 spokes, key links solid, others dashed.
+- **grid-map**: 12×6 cells, gap 8px; color maps state (active accent / idle 16% white / error red); active cell breathing pulse, staggered delay.
 
-## broll-thinking · 思考与组织
+## broll-thinking · Thinking & Organization
 
-- **compare-table**：表头左 mono caps 维度、右 cn 800 候选名;每行最优项 accent + ★ 前缀;hairline 分隔行,**不画竖线**。
-- **swot**：2×2 等宽;S/O 走 accent(正向),W/T 中性;字母 mono 800 · 56px 当视觉锚;条目用 8px 横杠(不用圆点)。
-- **fishbone**：主干水平、鱼头=问题在右、尾向左;6 类成因斜插,主因 accent;小刺横向 14px。
-- **timeline-row**：水平 hairline 轴等距分布;事件卡上下交错;关键事件 accent 大圆点。
-- **gantt**：左列任务名 + 右侧周柱;柱高 26px · 2px 圆角,关键里程碑 accent;表头 W1-W10 mono caps。
-- **kanban**：4 列等宽,当前列 accent 头;卡片上 mono 标签 / 下中文任务;列头跟数量。
-- **card-grid**：4×2 等宽等高、16px gap;卡片左上编号 + 左下标题 + 副标;推荐项整张 surface 填充 + accent 边。
+- **compare-table**: Header left mono caps dimension, right cn 800 candidate names; best row item accent + ★ prefix; hairline row separators, **no vertical lines**.
+- **swot**: 2×2 equal width; S/O use accent (positive), W/T neutral; letter mono 800 · 56px as visual anchor; items use 8px horizontal bars (not bullets).
+- **fishbone**: Spine horizontal, fish head = problem on right, tail left; 6 cause categories angled in, primary cause accent; sub-causes horizontal 14px.
+- **timeline-row**: Horizontal hairline axis evenly spaced; event cards alternate above/below; key event accent large dot.
+- **gantt**: Left column task names + right week bars; bar height 26px · 2px radius, key milestones accent; header W1–W10 mono caps.
+- **kanban**: 4 equal columns, current column accent header; card top mono label / bottom task title; column header shows count.
+- **card-grid**: 4×2 equal width and height, 16px gap; card top-left index + bottom-left title + subtitle; recommended item full surface fill + accent border.
 
 ## broll-ui · UI Mock
 
-- **terminal**：mono 字体(画面内约 30px);`surface` 底 + hairline 边;光标 10×18 实块 · 1s blink · accent;打字 60ms/字符;尾部 tokens/延迟/成本注脚走 `fg 42%`。
-- **chat-thread**：user 气泡右对齐 · accent 描边 · 透明底;AI 气泡左对齐 · surface 填充 · 无边;最大宽度 70%;流式末尾光标 ▍。
-- **browser**：三点 + tab 行 + URL 框全部 hairline;URL 用 mono、不显示 `https://`;CTA 用正方形 accent 按钮;不放 favicon。
-- **code-editor**：keyword=accent / string=`fg 66%` / comment=`fg 42%` italic;行号 mono `fg 42%` 右对齐;当前讲解行左侧 2px accent 竖条;文件树可选 32px 宽。
-- **api-call**：左请求 / 中延迟 / 右响应三栏;POST=accent、200=green、error=red;键 `fg 42%`、值纯白/accent;中间显示真实毫秒数。
-- **dashboard**：KPI 卡 = 巨数字 + 单位 + 标签;焦点卡左上 accent 角标;sparkline hairline + 单 accent 高亮点;右上 accent 圆点 + LIVE caps。
+- **terminal**: Mono font (~30px on screen); `surface` bg + hairline border; cursor 10×18 solid block · 1s blink · accent; typing 60ms/char; footer tokens/latency/cost notes at `fg 42%`.
+- **chat-thread**: User bubble right-aligned · accent stroke · transparent bg; AI bubble left-aligned · surface fill · no border; max width 70%; streaming cursor ▍ at end.
+- **browser**: Three dots + tab row + URL bar all hairline; URL in mono, hide `https://`; CTA uses square accent button; no favicon.
+- **code-editor**: keyword=accent / string=`fg 66%` / comment=`fg 42%` italic; line numbers mono `fg 42%` right-aligned; current explained line 2px accent left bar; file tree optional 32px wide.
+- **api-call**: Left request / center latency / right response three columns; POST=accent, 200=green, error=red; keys `fg 42%`, values pure white/accent; center shows real milliseconds.
+- **dashboard**: KPI card = large number + unit + label; focus card top-left accent corner mark; sparkline hairline + single accent highlight point; top-right accent dot + LIVE caps.
 
-## broll-abstract · 抽象兜底
+## broll-abstract · Abstract Fallback
 
-- **analogy**：左=未知 / 右=熟悉,两张完全对称 hairline 卡;连接符 ≈ 用 serif italic 76px accent;"就像"做下方语义提示;左卡 accent 标签强化区分。
-- **black-box**：盒子用 **dashed accent 描边**(区别于 hairline)+ 四角 bracket;`?` 84px cond accent;箭头 hairline + 锐角三角 最强 hairline。
-- **equation**：横向居中等距;运算符 serif italic 56px accent;关键项 accent 边框;顶部 EQ + hairline 注释栏(教科书味)。
-- **spectrum(abstract)**：轴 0–1 · 11 个 tick(5n 主刻度);marker 倒三角 accent + 上方 mono 标签;左极纯白 / 右极 accent meta。
-- **iceberg**：水线 accent 虚线 + WATERLINE 标签;水上实线 · accent · 标"10%";水下虚线 + 轻填充 · 灰阶 · 标"90%"。
-- **versus**：左右等宽 + 中竖线 + `vs` serif;同序键值行行对齐;左标 `fg 42%` / 右标 accent。
-- **placeholder**：45° 斜条纹底(4% 白)+ 1px 强 hairline 边 + 四角 bracket;`[ DROP HERE ]` mono caps accent;标注尺寸/时长/编码格式。
+- **analogy**: Left=unknown / right=familiar, two fully symmetric hairline cards; connector ≈ in serif italic 76px accent; "just like" as bottom semantic cue; left card accent label reinforces distinction.
+- **black-box**: Box uses **dashed accent stroke** (distinct from hairline) + corner brackets; `?` 84px cond accent; arrows hairline + sharp triangle strongest hairline.
+- **equation**: Horizontally centered equal spacing; operators serif italic 56px accent; key terms accent border; top EQ + hairline annotation bar (textbook feel).
+- **spectrum(abstract)**: Axis 0–1 · 11 ticks (5n major); marker inverted triangle accent + mono label above; left pole pure white / right pole accent meta.
+- **iceberg**: Waterline accent dashed + WATERLINE label; above water solid · accent · labeled "10%"; below water dashed + light fill · grayscale · labeled "90%".
+- **versus**: Left-right equal width + center vertical line + `vs` serif; same-order key-value rows aligned; left label `fg 42%` / right label accent.
+- **placeholder**: 45° diagonal stripe bg (4% white) + 1px strong hairline border + corner brackets; `[ DROP HERE ]` mono caps accent; annotate dimensions/duration/codec.
 
-## icons · 图标
+## icons · Icons
 
-- 用 Lucide 图标集(48 个精选见 catalog)。
-- 描边粗细:**默认 1.5px**(与 hairline 视觉等重);图标自身被强调时用 2px。同屏不混用 3 档以上。
-- 颜色:默认 `fg 66%`,hover/强调才 accent。**不主动给图标上色。**
+- Use Lucide icon set (48 curated picks in catalog).
+- Stroke weight: **default 1.5px** (visually matches hairline); 2px when icon itself is emphasized. Don't mix more than 3 tiers on screen.
+- Color: default `fg 66%`, accent on hover/emphasis only. **Don't color icons proactively.**
 
-## illustrations · 章节封面插画
+## illustrations · Chapter Cover Illustrations
 
-- 6 张 Open Peeps 风格场景插画,**仅用于章节封面**(一章一张)。
-- 这是「0 装饰插画」铁律的唯一豁免区 —— 插画只许出现在章节封面,正文镜头一律不用。
-- 注:插画**画稿本身是内容素材,不是主题样式** —— 本主题只规定怎么用、何时用。主题不匹配时退回 `broll-hero.big-type` 兜底。
+- 6 Open Peeps–style scene illustrations, **chapter covers only** (one per chapter).
+- Sole exemption to the "0 decorative illustration" rule —— illustrations only on chapter covers, never in body shots.
+- Note: illustrations are **content assets, not theme styling** —— this theme only defines how and when to use them. When theme doesn't match, fall back to `broll-hero.big-type`.

@@ -1,556 +1,556 @@
 ---
 name: scene-breakdown
-description: 逐字稿 / 卖点列表 → 分镜表的拆解方法论。
+description: Methodology for breaking down full script / selling-point list → shot list.
 ---
 
-# 分镜拆解方法论
+# Scene Breakdown Methodology
 
-[使用时机]
-    - 0-1 模式 Phase 1-5 都问完后，进入分镜起草阶段
-    - 迭代模式加新场景 / 大段重排时
+[When to use]
+    - 0-1 mode: after Phase 1-5 questions complete, enter shot-list drafting stage
+    - Iteration mode: adding new scenes / major reordering
 
-[核心理念]
-    分镜 = 把脚本翻译成可执行的画面 + 动效，不是切段落。
-    每个 Scene 必须回答 4 个问题：
-    1. 信息载荷 —— 这一镜让观众 get 到什么？
-    2. 组件 ID —— 用 components-catalog 哪个组件承载？
-    3. 时长 —— 几秒？
-    4. 转场 —— 怎么进、怎么出？
-
----
-
-## [输入]
-
-[输入形态]
-
-    1. 逐字稿（最理想）
-        已有完整旁白文本，按句号 / 语意单元切分
-
-    2. 卖点列表
-        3-7 个要点，每点要单独镜头表达
-
-    3. 大纲
-        三幕结构（开-中-收），每幕有粗略要点
-
-    4. 都没有
-        基于核心信息 + 受众 + 时长，你写草稿（前置：Phase 1 五维度齐全）
-
-[输入校验]
-    每种输入都必须能回答：
-    - 总时长（来自 Phase 1）
-    - 信息密度档位（hook / 教程 / 纪录）
-    - 核心信息（≤ 12 字）
-    - 叙事结构（来自 Phase 3.5 / 3.6 / 3.7）：
-      节拍曲线 + 情绪曲线 + 音画关系 + 同质化反例
-      → 拆分镜前必须先读 video-spec.md 的 [叙事结构] 章节
-      → 每个 Scene 都要落到节拍曲线的某一段
+[Core concept]
+    Scene breakdown = translating script into executable visuals + motion — not just cutting paragraphs.
+    Every Scene must answer 4 questions:
+    1. Information load — what should the viewer get from this shot?
+    2. Component ID — which component from components-catalog carries it?
+    3. Duration — how many seconds?
+    4. Transition — how in, how out?
 
 ---
 
-## [六步法]
+## [Input]
 
-### [一、内容分割]
+[Input formats]
 
-    [逐字稿]
-        1. 按句号断句 → 候选镜头列表
-        2. 合并连续短句（< 8 字）→ 节奏镜头
-            例："来。看这个。这就是答案。" → 合并为 1 镜，但保留 3 段动效层级
-        3. 长句（> 30 字）拆成多镜头
-            拆分点：连词（但是 / 因为 / 所以）/ 转折标记 / 数据出现处
-        4. 排比句 / 列举句 → 每项独立镜头（视觉上做"序列感"）
+    1. Full script (ideal)
+        Complete narration text, split by sentence / semantic unit
 
-    [卖点列表]
-        每个卖点拆成：
-        - 1 个核心镜头（陈述卖点）
-        - 0-2 个支撑镜头（证据 / 数据 / 演示）
-        - 总数控制：3-7 个卖点 × 平均 2 镜 = 6-14 个 Scene
+    2. Selling-point list
+        3-7 key points, each needing its own shot
 
-    [大纲]
-        三段分配：
-        - 开（hook）：1-3 镜头，占 15-20%（30s 视频 → 5-6s 内 / 60s → 10-12s 内）
-        - 中（核心）：5-15 镜头，占 60-70%（主要信息密度区，节奏快-慢交替）
-        - 收（cta / 收束）：1-2 镜头，占 10-15%（收束核心信息 + 可选 CTA）
+    3. Outline
+        Three-act structure (open-middle-close), each act with rough points
 
-    [都没有]
-        你根据 Phase 1 五维度起草大纲：
-        - 推算镜头总数（按节奏类型 × 总时长 → 大致镜头数）
-        - 起草大纲三段
-        - 必须让用户确认大纲再继续拆细
-        - 不要从零跳到逐字稿——中间要有大纲校准
+    4. None of the above
+        Draft from core message + audience + duration (prerequisite: Phase 1 five dimensions complete)
 
-### [二、节奏分配]
+[Input validation]
+    Every input format must be able to answer:
+    - Total duration (from Phase 1)
+    - Information density tier (hook / tutorial / documentary)
+    - Core message (≤ 12 characters)
+    - Narrative structure (from Phase 3.5 / 3.6 / 3.7):
+      Beat curve + emotional arc + audio-visual relationship + category cliché anti-patterns
+      → Must read video-spec.md [Narrative Structure] section before breaking down shots
+      → Every Scene must land on a segment of the beat curve
 
-    [按节奏类型分配时长基准]
+---
 
-        - hook 型（每镜 0.8-2s 主，关键镜头 2-3s）
-        - 教程型（每镜 2-5s 主，关键解释 5-7s）
-        - 纪录型（每镜 3-8s 主，强调镜头 6-10s）
+## [Six-Step Method]
 
-        详细分配见 pacing-rules.md。
+### [Step 1 · Content segmentation]
 
-    [总时长校验]
-        - 所有镜头时长 + 转场时长（粗略） ≈ 用户设定的总时长
-        - 转场粗估 0.2-0.5s/转场（精确值后续渲染时定）
-        - 误差 ±0.5s 以内允许
+    [Full script]
+        1. Split by sentence → candidate shot list
+        2. Merge consecutive short sentences (< 8 chars) → rhythm shot
+            Example: "Here. Look at this. This is the answer." → merge into 1 shot, but keep 3 motion layers
+        3. Long sentences (> 30 chars) split into multiple shots
+            Split points: conjunctions (but / because / so) / turn markers / data appearance
+        4. Parallel / list sentences → independent shot per item (visual "sequence feel")
 
-    [节奏曲线纪律]
-        - 不允许"全片均速"——会让观众疲劳
-        - 推荐节奏曲线：快-快-慢-快-慢-慢-快收尾
-        - 关键信息镜头前一镜可以加快（制造对比，凸显关键镜头的"停顿感"）
+    [Selling-point list]
+        Each selling point splits into:
+        - 1 core shot (state the selling point)
+        - 0-2 supporting shots (evidence / data / demo)
+        - Total control: 3-7 selling points × avg 2 shots = 6-14 Scenes
 
-### [三、镜头打标]
+    [Outline]
+        Three-part allocation:
+        - Open (hook): 1-3 shots, 15-20% (30s video → within 5-6s / 60s → within 10-12s)
+        - Middle (core): 5-15 shots, 60-70% (main information density zone, fast-slow alternation)
+        - Close (CTA / wrap): 1-2 shots, 10-15% (wrap up core message + optional CTA)
 
-    [标签集合（一镜可多标签）]
+    [None of the above]
+        Draft outline from Phase 1 five dimensions:
+        - Estimate total shot count (pacing type × total duration → rough shot count)
+        - Draft three-part outline
+        - Must get user confirmation on outline before breaking down further
+        - Don't jump from zero to full script — outline calibration in between
 
-        - `[hook]` 抓注意力（开头 / 大转折 / 反差冲击）
-        - `[data]` 数据 / 统计 / 排名
-        - `[concept]` 概念 / 定义 / 抽象阐释
-        - `[emotion]` 情绪 / 价值观 / 故事感
-        - `[demo]` 演示 / 操作 / 产品功能
-        - `[versus]` 对比 / 反差 / A vs B
-        - `[structure]` 结构 / 层级 / 分类
-        - `[flow]` 流程 / 步骤 / 序列
-        - `[cta]` 行动召唤 / 引导动作
-        - `[bridge]` 过渡 / 桥接（不承载主信息，但连接两段）
-        - `[summary]` 总结 / 收束 / 重申核心信息
+### [Step 2 · Rhythm allocation]
 
-    [打标纪律]
-        - 每个 Scene 至少 1 个主标签 + 0-2 个副标签
-        - `[bridge]` 占比 ≤ 15%（桥接太多会稀释信息密度）
-        - `[hook]` 标签的镜头必须落在视频开头 3s 内（至少 1 个）
-        - 一个 Scene 同时具备 `[data] + [concept]` → 警告"信息复合度高，注意信息过载"
+    [Duration baseline by pacing type]
 
-### [四、组件匹配]
+        - Hook-style (0.8-2s main per shot, key shots 2-3s)
+        - Tutorial-style (2-5s main per shot, key explanations 5-7s)
+        - Documentary-style (3-8s main per shot, emphasis shots 6-10s)
 
-    [按标签 + 内容性质从 components-catalog 选组件]
+        See pacing-rules.md for detailed allocation.
 
-    | 标签 | 优先匹配 |
+    [Total duration validation]
+        - All shot durations + transition durations (rough) ≈ user-set total duration
+        - Transition rough estimate 0.2-0.5s per transition (precise values set at render time)
+        - ±0.5s error allowed
+
+    [Rhythm curve discipline]
+        - No "constant speed throughout" — causes viewer fatigue
+        - Recommended rhythm curve: fast-fast-slow-fast-slow-slow-fast close
+        - Shot before key information can speed up (create contrast, highlight key shot's "pause feel")
+
+### [Step 3 · Shot tagging]
+
+    [Tag set (multiple tags per shot allowed)]
+
+        - `[hook]` Grab attention (opening / major turn / contrast impact)
+        - `[data]` Data / statistics / ranking
+        - `[concept]` Concept / definition / abstract explanation
+        - `[emotion]` Emotion / values / story feel
+        - `[demo]` Demo / operation / product feature
+        - `[versus]` Comparison / contrast / A vs B
+        - `[structure]` Structure / hierarchy / classification
+        - `[flow]` Process / steps / sequence
+        - `[cta]` Call to action / guide action
+        - `[bridge]` Transition / bridge (no main information, but connects two segments)
+        - `[summary]` Summary / wrap / restate core message
+
+    [Tagging discipline]
+        - Every Scene at least 1 primary tag + 0-2 secondary tags
+        - `[bridge]` share ≤ 15% (too many bridges dilutes information density)
+        - `[hook]` tagged shots must land within first 3s of video (at least 1)
+        - Scene with both `[data] + [concept]` → warning "high information compound — watch for overload"
+
+### [Step 4 · Component matching]
+
+    [Pick component from components-catalog by tag + content nature]
+
+    | Tag | Priority match |
     |------|---------|
     | hook | broll-hero.big-type / broll-hero.inversion-flash / aroll.subtitle-highlight |
     | data | broll-charts.* / broll-hero.big-number |
     | concept | broll-abstract.* / aroll.concept-card |
     | emotion | broll-hero.pull-quote |
-    | demo | broll-ui.* / 真人 + aroll |
+    | demo | broll-ui.* / live action + aroll |
     | versus | broll-abstract.versus / broll-abstract.spectrum |
     | structure | broll-structure.* / broll-structures2.* |
     | flow | broll-flows.* |
     | cta | broll-hero.big-type |
-    | bridge | broll-hero.inversion-flash（注意 ≤2 次）|
+    | bridge | broll-hero.inversion-flash (note ≤2 times) |
     | summary | broll-hero.pull-quote / aroll.subtitle-highlight |
 
-    [组件匹配纪律]
-        - 不允许"自创组件"——必须落到 components-catalog 已有 ID
-        - 某 Scene 没有合适组件 → 重写文案 / 改标签，不要发明组件
-        - 同一组件全片用 ≥ 4 次 → 警告"视觉单调"
-        - 同一类组件（如 broll-charts.*）用 ≥ 5 次 → 警告"图表过密集"
+    [Component matching discipline]
+        - No "inventing components" — must map to existing components-catalog IDs
+        - No suitable component for a Scene → rewrite copy / change tags, don't invent component
+        - Same component used ≥ 4 times across video → warning "visual monotony"
+        - Same component class (e.g. broll-charts.*) used ≥ 5 times → warning "chart overload"
 
-    [详细清单]
-        见 components-catalog.md（含每个组件的适用场景 / 何时不用 / 内容期待）。
+    [Detailed list]
+        See components-catalog.md (includes each component's use cases / when not to use / content expectations).
 
-### [五、转场决策]
+### [Step 5 · Transition decisions]
 
-    每个 Scene 都要明确"转场进入"和"转场离开"，只写类型，不写参数。
-    不允许 jump cut。
+    Every Scene must specify "transition in" and "transition out" — type only, no parameters.
+    Jump cuts not allowed.
 
-    转场类型（4 种粗粒度）：
-    - 硬切（hard cut）—— 默认，瞬间切换
-    - 软切（crossfade）—— 柔和过渡
-    - 反白闪屏 —— 硬规则：≤ 2 次/视频，间隔 ≥ 8s
-    - shader 转场 —— 仅写"shader 转场"，具体效果后续选
+    Transition types (4 coarse-grain):
+    - Hard cut — default, instant switch
+    - Soft cut (crossfade) — gentle transition
+    - Inversion flash — hard rule: ≤ 2 times/video, interval ≥ 8s
+    - Shader transition — only write "shader transition", specific effect chosen later
 
-    具体 ease / duration / shader ID 由视觉富化阶段决定。
+    Specific ease / duration / shader ID decided in visual enrichment stage.
 
-### [六、素材绑定]
+### [Step 6 · Asset binding]
 
-    [每镜必须绑定的素材]
+    [Assets every shot must bind]
 
-        - 旁白文案
-            - 从逐字稿对应段落抽取
-            - 如无逐字稿，你根据 Scene 主题 + 屏显文案补
-            - 用 TTS → 在素材依赖里标 "voice/scene-XX.mp3"
+        - Narration copy
+            - Extract from corresponding script paragraph
+            - If no script, you supplement from Scene theme + on-screen copy
+            - Using TTS → mark in asset dependencies "voice/scene-XX.mp3"
 
-        - 屏显文案
-            - 旁白的关键词（不是全文！）
-            - 12 字以内的核心句
-            - 高亮词单独标记
+        - On-screen copy
+            - Keywords from narration (not full text!)
+            - Core sentence ≤ 12 characters
+            - Highlight words marked separately
 
-        - 素材依赖
-            标注需要的：图片（路径）/ 视频（路径 + 时长 + 起始偏移）/
-            数据文件（data.json）/ Lottie / 3D 模型（路径 + camera 参数）/ 非默认字体
+        - Asset dependencies
+            Mark needed: images (path) / video (path + duration + start offset) /
+            data file (data.json) / Lottie / 3D model (path + camera params) / non-default fonts
 
-        - 缺素材的镜头
-            标记 `[待补充素材]` + 退化方案
-            例：`[待补充素材] 真人产品演示视频；退化方案：用 broll-ui.browser 模拟产品界面`
+        - Shots missing assets
+            Mark `[Pending asset]` + fallback plan
+            Example: `[Pending asset] live product demo video; fallback: simulate product UI with broll-ui.browser`
 
-    [素材绑定纪律]
-        - 不允许"过度乐观"——没素材就标待补充，不要默认你能生成
-        - 素材路径用相对路径（./assets/xxx）
-        - 同一素材在多 Scene 复用 → 明确标注 "复用自 Scene XX"
-
----
-
-## [输出格式]
-
-[每镜必填字段]
-    严格对齐 templates/video-spec-template.md「Script · 分镜表」节的字段，顺序不变：
-
-    标题行：Scene NN · [start]s – [end]s · [节拍标签，如 hook / 反差 / 数据 / 高潮 / CTA]
-
-    11 个内容字段：
-        1.  类型（A-roll / B-roll / 转场）
-        2.  组件（来自 components-catalog.md 的真实 ID）
-        3.  旁白文案（完整原文 / —）
-        4.  屏显文案（屏幕显示的文字 / —）
-        5.  期待内容（本镜传达的内容 / 数据 / 概念 / 情绪）
-        6.  期待效果（观众应该产生的反应：震撼 / 理解 / 记住 / 笑 / 共鸣）
-        7.  画面描述（镜头里有什么、布局、是否 3D、关键视觉要素）
-        8.  动效要点（动词级，如 SLAMS / CASCADE / floats）
-        9.  音效描述（无音效写「无」；有写具体类型 + 时间点）
-        10. 转场进入 + 转场离开（类型级：硬切 / crossfade / shader / 反白闪屏）
-        11. 素材依赖（narration.wav 段 / bgm.mp3 / 待搜索 X / 已有素材 Y）
-
-[Scene 排版]
-
-```
-Scene XX  [start-end / duration]  · [节拍标签]
-├─ 类型：A-roll / B-roll / 转场
-├─ 组件 ID：broll-hero.big-number
-├─ 旁白文案：…
-├─ 屏显文案：…（含高亮词标记）
-├─ [期待内容]：本镜要传达的具体内容（数据/概念/情绪/动作）
-├─ [期待效果]：本镜应该让观众产生什么反应（震撼/理解/记住/笑/共鸣）
-├─ 画面描述：（画面构成 / 布局 / 是否 3D / 装饰层）
-├─ 动效要点：（关键入场 / 出场 / 内部动效，动词级）
-├─ 音效描述：（无 / 具体类型 + 时间点，如「3.0s · 短促 click，volume 0.3」）
-├─ 转场进入 ← / 转场离开 →
-└─ 素材依赖：（路径 / [待补充素材]）
-```
-
-[期待内容] 和 [期待效果] 是产品需求——渲染时按这两个字段调整视觉强度、节奏、装饰层。
-[音效描述] 字段不能省，无音效也要明写「无」，避免输出时被遗漏。
-
-[动效要点]
-    只写动词级别（choreography verbs），不写具体动效参数。
-    常用动词：SLAMS / CASCADE / FLOATS / WHIPS / DISSOLVES / PULSES / SPIRALS / SCRATCHES。
-
-    合格："title SLAMS 入场 + subtitle CASCADE 错峰"
-    反例："y 30→0, 700ms ease power3.out"（这是视觉富化的活儿）
-
-    具体 ease / duration / 物理参数后续富化时再写。
+    [Asset binding discipline]
+        - No "overly optimistic" — if no asset, mark pending, don't assume you can generate
+        - Asset paths use relative paths (./assets/xxx)
+        - Same asset reused across Scenes → explicitly mark "reused from Scene XX"
 
 ---
 
-## [自检清单]
+## [Output Format]
 
-[输出后逐项检查]
+[Required fields per shot]
+    Strictly align with templates/video-spec-template.md "Script · Shot list" section fields, order unchanged:
+
+    Title line: Scene NN · [start]s – [end]s · [beat tag, e.g. hook / contrast / data / climax / CTA]
+
+    11 content fields:
+        1.  Type (A-roll / B-roll / transition)
+        2.  Component (real ID from components-catalog.md)
+        3.  Narration copy (full original / —)
+        4.  On-screen copy (text displayed on screen / —)
+        5.  Expected content (what this shot conveys: content / data / concept / emotion)
+        6.  Expected effect (audience reaction: awe / understanding / remember / laugh / resonance)
+        7.  Visual description (what's in frame, layout, 3D or not, key visual elements)
+        8.  Motion notes (verb-level, e.g. SLAMS / CASCADE / floats)
+        9.  SFX description (no SFX write `none`; if yes, specific type + timing)
+        10. Transition in + transition out (type-level: hard cut / crossfade / shader / inversion flash)
+        11. Asset dependencies (narration.wav segment / bgm.mp3 / pending search X / existing asset Y)
+
+[Scene layout]
 
 ```
-□ 每个 Scene 都锚定到 components-catalog 里的组件 ID（没有自创）
-□ 总时长 = 所有 Scene 时长 + 转场时长（误差 ±0.5s 以内）
-□ 反白闪屏 ≤ 2 次（全片硬上限）
-□ Shader 转场使用频率 ≤ 1/3 Scene
-□ 每 Scene 都明确写出转场进入和离开
-□ 没有 jump cut（无转场切换）
-□ A-roll 字幕高亮的镜头有完整的旁白文本
-□ 数据图表 Scene 标注了数据来源（data.json 或 inline）
-□ 用了真人出镜组件的 Scene 标注了视频路径和是否需要抠像
-□ 每个组件的"何时不用"原则没被违反（参考 components-catalog）
-□ hook 镜头落在视频开头 3s 内
-□ 同一组件全片使用 ≤ 4 次（视觉变化保证）
-□ [bridge] 标签镜头占比 ≤ 15%
-□ 节奏曲线不是均速（有快慢对比）
-□ 收尾镜头有明确的结束方式（淡出 / 静帧 / CTA 停留）
-□ 缺素材的 Scene 标了 [待补充素材] 和退化方案
-□ 旁白文案的总字数与总时长匹配（按 3-4 字/秒估算）
-□ 所有屏显文案 ≤ 12 字（hero 句）或 ≤ 8 字（关键词）
-□ 每个 Scene 都有信息载荷（不存在空帧）
-□ 每个 Scene 都明确写了 [期待内容]（要传达的具体信息）
-□ 每个 Scene 都明确写了 [期待效果]（观众应该产生的反应）
-□ 每个 Scene 都明确写了 [画面描述]（含布局 + 是否 3D）
-□ 每个 Scene 都明确写了 [音效描述]（无音效就写「无」，不能省）
-□ 动效要点只写动词级（SLAMS / CASCADE / FLOATS 等），不写 GSAP 参数
-□ 转场字段只写类型（硬切 / 软切 / 反白闪屏 / shader），不写 duration / ease
+Scene XX  [start-end / duration]  · [beat tag]
+├─ Type: A-roll / B-roll / transition
+├─ Component ID: broll-hero.big-number
+├─ Narration copy: …
+├─ On-screen copy: … (with highlight word markers)
+├─ [Expected content]: concrete content this shot conveys (data/concept/emotion/action)
+├─ [Expected effect]: audience reaction this shot should produce (awe/understanding/remember/laugh/resonance)
+├─ Visual description: (frame composition / layout / 3D or not / decoration layer)
+├─ Motion notes: (key entrance / exit / internal motion, verb-level)
+├─ SFX description: (none / specific type + timing, e.g. "3.0s · short click, volume 0.3")
+├─ Transition in ← / Transition out →
+└─ Asset dependencies: (path / [Pending asset])
+```
+
+[Expected content] and [Expected effect] are product requirements — render adjusts visual intensity, rhythm, decoration layer per these fields.
+[SFX description] field cannot be omitted; write `none` explicitly if no SFX, to avoid omission at output.
+
+[Motion notes]
+    Verb-level only (choreography verbs), no specific motion parameters.
+    Common verbs: SLAMS / CASCADE / FLOATS / WHIPS / DISSOLVES / PULSES / SPIRALS / SCRATCHES.
+
+    Good: "title SLAMS in + subtitle CASCADE staggered"
+    Bad: "y 30→0, 700ms ease power3.out" (that's visual enrichment's job)
+
+    Specific ease / duration / physics parameters written in enrichment stage.
+
+---
+
+## [Self-Review Checklist]
+
+[Check item by item after output]
+
+```
+□ Every Scene anchored to component ID in components-catalog (none invented)
+□ Total duration = all Scene durations + transition durations (error ±0.5s)
+□ Inversion flash ≤ 2 times (hard cap per video)
+□ Shader transition frequency ≤ 1/3 of Scenes
+□ Every Scene has explicit transition in and out
+□ No jump cuts (no transition between cuts)
+□ A-roll subtitle highlight shots have complete narration text
+□ Data chart Scenes marked with data source (data.json or inline)
+□ Scenes using live-action component marked with video path and whether matting needed
+□ Each component's "when not to use" principles not violated (see components-catalog)
+□ Hook shot lands within first 3s of video
+□ Same component used ≤ 4 times across video (visual variety guarantee)
+□ [bridge] tagged shots ≤ 15%
+□ Rhythm curve not constant speed (has fast-slow contrast)
+□ Closing shot has explicit end treatment (fade-out / hold frame / CTA dwell)
+□ Scenes missing assets marked [Pending asset] with fallback plan
+□ Total narration word count matches total duration (~3-4 chars/sec estimate)
+□ All on-screen copy ≤ 12 chars (hero sentence) or ≤ 8 chars (keywords)
+□ Every Scene has information load (no empty frames)
+□ Every Scene has explicit [Expected content] (concrete information to convey)
+□ Every Scene has explicit [Expected effect] (audience reaction)
+□ Every Scene has explicit [Visual description] (layout + 3D or not)
+□ Every Scene has explicit [SFX description] (write `none` if no SFX — cannot omit)
+□ Motion notes verb-level only (SLAMS / CASCADE / FLOATS etc.), no GSAP parameters
+□ Transition fields type-only (hard cut / soft cut / inversion flash / shader), no duration / ease
 ```
 
 ---
 
-## [示例]
+## [Example]
 
-[输入]
-    项目类型：科普视频
-    平台：YouTube / 30s / 16:9 / 30fps
-    受众：3-5 年经验的 AI 工程师
-    核心信息：模型是 compiler，不是 oracle
-    信息密度：教程型（信息中等密度，留消化时间）
-    场景组合：[大字海报型 + 数据驱动型 + 抽象概念型 + UI 演示型]
-    装饰层：hairline grid + 四角十字
-    Accent 色：#FF6B3D（默认）
+[Input]
+    Project type: Science explainer video
+    Platform: YouTube / 30s / 16:9 / 30fps
+    Audience: AI engineers with 3-5 years experience
+    Core message: Model is compiler, not oracle
+    Information density: Tutorial-style (medium information density, digestion time)
+    Scene combination: [Big-type poster + Data-driven + Abstract concept + UI demo]
+    Decoration layer: hairline grid + corner crosses
+    Accent color: #FF6B3D (default)
 
-[逐字稿（30 秒）]
+[Script (30 seconds)]
 
-    > "让我们聊聊上下文工程。它不是提示词魔法。模型不缺聪明，缺材料。RAG 在'纯背诵'和'纯检索'之间偏向后者。87% 的开发者认为提示工程会被上下文工程取代。结论：模型是 compiler，不是 oracle。"
+    > "Let's talk about context engineering. It's not prompt magic. Models aren't lacking intelligence — they're lacking material. Between pure memorization and pure retrieval, RAG leans toward the latter. 87% of developers believe prompt engineering will be replaced by context engineering. Conclusion: the model is a compiler, not an oracle."
 
-[8 Scene 完整拆解]
+[8-Scene complete breakdown]
 
 ```
 ─────────────────────────────────────────
 Scene 01  [0.0s - 2.5s / 2.5s]  · [hook] [concept]
-├─ 类型：B-roll
-├─ 组件 ID：broll-hero.big-type
-├─ 旁白文案：让我们聊聊上下文工程。
-├─ 屏显文案：上下文工程
-│   高亮词：「上下文工程」作为整句的 hero 强调
-├─ [期待内容]：抛出视频核心主题词"上下文工程"
-├─ [期待效果]：观众听到主题词 → 想知道它和"提示词"有什么不一样 → 愿意看下去
-├─ 画面描述：主题主色背景，hero 大字居中。
-│   accent 色细线作为左下装饰。
-│   四角十字 cross 默认装饰层。
-│   16:9 横屏，无 3D。
-├─ 动效要点：
-│   - hero 大字 SLAMS 入场
-│   - accent 底线 WHIPS 横扫
-│   - 整体 holds 静帧收尾
-├─ 音效描述：无（让旁白单独承担开场）
-├─ 转场进入 ← 视频起始（无前一镜，纯入场）
-├─ 转场离开 → 硬切
-└─ 素材依赖：无（纯组件渲染）
+├─ Type: B-roll
+├─ Component ID: broll-hero.big-type
+├─ Narration copy: Let's talk about context engineering.
+├─ On-screen copy: Context Engineering
+│   Highlight: 「Context Engineering」as full-sentence hero emphasis
+├─ [Expected content]: Introduce video's core theme term "context engineering"
+├─ [Expected effect]: Viewer hears theme term → wants to know how it differs from "prompting" → willing to keep watching
+├─ Visual description: Theme primary color background, hero big type centered.
+│   Accent color hairline as lower-left decoration.
+│   Corner cross decoration layer default.
+│   16:9 landscape, no 3D.
+├─ Motion notes:
+│   - hero big type SLAMS in
+│   - accent bottom line WHIPS sweep
+│   - overall holds static close
+├─ SFX description: none (let narration carry opening alone)
+├─ Transition in ← video start (no prior shot, pure entrance)
+├─ Transition out → hard cut
+└─ Asset dependencies: none (pure component render)
                                                           
 ─────────────────────────────────────────
 Scene 02  [2.5s - 5.5s / 3.0s]  · [concept] [versus]
-├─ 类型：B-roll
-├─ 组件 ID：broll-abstract.versus
-├─ 旁白文案：它不是提示词魔法。
-├─ 屏显文案：左侧「提示词魔法」（划掉）  vs  右侧「材料工程」
-│   高亮词：「提示词魔法」加 sketchout 划掉效果
-├─ [期待内容]：建立"否定旧认知 vs 引入新框架"的对比 —— 上下文工程 ≠ 提示词魔法
-├─ [期待效果]：观众原有认知被打破 → 产生"那它到底是什么"的好奇 → 进入接收新概念的状态
-├─ 画面描述：
-│   - 左右二分布局，左 50% 右 50%
-│   - 左侧灰阶弱化放"提示词魔法"标签
-│   - 右侧 accent 色高亮放"材料工程"标签
-│   - 中间用 hairline 竖线分隔
-│   - 16:9 横屏，无 3D
-├─ 动效要点：
-│   - 左右两侧 SLIDES 对冲入场（左从左、右从右）
-│   - "提示词魔法" SCRATCHES 划掉
-│   - "材料工程" PULSES 高亮
-├─ 音效描述：3.2s · 短促 click（划掉时配音，volume 0.3）
-├─ 转场进入 ← 硬切
-├─ 转场离开 → 软切（同类 broll-abstract → broll-abstract）
-└─ 素材依赖：无
+├─ Type: B-roll
+├─ Component ID: broll-abstract.versus
+├─ Narration copy: It's not prompt magic.
+├─ On-screen copy: Left 「Prompt Magic」(struck through)  vs  Right 「Material Engineering」
+│   Highlight: 「Prompt Magic」with sketchout strike-through
+├─ [Expected content]: Establish contrast "reject old belief vs introduce new frame" — context engineering ≠ prompt magic
+├─ [Expected effect]: Viewer's prior belief broken → curiosity "then what is it?" → ready to receive new concept
+├─ Visual description:
+│   - Left-right split layout, left 50% right 50%
+│   - Left grayscale muted "Prompt Magic" label
+│   - Right accent highlighted "Material Engineering" label
+│   - Hairline vertical divider in middle
+│   - 16:9 landscape, no 3D
+├─ Motion notes:
+│   - left and right SLIDE in from opposite sides
+│   - "Prompt Magic" SCRATCHES struck through
+│   - "Material Engineering" PULSES highlighted
+├─ SFX description: 3.2s · short click (on strike-through, volume 0.3)
+├─ Transition in ← hard cut
+├─ Transition out → soft cut (same broll-abstract → broll-abstract)
+└─ Asset dependencies: none
 
 ─────────────────────────────────────────
 Scene 03  [5.5s - 9.0s / 3.5s]  · [concept] [emotion]
-├─ 类型：B-roll
-├─ 组件 ID：broll-hero.pull-quote
-├─ 旁白文案：模型不缺聪明，缺材料。
-├─ 屏显文案：「模型不缺聪明，缺材料」
-│   高亮词：「缺材料」用 accent 色 + marker 横扫高亮
-├─ [期待内容]：揭示核心论断 —— 模型能力瓶颈不在智能，而在喂给它的上下文素材
-├─ [期待效果]：观众心里"哎，有道理" → 把"模型不行"重新定位成"我没给够材料" → 认知反转
-├─ 画面描述：
-│   - 引用块居中布局，左右大留白
-│   - 引用区使用 serif italic 强调字（按主题字号档位）
-│   - 左侧 oversized 引号装饰（accent 色）
-│   - 整段引用走主色稍弱化
-│   - 16:9 横屏，无 3D
-├─ 动效要点：
-│   - 引号 FLOATS 入场（先于文字）
-│   - 文字按词 CASCADE 错峰入场
-│   - 「缺材料」WHIPS 被 marker 横扫高亮
-├─ 音效描述：无（pull-quote 镜头让旁白与字幕停顿单独承担）
-├─ 转场进入 ← 软切
-├─ 转场离开 → 硬切
-└─ 素材依赖：无
+├─ Type: B-roll
+├─ Component ID: broll-hero.pull-quote
+├─ Narration copy: Models aren't lacking intelligence — they're lacking material.
+├─ On-screen copy: 「Models aren't lacking intelligence — they're lacking material」
+│   Highlight: 「lacking material」accent color + marker sweep highlight
+├─ [Expected content]: Reveal core thesis — model capability bottleneck isn't intelligence, but context material fed to it
+├─ [Expected effect]: Viewer thinks "that makes sense" → reframes "model doesn't work" as "I didn't give enough material" → cognitive reversal
+├─ Visual description:
+│   - Pull quote centered layout, large side margins
+│   - Quote area uses serif italic emphasis (per theme type scale)
+│   - Left oversized quotation mark decoration (accent color)
+│   - Full quote in primary color slightly muted
+│   - 16:9 landscape, no 3D
+├─ Motion notes:
+│   - quotation marks FLOAT in (before text)
+│   - text CASCADE staggered word-by-word
+│   - 「lacking material」WHIPS marker sweep highlight
+├─ SFX description: none (pull-quote shot lets narration and subtitle pause carry alone)
+├─ Transition in ← soft cut
+├─ Transition out → hard cut
+└─ Asset dependencies: none
 
 ─────────────────────────────────────────
 Scene 04  [9.0s - 13.0s / 4.0s]  · [concept] [structure]
-├─ 类型：B-roll
-├─ 组件 ID：broll-abstract.spectrum
-├─ 旁白文案：RAG 在'纯背诵'和'纯检索'之间偏向后者。
-├─ 屏显文案：左端「纯背诵」 ── 中点 ── 右端「纯检索」
-│   游标位置：偏向右端 70% 处，标注 "RAG"
-│   高亮词：「RAG」标签用 accent 色圆形 chip 包住
-├─ [期待内容]：用一根坐标轴把抽象概念"RAG 偏检索"空间化，把 RAG 定位在 70% 检索侧
-├─ [期待效果]：观众脑中形成空间感（一根尺、一个位置）→ 抽象概念变成可记忆的图像
-├─ 画面描述：
-│   - 水平光谱条横跨屏幕 70% 宽
-│   - 光谱条从主色渐变到 accent 色（左主色右 accent）
-│   - 左右两端标签 caption 档（中文语义字体）
-│   - 游标用 accent 色圆点 + 上方"RAG"标签
-│   - 上方留白放说明小字（可选）
-│   - 16:9 横屏，无 3D
-├─ 动效要点：
-│   - 光谱条从中点 DRAWS 向两端展开
-│   - 左右标签 CASCADE 紧随入场
-│   - 游标 SLIDES 滑到 70% 位置
-│   - "RAG" 标签 FLOATS 从游标下方升起
-├─ 音效描述：12.0s · 短促 tick（游标到位时配音，强化定位感，volume 0.25）
-├─ 转场进入 ← 硬切
-├─ 转场离开 → 反白闪屏(1/2，留给即将到来的数据高潮）
-└─ 素材依赖：无
+├─ Type: B-roll
+├─ Component ID: broll-abstract.spectrum
+├─ Narration copy: Between pure memorization and pure retrieval, RAG leans toward the latter.
+├─ On-screen copy: Left end 「Pure Memorization」 ── midpoint ── Right end 「Pure Retrieval」
+│   Cursor position: leaning right at 70%, labeled "RAG"
+│   Highlight: 「RAG」label in accent color circular chip
+├─ [Expected content]: Spatialize abstract concept "RAG leans retrieval" on one axis, position RAG at 70% retrieval side
+├─ [Expected effect]: Viewer forms spatial mental model (a ruler, a position) → abstract concept becomes memorable image
+├─ Visual description:
+│   - Horizontal spectrum bar spans 70% screen width
+│   - Spectrum gradient primary to accent (left primary, right accent)
+│   - End labels caption tier (Chinese semantic font)
+│   - Cursor accent color dot + "RAG" label above
+│   - Upper margin for optional caption
+│   - 16:9 landscape, no 3D
+├─ Motion notes:
+│   - spectrum bar DRAWS outward from center
+│   - end labels CASCADE in after
+│   - cursor SLIDES to 70% position
+│   - "RAG" label FLOATS up from below cursor
+├─ SFX description: 12.0s · short tick (when cursor lands, reinforce positioning, volume 0.25)
+├─ Transition in ← hard cut
+├─ Transition out → inversion flash (1/2, leading into upcoming data climax)
+└─ Asset dependencies: none
 
 ─────────────────────────────────────────
 Scene 05  [13.0s - 17.5s / 4.5s]  · [data] [hook]
-├─ 类型：B-roll
-├─ 组件 ID：broll-hero.big-number
-├─ 旁白文案：87% 的开发者认为提示工程会被上下文工程取代。
-├─ 屏显文案：
-│   主数：「87%」（display 档主数字，accent 色）
-│   副标：「开发者认为提示工程会被上下文工程取代」
-│   高亮词：「提示工程」「上下文工程」用 hairline 下划线
-├─ [期待内容]：用 87% 这个具体数字证实"上下文工程正在取代提示工程"已是行业共识
-├─ [期待效果]：观众被数字震撼（87% 不是少数派）→ 产生"我也得跟上"的紧迫感 → 把概念从"听说"升级为"必学"
-├─ 画面描述：
-│   - 主数字大尺寸，居中偏左
-│   - 副标 body 档主色稍弱化，右侧多行排版
-│   - 左下角小字标注"Source: [虚构占位 / data.json]"
-│   - 装饰：右上角四角十字保留，左下 accent 色短线
-│   - 16:9 横屏，无 3D
-├─ 动效要点：
-│   - 87% 主数 COUNTS UP 从 0 滚到 87
-│   - "%" 符号 SLAMS 弹入
-│   - 副标按行 CASCADE 入场
-│   - 关键词「上下文工程」WHIPS hairline 扫入
-├─ 音效描述：13.0s · swoosh（配反白闪屏切入，volume 0.6）+ 13.4s · 低频 thump（87% 落定时配音，volume 0.3）
-├─ 转场进入 ← 反白闪屏（2/2，全片用完，制造数据高潮）
-├─ 转场离开 → 软切
-└─ 素材依赖：data.json（含 87% 的来源元数据，或在 spec 备注 [待补充素材 - 数据源]）
+├─ Type: B-roll
+├─ Component ID: broll-hero.big-number
+├─ Narration copy: 87% of developers believe prompt engineering will be replaced by context engineering.
+├─ On-screen copy:
+│   Main number: 「87%」(display tier main digit, accent color)
+│   Subhead: 「Developers believe prompt engineering will be replaced by context engineering」
+│   Highlight: 「prompt engineering」「context engineering」with hairline underline
+├─ [Expected content]: Use 87% concrete number to confirm "context engineering replacing prompt engineering" is industry consensus
+├─ [Expected effect]: Viewer awed by number (87% not minority) → urgency "I need to keep up" → upgrades concept from "heard about it" to "must learn"
+├─ Visual description:
+│   - Main number large size, centered-left
+│   - Subhead body tier primary slightly muted, multi-line right side
+│   - Lower-left small text "Source: [fictional placeholder / data.json]"
+│   - Decoration: upper-right corner crosses retained, lower-left accent short line
+│   - 16:9 landscape, no 3D
+├─ Motion notes:
+│   - 87% main number COUNTS UP from 0 to 87
+│   - "%" symbol SLAMS in
+│   - subhead CASCADE in line by line
+│   - keyword 「context engineering」WHIPS hairline sweep in
+├─ SFX description: 13.0s · swoosh (with inversion flash entry, volume 0.6) + 13.4s · low thump (when 87% lands, volume 0.3)
+├─ Transition in ← inversion flash (2/2, quota used, creating data climax)
+├─ Transition out → soft cut
+└─ Asset dependencies: data.json (87% source metadata, or spec note [Pending asset - data source])
 
 ─────────────────────────────────────────
 Scene 06  [17.5s - 21.0s / 3.5s]  · [demo] [structure]
-├─ 类型：B-roll
-├─ 组件 ID：broll-ui.terminal
-├─ 旁白文案：（无旁白，纯演示）
-├─ 屏显文案：终端窗口内容（typing 效果）：
+├─ Type: B-roll
+├─ Component ID: broll-ui.terminal
+├─ Narration copy: (no narration, pure demo)
+├─ On-screen copy: Terminal window content (typing effect):
 │   ```
 │   $ context.load("docs/*.md")
 │     loading 142 files... done
 │   $ context.compose()
 │     → 23k tokens ready
 │   ```
-├─ [期待内容]：把抽象的"上下文工程"实例化成可执行的代码动作（load 142 files → 23k tokens）
-├─ [期待效果]：观众"哦原来是这么干的" → 概念从抽象变成具体可操作 → 产生"我也能上手"的信心
-├─ 画面描述：
-│   - 终端窗口居中，深色面板背景 + 主文字色反色
-│   - 顶部标题栏 macOS 风格三个圆点装饰
-│   - 终端区使用等宽字体（按主题档位）
-│   - 命令提示符 $ 用 accent 色
-│   - 16:9 横屏，无 3D
-├─ 动效要点：
-│   - 终端窗口 FLOATS 入场
-│   - 第一行命令 types on 打字机出现
-│   - 第二行 loading 输出 CASCADE 紧随
-│   - "done" PULSES accent 色高亮闪一下
-│   - 第三行 command types on
-│   - "23k tokens" PULSES accent 色加粗强调
-├─ 音效描述：17.8s 起 · 极轻 typewriter tick（伴随每行 types on，volume 0.2）+ 19.5s · 短促 pop（"done" PULSES 时配音，volume 0.3）
-├─ 转场进入 ← 软切
-├─ 转场离开 → shader 转场
-└─ 素材依赖：无（纯组件 + 文本）
+├─ [Expected content]: Instantiate abstract "context engineering" as executable code action (load 142 files → 23k tokens)
+├─ [Expected effect]: Viewer "oh that's how it's done" → concept goes from abstract to concrete actionable → confidence "I can do this too"
+├─ Visual description:
+│   - Terminal window centered, dark panel background + primary text inverted
+│   - Top title bar macOS-style three dots decoration
+│   - Terminal area monospace font (per theme tier)
+│   - Command prompt $ in accent color
+│   - 16:9 landscape, no 3D
+├─ Motion notes:
+│   - terminal window FLOATS in
+│   - first command line types on
+│   - second line loading output CASCADE after
+│   - "done" PULSES accent highlight flash
+│   - third command line types on
+│   - "23k tokens" PULSES accent bold emphasis
+├─ SFX description: from 17.8s · very light typewriter tick (with each types on, volume 0.2) + 19.5s · short pop ("done" PULSES, volume 0.3)
+├─ Transition in ← soft cut
+├─ Transition out → shader transition
+└─ Asset dependencies: none (pure component + text)
 
 ─────────────────────────────────────────
 Scene 07  [21.0s - 25.0s / 4.0s]  · [summary] [emotion]
-├─ 类型：A-roll（如有真人素材）/ B-roll fallback
-├─ 组件 ID：aroll.subtitle-highlight（有真人）/ broll-hero.pull-quote（fallback）
-├─ 旁白文案：结论：
-├─ 屏显文案：
-│   主标：「结论」（accent 色 marker 横扫）
-│   副标：（无，留白给下一镜释放核心信息）
-│   高亮词：「结论」全句 accent 色高亮
-├─ [期待内容]：制造"暂停 + 转折"的语义节拍，告诉观众下一句是 takeaway，请集中注意力
-├─ [期待效果]：观众身体前倾、停止分心 → 把"结论镜头"当成必须记住的关键节点 → 准备接收核心句
-├─ 画面描述：
-│   - 如有真人：真人 talking head 居中，底部字幕高亮关键词
-│   - 如无真人：主题主色背景 + hero 大字「结论」（serif italic 强调）
-│   - 上方留白比例大（70%），强调下方"结论"主体
-│   - 16:9 横屏，无 3D
-├─ 动效要点：
-│   - "结论" SLAMS 入场
-│   - accent marker WHIPS 横扫高亮
-│   - 整体 holds 静帧（给观众预期"核心句即将出现"）
-├─ 音效描述：21.0s · BGM 短促压低 1 拍（音画错位强调，让观众屏息）；无单独音效
-├─ 转场进入 ← shader 转场（接续 Scene 06）
-├─ 转场离开 → 硬切
-└─ 素材依赖：
-│   - 如选 A-roll：真人 4.0s 片段（路径：./assets/talking-head.mp4）+ u2net 抠像
-│   - 如无：标 [待补充素材] 真人片段；退化用 pull-quote
+├─ Type: A-roll (if live-action asset) / B-roll fallback
+├─ Component ID: aroll.subtitle-highlight (with live action) / broll-hero.pull-quote (fallback)
+├─ Narration copy: Conclusion:
+├─ On-screen copy:
+│   Main: 「Conclusion」(accent marker sweep)
+│   Sub: (none, white space for next shot to release core message)
+│   Highlight: 「Conclusion」full line accent highlight
+├─ [Expected content]: Create semantic beat of "pause + turn" — tell viewer next line is takeaway, pay attention
+├─ [Expected effect]: Viewer leans in, stops multitasking → treats "conclusion shot" as must-remember key node → ready to receive core sentence
+├─ Visual description:
+│   - If live action: talking head centered, bottom subtitle highlighting keywords
+│   - If no live action: theme primary background + hero big type 「Conclusion」(serif italic emphasis)
+│   - Large upper white space (70%), emphasize lower "Conclusion" subject
+│   - 16:9 landscape, no 3D
+├─ Motion notes:
+│   - "Conclusion" SLAMS in
+│   - accent marker WHIPS sweep highlight
+│   - overall holds static (set expectation "core sentence coming")
+├─ SFX description: 21.0s · BGM brief dip 1 beat (audio-visual misalignment emphasis, viewer holds breath); no separate SFX
+├─ Transition in ← shader transition (continuing from Scene 06)
+├─ Transition out → hard cut
+└─ Asset dependencies:
+│   - If A-roll: live 4.0s clip (path: ./assets/talking-head.mp4) + u2net matting
+│   - If none: mark [Pending asset] live clip; fallback pull-quote
 
 ─────────────────────────────────────────
 Scene 08  [25.0s - 30.0s / 5.0s]  · [summary] [cta] [hook]
-├─ 类型：B-roll
-├─ 组件 ID：broll-hero.big-type
-├─ 旁白文案：模型是 compiler，不是 oracle。
-├─ 屏显文案：
-│   主句（两行排版）：
-│     第一行：「模型是 compiler，」
-│     第二行：「不是 oracle。」
-│   高亮词：「compiler」accent 色，「oracle」主色弱化划掉
-├─ [期待内容]：用 12 字以内的最强 takeaway 封口 —— "模型是 compiler，不是 oracle"，把整片浓缩成可传播的一句话
-├─ [期待效果]：观众记住这句金句，能在自己向别人解释时复述出来 → 视频的核心信息成功"出片成梗"
-├─ 画面描述：
-│   - 双行 hero 字号排版
-│   - 第一行主色实心，「compiler」accent 色
-│   - 第二行主色弱化，「oracle」用 sketchout 划掉
-│   - 居中布局，四角十字 + hairline 底线装饰
-│   - 底部小字 CTA（可选）："了解更多 → context-eng.dev"
-│   - 16:9 横屏，无 3D
-├─ 动效要点：
-│   - 第一行按词 CASCADE 入场
-│   - 「compiler」WHIPS accent marker 横扫高亮
-│   - 第二行按词 CASCADE 紧随入场
-│   - 「oracle」SCRATCHES 划掉
-│   - 整体 holds 让观众消化核心信息
-│   - 收尾 DISSOLVES 暗示结束
-├─ 音效描述：29.0s · BGM fade-out 收尾
-├─ 转场进入 ← 硬切
-├─ 转场离开 → fade-out（最终镜头退场）
-└─ 素材依赖：无
+├─ Type: B-roll
+├─ Component ID: broll-hero.big-type
+├─ Narration copy: The model is a compiler, not an oracle.
+├─ On-screen copy:
+│   Main sentence (two-line layout):
+│     Line 1: 「The model is a compiler,」
+│     Line 2: 「not an oracle.」
+│   Highlight: 「compiler」accent color, 「oracle」primary muted struck through
+├─ [Expected content]: Seal with strongest takeaway within 12 chars — "model is compiler, not oracle", condense whole piece into one shareable sentence
+├─ [Expected effect]: Viewer remembers this line, can repeat when explaining to others → video's core message successfully "ships as meme"
+├─ Visual description:
+│   - Two-line hero type scale layout
+│   - Line 1 primary solid, 「compiler」accent color
+│   - Line 2 primary muted, 「oracle」sketchout struck through
+│   - Centered layout, corner crosses + hairline bottom decoration
+│   - Bottom small CTA (optional): "Learn more → context-eng.dev"
+│   - 16:9 landscape, no 3D
+├─ Motion notes:
+│   - line 1 CASCADE word-by-word in
+│   - 「compiler」WHIPS accent marker sweep highlight
+│   - line 2 CASCADE word-by-word after
+│   - 「oracle」SCRATCHES struck through
+│   - overall holds for viewer to digest core message
+│   - close DISSOLVES hinting end
+├─ SFX description: 29.0s · BGM fade-out close
+├─ Transition in ← hard cut
+├─ Transition out → fade-out (final shot exit)
+└─ Asset dependencies: none
 
 ─────────────────────────────────────────
 ```
 
-[示例统计自检]
-    - 总时长：2.5+3.0+3.5+4.0+4.5+3.5+4.0+5.0 = 30.0s ✅
-    - 反白闪屏：2 次（Scene 04→05 进入 + Scene 05）✅ 用完额度
-    - Shader 转场：1 次（Scene 06→07）✅ < 1/3 限制
-    - hook 镜头：Scene 01 落在开头 2.5s 内 ✅
-    - 组件多样性：broll-hero ×3 / broll-abstract ×2 / big-number ×1 / terminal ×1 / aroll ×1 ✅
-    - 每 Scene 都有信息载荷 + 转场明确 + 无 jump cut ✅
-    - 节奏曲线：2.5-3.0-3.5-4.0-4.5-3.5-4.0-5.0（前快后慢）✅
+[Example stats self-review]
+    - Total duration: 2.5+3.0+3.5+4.0+4.5+3.5+4.0+5.0 = 30.0s ✅
+    - Inversion flash: 2 times (Scene 04→05 entry + Scene 05) ✅ quota used
+    - Shader transition: 1 time (Scene 06→07) ✅ < 1/3 limit
+    - Hook shot: Scene 01 within first 2.5s ✅
+    - Component diversity: broll-hero ×3 / broll-abstract ×2 / big-number ×1 / terminal ×1 / aroll ×1 ✅
+    - Every Scene has information load + explicit transitions + no jump cuts ✅
+    - Rhythm curve: 2.5-3.0-3.5-4.0-4.5-3.5-4.0-5.0 (fast front, slow back) ✅
 
 ---
 
-## [常见陷阱]
+## [Common Pitfalls]
 
-[陷阱 1：按句号切完就当分镜]
-    问题：句号不等于视觉切点
-    应对：再过一遍，看哪些短句要合并，哪些长句要拆分
+[Pitfall 1 · Splitting by sentence equals done]
+    Problem: Sentence boundary ≠ visual cut point
+    Fix: Second pass — which short sentences merge, which long sentences split
 
-[陷阱 2：每个 Scene 都用大字 hero]
-    问题：视觉单调，观众疲劳
-    应对：组件多样性自检——同一组件 ≤ 4 次
+[Pitfall 2 · Every Scene uses hero big type]
+    Problem: Visual monotony, viewer fatigue
+    Fix: Component diversity self-review — same component ≤ 4 times
 
-[陷阱 3：转场字段写具体参数 / 全用同一种]
-    问题：写出 "crossfade 300ms ease-out" → 越界
-    应对：只写类型（硬切 / 软切 / 反白闪屏 / shader）
+[Pitfall 3 · Transition field has specific params / all same type]
+    Problem: Writing "crossfade 300ms ease-out" → out of scope
+    Fix: Type only (hard cut / soft cut / inversion flash / shader)
 
-[陷阱 4：反白闪屏每个 Scene 都用]
-    问题：违反 hard rule（≤ 2 次）
-    应对：留给最关键的两个转折点（一般在 hook 进入 + 数据高潮）
+[Pitfall 4 · Inversion flash on every Scene]
+    Problem: Violates hard rule (≤ 2 times)
+    Fix: Reserve for two most critical turning points (usually hook entry + data climax)
 
-[陷阱 5：节奏全片均速]
-    问题：观众没记忆点，所有镜头一样长
-    应对：检查节奏曲线，必须有快慢对比
+[Pitfall 5 · Constant speed throughout]
+    Problem: No memory points, all shots same length
+    Fix: Check rhythm curve — must have fast-slow contrast
 
-[陷阱 6：所有 Scene 都堆满信息]
-    问题：信息密度过载，观众消化不了
-    应对：穿插 [bridge] 或 [emotion] 镜头给观众喘息（但占比 ≤ 15%）
+[Pitfall 6 · Every Scene packed with information]
+    Problem: Information overload, viewer can't digest
+    Fix: Intersperse [bridge] or [emotion] shots for breathing room (but share ≤ 15%)
 
-[陷阱 7：忘记给数据 Scene 标数据源]
-    问题：渲染时无数据可用
-    应对：data Scene 必须标 data.json 路径或 inline 数据
+[Pitfall 7 · Forgot to mark data source on data Scenes]
+    Problem: No data available at render
+    Fix: Data Scenes must mark data.json path or inline data
 
-[陷阱 8：A-roll Scene 旁白不全]
-    问题：字幕高亮无法精确同步
-    应对：A-roll 必须有完整旁白文本（不能用"省略号"）
+[Pitfall 8 · A-roll Scene narration incomplete]
+    Problem: Subtitle highlight can't sync precisely
+    Fix: A-roll must have complete narration text (no ellipsis)

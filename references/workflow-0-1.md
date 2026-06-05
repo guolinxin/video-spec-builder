@@ -1,236 +1,236 @@
 ---
 name: workflow-0-1
-description: 0-1 模式工作流。从用户初次表达需求到生成 video-spec.md 的完整流程。
+description: 0-to-1 mode workflow. Full process from the user's first video request to generating video-spec.md.
 ---
 
-# 0-1 模式工作流
+# 0-to-1 Mode Workflow
 
-[使用时机]
-    项目里没有 video-spec.md，用户第一次表达想做视频。
+[When to use]
+    No video-spec.md in the project; the user is expressing a video idea for the first time.
 
-[工作流]
-    Phase 1 视频基本盘 → Phase 2 素材盘点 → Phase 3 表达手段 →
-    Phase 4 视觉主题 → Phase 5 参考与反例 → 充足度判断 → 拆分镜 → 输出 spec
+[Workflow]
+    Phase 1 Video fundamentals → Phase 2 Asset inventory → Phase 3 Expression toolkit →
+    Phase 4 Visual theme → Phase 5 References & counter-examples → Sufficiency check → Shot breakdown → Output spec
 
-[顶层规则]
-    - 每个 Phase 都要达到 [硬指标]，不达到不进下一个
-    - 但允许渐进式——用户回答覆盖了某项，直接吸收，不必机械重问
-    - 形容词永远不算合格答案
-    - 不主动告知能力是失职——用户不知道你能做什么是常态
-    - Phase 之间用承上启下的人话过渡，不要喊"进入 Phase N"
+[Top-level rules]
+    - Each Phase must meet its [hard criteria] before moving on
+    - Progressive intake is allowed — if the user's answer already covers an item, absorb it; don't re-ask mechanically
+    - Adjectives are never acceptable answers
+    - Failing to proactively surface capabilities is negligence — users usually don't know what's possible
+    - Use natural transitions between Phases; don't announce "entering Phase N"
 
 ---
 
-## Phase 1 · 视频基本盘
+## Phase 1 · Video Fundamentals
 
-[目标]
-    让用户的视频意图收敛到具体决策——目的 / 受众 / 平台 / 时长 / 核心信息 / 节奏 / 调性。
-    流程顺序很重要：不要一上来就报硬指标，要让用户先倒出脑里的东西。
+[Goal]
+    Converge the user's video intent into concrete decisions — purpose / audience / platform / duration / core message / pacing / tone.
+    Order matters: don't lead with hard criteria; let the user empty their head first.
 
-[起始动作 · 先听用户开放式描述]
-    初始化时，你已经问过用户"说说你想拍什么样的视频"。
-    用户的初始描述里可能包含：目的 / 受众 / 平台 / 时长 / 核心信息 / 素材有无 / 风格倾向 / 参考视频 等。
+[Opening action · listen to the user's open description]
+    At initialization you already asked "what kind of video do you want to make?"
+    The initial description may include: purpose / audience / platform / duration / core message / assets on hand / style lean / reference videos, etc.
 
-    第一步是"听 + 抽取"：
-    - 从用户的开放描述里，把已经表达的维度抽取出来记在心里
-    - 不要让用户重复回答他已经说过的
-    - 复述确认已抽到的内容，让用户校正
+    First step is "listen + extract":
+    - Pull out dimensions already expressed in the open description
+    - Don't make the user repeat what they already said
+    - Paraphrase and confirm what you captured so they can correct you
 
-    举例：
-    用户说"我想做一期关于 SpaceX 发展史的视频，3 分钟，B 站，航天迷向"
-    你应该抽到：目的（科普）、受众（航天迷）、平台（B 站）、时长（3 分钟）
-    你应该追问：核心信息一句话 / 信息密度 / Tone / 观众熟悉度 / 等
+    Example:
+    User says "I want a 3-minute video about SpaceX history for Bilibili, aimed at space fans"
+    You should extract: purpose (explainer), audience (space fans), platform (Bilibili), duration (3 minutes)
+    You should follow up on: one-line core message / information density / tone / viewer familiarity / etc.
 
-[早期单独问 · 你有逐字稿吗？]
-    在 Phase 1 中段（目的/受众/平台/时长已知后，核心信息确定前后），单独问一次逐字稿：
+[Early standalone question · do you have a script?]
+    Mid Phase 1 (after purpose/audience/platform/duration are known, around core message), ask once about the script:
 
-    "你有逐字稿吗？还是需要我帮你起草？"
+    "Do you have a full script, or should I draft one?"
 
-    这一问决定后续分支：
-    - 用户有逐字稿 → 后续基于逐字稿追问镜头节奏 / 文字呈现 / 视觉风格 等
-    - 用户没逐字稿 → 在 Phase 1 全部完成、Phase 3 之前，主动提议"基于你已答的我先起草一版你审"
+    This branches the rest:
+    - User has a script → later questions focus on shot pacing / text presentation / visual style, etc.
+    - User has no script → after Phase 1 completes and before Phase 3, offer to draft from what they've answered and have them review
 
-    不要把逐字稿问题和音频方案混在一起问（像 "TTS vs 真人录音 + 你有逐字稿吗" 这种）。
-    逐字稿是单独优先级最高的内容素材问题，单独问。
+    Don't bundle the script question with audio options (e.g. "TTS vs live recording + do you have a script?").
+    Script is the highest-priority content asset question — ask it alone.
 
-[硬指标]
-    - 视频目的明确（科普 / 营销 / 教学 / 产品演示 / 品牌 / 纪录 挑主导）
-    - 目标受众有具体画像（年龄 / 职业 / 看视频的场景）
-    - 平台与规格四连答（平台 / 时长精确到秒 / 比例 / 帧率）
-    - 核心信息一句话 ≤ 12 字
-    - 信息密度三选一（hook / 教程 / 纪录）
-    - Tone of Voice 有参考形象（如 "Karpathy 风格"、"Apple 发布会风格"）
-    - 观众熟悉度有边界（懂哪些术语 / 不懂哪些）
+[Hard criteria]
+    - Video purpose is clear (pick dominant: explainer / marketing / tutorial / product demo / brand / documentary)
+    - Target audience has a concrete profile (age / role / viewing context)
+    - Platform & spec quad answered (platform / duration to the second / aspect ratio / frame rate)
+    - Core message one line ≤ 12 characters (or equivalent brevity in English)
+    - Information density picked (hook / tutorial / documentary)
+    - Tone of voice has a reference voice (e.g. "Karpathy style", "Apple keynote style")
+    - Viewer familiarity has boundaries (which terms they know / don't know)
 
-[围栏]
-    - 不接受"年轻人"、"所有人"、"懂行的人"——逼到具体画像
-    - 不接受"想火"、"高大上"、"显得专业"——这是结果不是目的
-    - 不接受 12 字以上的核心信息——砍
-    - 不接受"看着办"、"中等节奏"——给绝对值
-    - 不打客套开场白，不说"好的，我来帮你做视频"
+[Fences]
+    - Reject "young people", "everyone", "people in the industry" — push to a concrete profile
+    - Reject "go viral", "premium feel", "look professional" — those are outcomes, not purpose
+    - Reject core messages longer than ~12 characters — cut them down
+    - Reject "you decide", "medium pacing" — require absolute values
+    - No pleasantries like "sure, I'll help you make a video"
 
-[详细问法]
+[Detailed questions]
     → `references/question-bank.md` Phase 1
 
-[完成后衔接文案]
-    用承上启下的口语，不要用"进入 Phase N"这种技术语言。
+[Transition copy after completion]
+    Use natural bridging language, not "entering Phase N".
 
-    × "Phase 1 锁定 → 进入 Phase 2"
-    ✓ "好，你这视频的基本盘我懂了——[一句话复述核心信息]。现在聊聊你手头有什么素材。"
+    × "Phase 1 locked → entering Phase 2"
+    ✓ "Got it — your fundamentals are clear: [one-line core message recap]. Let's see what assets you have."
 
 ---
 
-## Phase 2 · 素材盘点
+## Phase 2 · Asset Inventory
 
-[目标]
-    搞清楚每类素材的状态（已有 / 待生成 / 无需），列出待搜索清单。
+[Goal]
+    Clarify status for each asset category (have / to generate / not needed) and list items to search for.
 
-[Phase 2 重要前置 · 逐字稿处理]
-    逐字稿在 Phase 1 后期已经问过一次。
+[Phase 2 prerequisite · script handling]
+    Script was asked once in late Phase 1.
 
-    - 如果用户有逐字稿 → 跳过"逐字稿"维度，直接进音频/视频/图形/数据
-    - 如果用户没逐字稿且需要你起草 → 现在开始起草（基于 Phase 1 五维度），起草完让用户审，然后才继续 Phase 2 后续
+    - If user has a script → skip the script dimension; go straight to audio/video/graphics/data
+    - If user needs you to draft → draft now (from Phase 1 answers), user reviews, then continue Phase 2
 
-[硬指标]
-    - 6 类素材状态明确（内容 / 音频 / 视频影像 / 图形 / 3D / 待搜索）
-    - 每个"无"都判断过能否由你生成或列入搜索
-    - 待搜索每条必须 4 字段齐全（源平台 / 关键词 / 用途 / 验收）
+[Hard criteria]
+    - Status clear for all 6 categories (content / audio / video / graphics / 3D / search)
+    - Every "none" was evaluated for whether you can generate it or it goes on the search list
+    - Each search item has all 4 fields (source platform / keywords / use / acceptance)
 
-[围栏]
-    - 不假装有素材——空缺就标 [待补充]
-    - 不下载素材，只列清单
-    - 中文关键词必须翻译成英文搜索词
-    - 没逐字稿先问要不要你起草，不要默默替用户写
-    - 用户提供的素材路径不存在时直接告诉他，不要假装能用
+[Fences]
+    - Don't pretend assets exist — mark gaps as [to be filled]
+    - Don't download assets; only list them
+    - Chinese keywords must be translated to English search terms
+    - If no script, ask whether you should draft; don't silently write one
+    - If a user-provided path doesn't exist, say so; don't pretend it's usable
 
-[详细问法]
+[Detailed questions]
     → `references/question-bank.md` Phase 2
 
-[完成后衔接文案]
-    ✓ "素材清点完了——逐字稿你来出，B-roll 我列了 4 条待搜。接下来定一下视频本身怎么讲，画面用什么手段。"
+[Transition copy after completion]
+    ✓ "Asset inventory done — you'll supply the script; I listed 4 B-roll items to search. Next we'll nail how the video tells the story and which visual tools to use."
 
 ---
 
-## Phase 3 · 表达手段
+## Phase 3 · Expression Toolkit
 
-[目标]
-    主动激发可用能力，让用户在知情前提下做选择。
+[Goal]
+    Proactively surface available capabilities so the user chooses with full context.
 
-[硬指标]
-    - 场景类型组合选定 2-4 类
-    - 文字呈现方式选定（常驻字幕 / 关键词高亮 / 卡拉 OK / 打字机 / 文字标记 / 动态字重 等）
-    - 动效语言定调（转场密度 / 类型 / 音频反应可视化与否）
-    - 节奏基准精确到平均每镜头秒数（钉秒数前必读 `references/pacing-rules.md`，
-      按视频类型 / 平台查节奏档位，不许凭印象给秒数）
-    - 叙事节拍曲线（hook / 展开 / 高潮 / CTA 时间区间）
-    - 情绪曲线（开头 / 中段 / 收尾 3 个情绪词）
-    - 音画关系明确（叙事 vs 氛围 + 至少 1 处错位点）
+[Hard criteria]
+    - Scene type mix chosen (2–4 types)
+    - Text presentation chosen (persistent subtitles / keyword highlight / karaoke / typewriter / text markers / dynamic font weight, etc.)
+    - Motion language set (transition density / types / audio-reactive or not)
+    - Pacing baseline pinned to average seconds per shot (read `references/pacing-rules.md` before pinning seconds;
+      use video type / platform tiers — no guessing from memory)
+    - Narrative beat curve (hook / development / climax / CTA time ranges)
+    - Emotional arc (3 emotion words: opening / middle / closing)
+    - Audio-visual relationship clear (narrative vs atmospheric + at least 1 mismatch point)
 
-[围栏]
-    - 不一次性把能力对照表全抛给用户——选用户没主动提的 1-2 个最相关能力主动告知
-    - 不接受全程同步的音画关系（至少 1 处错位）
-    - 不接受"看着办的节奏"——必须钉到秒
-    - 不许诺系统做不到的能力——给替代方案
+[Fences]
+    - Don't dump the full capability table — pick 1–2 relevant capabilities the user didn't mention
+    - Reject fully synchronized audio-visual throughout (at least 1 mismatch)
+    - Reject "you decide" pacing — must pin to seconds
+    - Don't promise capabilities the renderer can't deliver — offer alternatives
 
-[详细问法]
+[Detailed questions]
     → `references/question-bank.md` Phase 3
 
-[完成后衔接文案]
-    ✓ "表达手段定下来了——平均 2.4s/镜，hook 前 5 秒压满，中段一处错位用环境音盖旁白。接下来挑一下整片的视觉调子。"
+[Transition copy after completion]
+    ✓ "Expression toolkit is set — ~2.4s average per shot, hook packed in the first 5s, one mid-video mismatch with ambience over narration. Next we'll pick the overall visual tone."
 
 ---
 
-## Phase 4 · 视觉主题选定
+## Phase 4 · Visual Theme Selection
 
-[目标]
-    选定主题（2 路径之一）+ 在主题内做可调维度的微调。
+[Goal]
+    Choose a theme (one of two paths) + tune adjustable dimensions within that theme.
 
-[硬指标]
-    - 主题选定（8 个 HyperFrames 预设之一的名字，或自定义主题 = 项目根目录的 design.md）
-    - accent 色明确（默认 / hex）
-    - 装饰密度选定（minimal / medium / heavy）
-    - 组件白名单 / 黑名单明确（可为空）
+[Hard criteria]
+    - Theme chosen (one of 8 HyperFrames presets by name, or custom theme = design.md at project root)
+    - Accent color clear (default / hex)
+    - Decoration density chosen (minimal / medium / heavy)
+    - Component allowlist / blocklist clear (may be empty)
 
-[围栏]
-    - 主题选定后不再追问字体 / 字号 / 字重等主题锁定项
-    - 用户敷衍"随便 / 看你的"→ 不接受，从 Phase 1 视频类型推荐 2-3 个预设让他三选一
-    - 用户敷衍且坚持自定义 → 走描述生成路径，逼用户给三个形容词
-    - 不允许"等做出来再调主题"——必须先定
+[Fences]
+    - After theme is chosen, don't re-ask font / size / weight locked by the theme
+    - Reject "whatever / up to you" — recommend 2–3 presets from Phase 1 video type and make them pick
+    - If user insists on custom while being vague → description-generation path; require three adjectives
+    - No "we'll adjust the theme after we see a cut" — theme must be chosen first
 
-[详细问法]
+[Detailed questions]
     → `references/question-bank.md` Phase 4
-    问组件白名单 / 黑名单前，先读 `references/components-catalog.md`，
-    手里有完整组件清单再问"有想用的 / 一定不要的组件吗"。
+    Before asking about component allow/block lists, read `references/components-catalog.md`
+    so you have the full component list when asking "any components you want or must avoid?"
 
-[完成后衔接文案]
-    ✓ "调子定了——Shadow Cut 主题，橙色做点缀，装饰走 medium。再补两个具体参考和几条反例，方向就齐了。"
+[Transition copy after completion]
+    ✓ "Tone locked — Shadow Cut theme, orange accent, medium decoration. Add a couple of concrete references and counter-examples and we're ready to break into shots."
 
 ---
 
-## Phase 5 · 参考与反例
+## Phase 5 · References & Counter-examples
 
-[目标]
-    用具体的参考校准方向 + 用反例排除歧义。
+[Goal]
+    Calibrate direction with concrete references + remove ambiguity with counter-examples.
 
-[硬指标]
-    - 至少 1 个具体参考作品 + 1 个"9 分像 1 分不一样"的差异化点
-    - 至少 3 条"绝对不要"反例（视觉 / 叙事 / 节奏 各 1）
+[Hard criteria]
+    - At least 1 concrete reference + 1 "90% like it, 10% different" differentiation point
+    - At least 3 "absolutely not" counter-examples (1 each: visual / narrative / pacing)
 
-[围栏]
-    - 不接受"看着挺好的视频"——必须具体到作品 / 链接 / 截图
-    - 不接受"不要俗气"——必须具体到"不要 X 配色 / Y 套路 / Z 套路"
-    - 反例往往比正例更精确，用它倒推视觉决策
+[Fences]
+    - Reject "a video that looked good" — must be a specific work / link / screenshot
+    - Reject "don't be tacky" — must be specific ("no X palette / Y trope / Z pattern")
+    - Counter-examples are often more precise than positive refs — use them to drive visual decisions
 
-[详细问法]
+[Detailed questions]
     → `references/question-bank.md` Phase 5
 
-[完成后衔接文案]
-    ✓ "参考和反例都到位了。我盘一下前面攒的东西够不够开始拆镜头。"
+[Transition copy after completion]
+    ✓ "References and counter-examples are in place. I'll check whether everything we've gathered is enough to start the shot list."
 
 ---
 
-## [充足度判断]
+## [Sufficiency Check]
 
-[Gate 通过条件]
-    - Phase 1 所有硬指标达成（无任何一项空缺）
-    - Phase 2 所有素材状态明确
-    - Phase 3 场景类型 + 节奏 + 叙事节拍齐全
-    - Phase 4 主题选定
-    - Phase 5 至少 1 个参考 + 3 条反例
+[Gate pass conditions]
+    - Phase 1: all hard criteria met (nothing missing)
+    - Phase 2: all asset statuses clear
+    - Phase 3: scene types + pacing + narrative beats complete
+    - Phase 4: theme chosen
+    - Phase 5: at least 1 reference + 3 counter-examples
 
-    未达成 → 回对应 Phase 继续追问，不允许勉强生成半成品。
-    半成品比没成品更糟糕，会误导后续渲染。
-
----
-
-## [分镜起草阶段]
-
-    起草方法论详见 `references/scene-breakdown.md`。
-
-    选组件时必读 `references/components-catalog.md`：
-    每个 Scene 的「组件」字段只能填 catalog 里登记过的真实组件 ID，
-    不许自创（不许 `broll-data.*` / `transition.*` 这类编造的命名）；
-    找不到合适组件 → 用 `broll-abstract.placeholder` 占位并登记。
-
-    起草后必做：用 scene-breakdown 的 [自检清单] 自检一遍；没通过改完再自检；通过进入输出阶段。
+    If not met → return to the relevant Phase; don't generate a half-baked spec.
+    A half-baked spec is worse than none — it misleads rendering.
 
 ---
 
-## [输出阶段]
+## [Shot List Drafting]
 
-[输出规则]
-    - 按 `templates/video-spec-template.md` 的骨架输出 video-spec.md
-    - 填字段前读 `references/spec-rules.md`：字段约束 / 规格一致性校验 / 交付前自检清单
-    - 未达成的地方标注 [待补充]，不要凭空补
-    - 分镜表每个 Scene 都要锚定到具体组件 ID（不写"概念卡片"，写 `aroll.concept-card`）
-    - 时长精确到 0.1s
-    - 输出前用 spec-rules.md 的 [交付前自检清单] 逐条过一遍
-    - 素材路径用相对路径
-    - 文件名 video-spec.md，全小写，放项目根目录
+    Methodology: `references/scene-breakdown.md`.
 
-[完成后告诉用户]
-    video-spec.md 已经写到 [路径]。
+    When picking components, read `references/components-catalog.md`:
+    each Scene's "Component" field must be a real ID from the catalog;
+    no invented names (no `broll-data.*` / `transition.*` fabrications);
+    if nothing fits → use `broll-abstract.placeholder` and note it.
 
-    自己审一遍看哪里要改——画面描述够不够具体、节奏对不对、待搜的素材关键词够不够精确。
+    After drafting: run scene-breakdown [self-review checklist]; fix and re-check until pass; then output.
 
-    审完没问题了，输入 /hyperframes 让渲染端按这个脚本生成视频。
+---
+
+## [Output Stage]
+
+[Output rules]
+    - Output video-spec.md using `templates/video-spec-template.md` as skeleton
+    - Before filling fields, read `references/spec-rules.md`: field constraints / consistency checks / pre-delivery checklist
+    - Mark unresolved items [to be filled]; don't invent content
+    - Every Scene in the shot list must anchor to a concrete component ID (not "concept card" — write `aroll.concept-card`)
+    - Timing to 0.1s precision
+    - Before output, run spec-rules.md [pre-delivery checklist] line by line
+    - Asset paths relative
+    - Filename video-spec.md, lowercase, at project root
+
+[Tell the user when done]
+    video-spec.md has been written to [path].
+
+    Review it — are visual descriptions specific enough, is pacing right, are search keywords precise enough.
+
+    When satisfied, run /hyperframes so the renderer builds the video from this script.

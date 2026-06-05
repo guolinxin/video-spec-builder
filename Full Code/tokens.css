@@ -1,13 +1,13 @@
 /* ================================================================
-   tokens.css — 视频组件库 v2 · SpaceX × Grok × X 视觉语言
-   纯黑 / 纯白 · 几何 sans · condensed 数字 · spec-sheet 美学
+   tokens.css — Video component library v2 · SpaceX × Grok × X visual language
+   Pure black / pure white · geometric sans · condensed numerals · spec-sheet aesthetic
    ================================================================ */
 :root {
   /* ---------- color · pure mono ---------- */
-  --bg:        #000000;          /* pure black · 太空黑 */
-  --bg-card:   #0A0A0A;          /* 卡片层 */
-  --bg-elev:   #141414;          /* 抬起层 */
-  --bg-flash:  #FFFFFF;          /* 反白 cut-in */
+  --bg:        #000000;          /* pure black · space black */
+  --bg-card:   #0A0A0A;          /* card layer */
+  --bg-elev:   #141414;          /* elevated layer */
+  --bg-flash:  #FFFFFF;          /* inverted cut-in */
 
   --fg:        #FFFFFF;          /* pure white */
   --fg-2:      rgba(255,255,255,0.66);
@@ -18,13 +18,13 @@
   --line-2:    rgba(255,255,255,0.16);
   --line-3:    rgba(255,255,255,0.28);
 
-  /* single accent — Tweaks 可换 · 默认就是白 (Grok-style mono) */
+  /* single accent — swappable via Tweaks · defaults to white (Grok-style mono) */
   --accent:    #FFFFFF;
   --accent-2:  color-mix(in oklab, var(--accent) 40%, transparent);
   --accent-3:  color-mix(in oklab, var(--accent) 14%, transparent);
 
-  /* status · 极少使用 · 仅图表 */
-  --green:     #00E07A;          /* SpaceX 仪表绿 */
+  /* status · rarely used · charts only */
+  --green:     #00E07A;          /* SpaceX instrument green */
   --red:       #FF3333;          /* abort red */
   --yellow:    #FFC700;          /* caution yellow */
 
@@ -45,19 +45,19 @@
   --t-cap:     11px;
   --t-meta:    10px;
 
-  /* weights — 跳过 500/700，对比悬崖 */
+  /* weights — use 400 / 600 / 700 / 800, skip 500 for contrast cliff */
   --w-reg:  400;
   --w-mid:  600;
   --w-bold: 700;
   --w-heavy: 800;
 
-  /* letter-spacing — SpaceX 偏紧 + caps 偏松 */
+  /* letter-spacing — SpaceX tight + caps loose */
   --ls-display: -0.03em;
   --ls-tight:   -0.018em;
   --ls-normal:  -0.005em;
   --ls-caps:     0.18em;
   --ls-meta:     0.22em;
-  --ls-mission:  0.32em;        /* T-MINUS 等任务字串极宽 */
+  --ls-mission:  0.32em;        /* extra-wide for mission strings like T-MINUS */
 
   /* ---------- motion ---------- */
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
@@ -70,7 +70,7 @@
   --d-3: 700ms;
   --d-4: 1100ms;
 
-  /* ---------- radii — SpaceX 几何感：极小或 0 ---------- */
+  /* ---------- radii — SpaceX geometry: minimal or 0 ---------- */
   --r-0: 0px;
   --r-1: 2px;
   --r-2: 4px;

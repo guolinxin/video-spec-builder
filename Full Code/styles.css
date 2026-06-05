@@ -1,6 +1,6 @@
 /* ================================================================
-   styles.css — 视频组件库 v2 · SpaceX × Grok × X 视觉语言
-   纯黑底 · 几何字体 · spec-sheet 装饰
+   styles.css — Video component library v2 · SpaceX × Grok × X visual language
+   Pure black background · geometric type · spec-sheet decoration
    ================================================================ */
 
 /* ---------- page shell ---------- */
@@ -282,7 +282,7 @@
 }
 
 /* ================================================================
-   v3 · 工具类（spec-sheet flourishes）
+   v3 · utility classes (spec-sheet flourishes)
    ================================================================ */
 
 .cross {
@@ -373,7 +373,7 @@
 
 .frame { position: relative; }
 
-/* spec-sheet row · 仿 SpaceX 发射页 */
+/* spec-sheet row · SpaceX launch-page style */
 .spec-row {
   display: flex; align-items: center; gap: 14px;
   font-family: var(--f-mono); font-size: 11px;

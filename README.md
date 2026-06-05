@@ -1,6 +1,6 @@
 <img width="2172" height="724" alt="ChatGPT Image May 16, 2026, 10_46_58 PM" src="https://github.com/user-attachments/assets/7820d93e-84b6-4e09-904c-9567c6595c57" />
 
-**English** · [中文](README.zh.md)
+**English** · [Chinese README path](README.zh.md)
 
 # video-spec-builder
 
@@ -169,8 +169,8 @@ Writing a `design.md` from scratch takes some work, so I made one ahead of time 
 <!-- placeholder: drop the Spec Mono preview image at spec-mono/preview.png, then uncomment the line below -->
 <!-- ![Spec Mono preview](spec-mono/preview.png) -->
 
-Download to see complete design [视频组件库 v2 · 硅谷暗色科技风.pdf](https://github.com/user-attachments/files/27866436/v2.pdf)
-<img width="1020" height="1440" alt="视频组件库 v2 · 硅谷暗色科技风" src="https://github.com/user-attachments/assets/bef576da-73ba-4bad-a9c4-3c673e652eaa" />
+Download to see the complete design [Video Component Library v2 · Silicon Valley Dark Tech.pdf](https://github.com/user-attachments/files/27866436/v2.pdf)
+<img width="1020" height="1440" alt="Video Component Library v2 · Silicon Valley Dark Tech" src="https://github.com/user-attachments/assets/bef576da-73ba-4bad-a9c4-3c673e652eaa" />
 
 The `spec-mono/` folder holds three files:
 
@@ -189,8 +189,7 @@ To use it, copy `spec-mono/design.md` into your video project root and bring `to
 ```
 video-spec-builder/
 ├── SKILL.md                  the skill's main file — the AI reads this first
-├── README.md                 English
-├── README.zh.md              中文
+├── README.md                 project readme
 ├── LICENSE
 ├── references/               reference docs on questioning, shot breakdown, pacing — loaded as needed
 │   ├── workflow-0-1.md

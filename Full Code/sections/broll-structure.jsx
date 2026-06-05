@@ -1,11 +1,11 @@
 /* ================================================================
-   sections/broll-structure.jsx — 02 · 结构图
+   sections/broll-structure.jsx — 02 · Structure Diagrams
    ================================================================ */
 
 function StructureSection() {
   return (
-    <Section id="structure" num="02" title="B-roll · 结构图"
-      desc="讲<b>流程 · 层级 · 收敛 · 包含</b>关系时用。每张图遵守同一条：<em>一根 hairline · 一个 mono 标签 · 一种强调色</em>。">
+    <Section id="structure" num="02" title="B-roll · Structure Diagrams"
+      desc="Use when explaining <b>flow · hierarchy · convergence · containment</b> relationships. Every chart follows the same rule: <em>one hairline · one mono label · one accent color</em>.">
       <FlowChart />
       <Pyramid />
       <Funnel />
@@ -16,7 +16,7 @@ function StructureSection() {
   );
 }
 
-/* ---------- 流程图 ---------- */
+/* ---------- Flow Chart ---------- */
 function FlowChart() {
   const [hot, setHot] = React.useState(0);
   React.useEffect(() => {
@@ -24,13 +24,13 @@ function FlowChart() {
     return () => clearInterval(id);
   }, []);
   const steps = [
-    { en: 'COLLECT', cn: '收集证据' },
-    { en: 'ANALYZE', cn: '分析模式' },
-    { en: 'LOCATE',  cn: '定位根因' },
-    { en: 'VERIFY',  cn: '验证修复' },
+    { en: 'COLLECT', cn: 'Gather Evidence' },
+    { en: 'ANALYZE', cn: 'Analyze Patterns' },
+    { en: 'LOCATE',  cn: 'Locate Root Cause' },
+    { en: 'VERIFY',  cn: 'Verify Fix' },
   ];
   return (
-    <SubSec name="流程图 · Flow Chart" tag="LINEAR PROCESS">
+    <SubSec name="Flow Chart" tag="LINEAR PROCESS">
       <Stage pattern="dot" label="● B-ROLL" labelR="02.A">
         <div style={{
           position: 'absolute', inset: '20% 6%',
@@ -63,24 +63,24 @@ function FlowChart() {
       </Stage>
       <Params rows={[
         { k: 'NODE', v: 'hairline → solid accent (hot)' },
-        { k: 'ARROW', v: '1px line + 7px 三角箭头' },
+        { k: 'ARROW', v: '1px line + 7px triangular arrow' },
         { k: 'RHYTHM', v: '900ms / step' },
-        { k: 'PAST', v: '线 / 箭头变 accent · 节点正常' },
-        { k: 'FUTURE', v: '透明度 0.5' },
+        { k: 'PAST', v: 'line / arrow turn accent · nodes normal' },
+        { k: 'FUTURE', v: 'opacity 0.5' },
       ]} />
     </SubSec>
   );
 }
 
-/* ---------- 金字塔 ---------- */
+/* ---------- Pyramid ---------- */
 function Pyramid() {
   const layers = [
-    { w: '32%', en: 'PEAK',   cn: '顶层 · 战略',  sub: '少而决定性' },
-    { w: '52%', en: 'BRIDGE', cn: '中层 · 方法', sub: '可复用模式' },
-    { w: '72%', en: 'BASE',   cn: '底层 · 执行', sub: '大量 / 重复' },
+    { w: '32%', en: 'PEAK',   cn: 'Top · Strategy',  sub: 'Few, decisive' },
+    { w: '52%', en: 'BRIDGE', cn: 'Middle · Methods', sub: 'Reusable patterns' },
+    { w: '72%', en: 'BASE',   cn: 'Base · Execution', sub: 'High volume / repetitive' },
   ];
   return (
-    <SubSec name="金字塔 · Pyramid" tag="HIERARCHY">
+    <SubSec name="Pyramid" tag="HIERARCHY">
       <Stage pattern="dot" label="● B-ROLL" labelR="02.B">
         <div style={{ position: 'absolute', inset: '12% 8%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
           {layers.map((l, i) => (
@@ -102,24 +102,24 @@ function Pyramid() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'WIDTHS', v: '32% / 52% / 72% — 黄金比' },
-        { k: 'GAP', v: '8px · 不重叠' },
-        { k: 'TOP HIGHLIGHT', v: '顶层 mono 标签 accent · 其余 fg-3' },
+        { k: 'WIDTHS', v: '32% / 52% / 72% — golden ratio' },
+        { k: 'GAP', v: '8px · no overlap' },
+        { k: 'TOP HIGHLIGHT', v: 'top layer mono label accent · rest fg-3' },
       ]} />
     </SubSec>
   );
 }
 
-/* ---------- 漏斗 ---------- */
+/* ---------- Funnel ---------- */
 function Funnel() {
   const stages = [
-    { w: '80%', en: 'AWARE',    cn: '看见',   stat: '10,000' },
-    { w: '58%', en: 'TRY',      cn: '试用',   stat: '1,800' },
-    { w: '40%', en: 'COMMIT',   cn: '留存',   stat: '420' },
-    { w: '22%', en: 'EVANGELIZE', cn: '传播', stat: '38' },
+    { w: '80%', en: 'AWARE',    cn: 'Awareness',   stat: '10,000' },
+    { w: '58%', en: 'TRY',      cn: 'Trial',       stat: '1,800' },
+    { w: '40%', en: 'COMMIT',   cn: 'Retention',   stat: '420' },
+    { w: '22%', en: 'EVANGELIZE', cn: 'Advocacy',  stat: '38' },
   ];
   return (
-    <SubSec name="漏斗 · Funnel" tag="CONVERSION">
+    <SubSec name="Funnel" tag="CONVERSION">
       <Stage pattern="dot" label="● B-ROLL" labelR="02.C">
         <div style={{ position: 'absolute', inset: '10% 8%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, justifyContent: 'center' }}>
           {stages.map((s, i) => (
@@ -143,23 +143,23 @@ function Funnel() {
       </Stage>
       <Params rows={[
         { k: 'WIDTHS', v: '80 → 58 → 40 → 22%' },
-        { k: 'BOTTOM', v: 'accent 边框 · 最终留存' },
-        { k: 'DATA COL', v: '右对齐 mono 数字' },
+        { k: 'BOTTOM', v: 'accent border · final retention' },
+        { k: 'DATA COL', v: 'right-aligned mono numbers' },
       ]} />
     </SubSec>
   );
 }
 
-/* ---------- 同心圆 ---------- */
+/* ---------- Concentric Circles ---------- */
 function Concentric() {
   const rings = [
-    { r: 240, en: 'BUSINESS',   cn: '业务' },
-    { r: 180, en: 'PRODUCT',    cn: '产品' },
-    { r: 120, en: 'EXPERIENCE', cn: '体验' },
-    { r:  60, en: 'CORE',       cn: '核心' },
+    { r: 240, en: 'BUSINESS',   cn: 'Business' },
+    { r: 180, en: 'PRODUCT',    cn: 'Product' },
+    { r: 120, en: 'EXPERIENCE', cn: 'Experience' },
+    { r:  60, en: 'CORE',       cn: 'Core' },
   ];
   return (
-    <SubSec name="同心圆 · Concentric" tag="NESTED SCOPE">
+    <SubSec name="Concentric" tag="NESTED SCOPE">
       <Stage pattern="dot" label="● B-ROLL" labelR="02.D">
         <svg viewBox="-300 -200 600 400" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           {rings.map((r, i) => (
@@ -173,28 +173,28 @@ function Concentric() {
       </Stage>
       <Params rows={[
         { k: 'RADII', v: '60 · 120 · 180 · 240' },
-        { k: 'LABELS', v: '环顶部 · 右对齐 · mono + cn 双行' },
-        { k: 'CORE', v: '填 bg-card + accent 描边' },
+        { k: 'LABELS', v: 'top of ring · right-aligned · mono + label dual line' },
+        { k: 'CORE', v: 'fill bg-card + accent stroke' },
       ]} />
     </SubSec>
   );
 }
 
-/* ---------- 节点图 ---------- */
+/* ---------- Node Graph ---------- */
 function NodeGraph() {
   const nodes = [
-    { id: 'input',  x: 12, y: 50, en: 'INPUT',  cn: '输入',  hot: false },
-    { id: 'router', x: 36, y: 50, en: 'ROUTER', cn: '路由',  hot: true },
-    { id: 'a',      x: 64, y: 28, en: 'TOOL A', cn: '搜索',  hot: false },
-    { id: 'b',      x: 64, y: 72, en: 'TOOL B', cn: '生成',  hot: false },
-    { id: 'out',    x: 88, y: 50, en: 'OUTPUT', cn: '输出',  hot: false },
+    { id: 'input',  x: 12, y: 50, en: 'INPUT',  cn: 'Input',  hot: false },
+    { id: 'router', x: 36, y: 50, en: 'ROUTER', cn: 'Route',  hot: true },
+    { id: 'a',      x: 64, y: 28, en: 'TOOL A', cn: 'Search', hot: false },
+    { id: 'b',      x: 64, y: 72, en: 'TOOL B', cn: 'Generate', hot: false },
+    { id: 'out',    x: 88, y: 50, en: 'OUTPUT', cn: 'Output', hot: false },
   ];
   const edges = [
     ['input', 'router'], ['router', 'a'], ['router', 'b'], ['a', 'out'], ['b', 'out'],
   ];
   const find = (id) => nodes.find(n => n.id === id);
   return (
-    <SubSec name="节点图 · Node Graph" tag="ROUTING / WORKFLOW">
+    <SubSec name="Node Graph" tag="ROUTING / WORKFLOW">
       <Stage pattern="dot" label="● B-ROLL" labelR="02.E">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           {edges.map(([a, b], i) => {
@@ -215,29 +215,29 @@ function NodeGraph() {
         ))}
       </Stage>
       <Params rows={[
-        { k: 'EDGE', v: '1px line-2 · 不加箭头美化' },
+        { k: 'EDGE', v: '1px line-2 · no arrow decoration' },
         { k: 'NODE', v: '6px radius · padding 8/14' },
-        { k: 'HOT', v: 'accent 描边 + bg-card 填充' },
+        { k: 'HOT', v: 'accent stroke + bg-card fill' },
       ]} />
     </SubSec>
   );
 }
 
-/* ---------- 谱系图 ---------- */
+/* ---------- Spectrum ---------- */
 function Spectrum() {
   return (
-    <SubSec name="谱系图 · Spectrum" tag="OPPOSITE AXIS">
+    <SubSec name="Spectrum" tag="OPPOSITE AXIS">
       <Stage pattern="dot" label="● B-ROLL" labelR="02.F">
         <div style={{ position: 'absolute', inset: '32% 8%', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 22 }}>
             <div>
               <div className="meta" style={{ marginBottom: 4 }}>← LEFT POLE</div>
-              <div className="cn" style={{ fontSize: 44, fontWeight: 800 }}>规则驱动</div>
+              <div className="cn" style={{ fontSize: 44, fontWeight: 800 }}>Rule-Driven</div>
             </div>
             <div className="meta">SPECTRUM</div>
             <div style={{ textAlign: 'right' }}>
               <div className="meta" style={{ marginBottom: 4 }}>RIGHT POLE →</div>
-              <div className="cn" style={{ fontSize: 44, fontWeight: 800 }}>智能体驱动</div>
+              <div className="cn" style={{ fontSize: 44, fontWeight: 800 }}>Agent-Driven</div>
             </div>
           </div>
           <div style={{ position: 'relative', height: 1, background: 'var(--line-2)' }}>
@@ -246,15 +246,15 @@ function Spectrum() {
             <div style={{ position: 'absolute', left: '68%', top: -7, width: 14, height: 14, background: 'var(--accent)', borderRadius: '50%' }} />
           </div>
           <div style={{ position: 'relative', height: 24, marginTop: 12 }}>
-            <div className="meta" style={{ position: 'absolute', left: '68%', transform: 'translateX(-50%)', color: 'var(--accent)' }}>当前 · CURRENT</div>
+            <div className="meta" style={{ position: 'absolute', left: '68%', transform: 'translateX(-50%)', color: 'var(--accent)' }}>Current · CURRENT</div>
           </div>
         </div>
       </Stage>
       <Params rows={[
-        { k: 'AXIS', v: '1px line-2 · 全宽' },
-        { k: 'POLE DOTS', v: '7px 圆 · fg-2' },
-        { k: 'MARKER', v: '14px 圆 · accent' },
-        { k: 'USE', v: '讲对立 / 演进位置' },
+        { k: 'AXIS', v: '1px line-2 · full width' },
+        { k: 'POLE DOTS', v: '7px circle · fg-2' },
+        { k: 'MARKER', v: '14px circle · accent' },
+        { k: 'USE', v: 'show opposition / position on continuum' },
       ]} />
     </SubSec>
   );

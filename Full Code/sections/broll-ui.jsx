@@ -1,11 +1,11 @@
 /* ================================================================
-   sections/broll-ui.jsx — 03 · B-roll · 仿真 UI
-   终端 · 浏览器 · 对话 · 代码 · API · 仪表盘
+   sections/broll-ui.jsx — 03 · B-roll · Simulated UI
+   Terminal · Browser · Chat · Code · API · Dashboard
    ================================================================ */
 function FakeUISection() {
   return (
-    <Section id="ui" num="03" title="B-roll · 仿真 UI"
-      desc="讲 AI 教程必备：<b>终端 · 浏览器 · 对话 · 代码 · API · 仪表盘</b>。所有 UI mock 共享同一规则 —— <em>极简</em>、<em>真实可信</em>、<em>不要拟物窗口</em>。窗口装饰只保留三个灰点 + 一条 hairline 头。">
+    <Section id="ui" num="03" title="B-roll · Simulated UI"
+      desc="Essential for AI tutorials: <b>terminal · browser · chat · code · API · dashboard</b>. All UI mocks share one rule — <em>minimal</em>, <em>credible</em>, <em>no skeuomorphic windows</em>. Window chrome is only three gray dots + one hairline header.">
       <Terminal />
       <Chat />
       <Browser />
@@ -25,13 +25,13 @@ function Terminal() {
     return () => clearInterval(id);
   }, []);
   return (
-    <SubSec name="终端 · Terminal" tag="CLI MOCK">
+    <SubSec name="Terminal · CLI Mock" tag="CLI MOCK">
       <Stage pattern="dot" label="● B-ROLL" labelR="03.A">
         <WindowChrome title="~/projects/rag-demo · zsh">
           <div className="mono" style={{ padding: '28px 32px', fontSize: 30, lineHeight: 1.75, color: 'var(--fg)' }}>
             <span style={{ color: 'var(--accent)' }}>{cmd.slice(0, chars)}</span>
             <span style={{ display: 'inline-block', width: 10, height: 18, background: 'var(--accent)', verticalAlign: '-3px', animation: 'cb 1s steps(2) infinite' }} />
-            <div style={{ color: 'var(--fg-2)', marginTop: 14 }}>→ Retrieval-Augmented Generation: 给模型外接资料库再生成。</div>
+            <div style={{ color: 'var(--fg-2)', marginTop: 14 }}>→ Retrieval-Augmented Generation: attach an external knowledge base before generating.</div>
             <div style={{ color: 'var(--fg-3)', marginTop: 6, fontSize: 22 }}>↳ tokens 23 · 412ms · $0.0008</div>
           </div>
         </WindowChrome>
@@ -40,9 +40,9 @@ function Terminal() {
       <Params rows={[
         { k: 'FONT', v: 'Geist Mono 30px (within stage)' },
         { k: 'BG', v: 'var(--bg-card) · hairline border' },
-        { k: 'CURSOR', v: '10×18 实块 · 1s blink · accent' },
+        { k: 'CURSOR', v: '10×18 solid block · 1s blink · accent' },
         { k: 'TYPE SPEED', v: '60ms / char' },
-        { k: 'META TAIL', v: 'tokens · 延迟 · $ 成本（fg-3）' },
+        { k: 'META TAIL', v: 'tokens · latency · $ cost (fg-3)' },
       ]} />
     </SubSec>
   );
@@ -51,19 +51,19 @@ function Terminal() {
 /* ---------- B · Chat ---------- */
 function Chat() {
   return (
-    <SubSec name="对话流 · Chat Thread" tag="LLM CONVERSATION">
+    <SubSec name="Chat Thread · Conversation" tag="LLM CONVERSATION">
       <Stage pattern="dot" label="● B-ROLL" labelR="03.B">
         <div style={{ position: 'absolute', inset: '10% 16%', display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <Bubble role="user">RAG 跟 fine-tuning 啥区别？</Bubble>
-          <Bubble role="ai">RAG 是<span style={{ color: 'var(--accent)' }}>开卷考试</span>—— 临时查资料。fine-tuning 是<span style={{ color: 'var(--accent)' }}>背书</span>—— 把知识焊进模型权重。</Bubble>
-          <Bubble role="user" pending>那我应该选哪个 ▍</Bubble>
+          <Bubble role="user">What's the difference between RAG and fine-tuning?</Bubble>
+          <Bubble role="ai">RAG is like an <span style={{ color: 'var(--accent)' }}>open-book exam</span> — look things up on the spot. Fine-tuning is like <span style={{ color: 'var(--accent)' }}>memorizing</span> — baking knowledge into the model weights.</Bubble>
+          <Bubble role="user" pending>So which one should I pick? ▍</Bubble>
         </div>
       </Stage>
       <Params rows={[
-        { k: 'USER BUBBLE', v: '右对齐 · accent 描边 · bg 透明' },
-        { k: 'AI BUBBLE', v: '左对齐 · bg-card 填充 · 无边' },
-        { k: 'TYPING', v: '末尾光标 ▍' },
-        { k: 'MAX WIDTH', v: '70% · 留出对侧呼吸' },
+        { k: 'USER BUBBLE', v: 'right-aligned · accent stroke · transparent bg' },
+        { k: 'AI BUBBLE', v: 'left-aligned · bg-card fill · no border' },
+        { k: 'TYPING', v: 'trailing cursor ▍' },
+        { k: 'MAX WIDTH', v: '70% · leave breathing room on the opposite side' },
       ]} />
     </SubSec>
   );
@@ -87,7 +87,7 @@ function Bubble({ role, pending, children }) {
 /* ---------- C · Browser ---------- */
 function Browser() {
   return (
-    <SubSec name="浏览器 · Browser" tag="URL + VIEWPORT">
+    <SubSec name="Browser · URL + Viewport" tag="URL + VIEWPORT">
       <Stage pattern="dot" label="● B-ROLL" labelR="03.C">
         <WindowChrome
           tabs={['claude.ai/chat', 'docs · arxiv', '+']}
@@ -97,7 +97,7 @@ function Browser() {
           <div style={{ padding: '24px 32px' }}>
             <div className="meta" style={{ color: 'var(--accent)', marginBottom: 12 }}>● LIVE</div>
             <div className="cn" style={{ fontSize: 44, fontWeight: 800, letterSpacing: '-0.018em', lineHeight: 1.1, marginBottom: 14 }}>
-              问 Claude 任何关于 RAG 的问题
+              Ask Claude anything about RAG
             </div>
             <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
               <div style={{ flex: 1, height: 56, border: '1px solid var(--line-2)', borderRadius: 6, display: 'flex', alignItems: 'center', padding: '0 16px' }}>
@@ -109,10 +109,10 @@ function Browser() {
         </WindowChrome>
       </Stage>
       <Params rows={[
-        { k: 'CHROME', v: '三点 + tab 行 + URL 框 · 全部 hairline' },
-        { k: 'URL', v: 'Geist Mono · 不显示 https:// 前缀' },
-        { k: 'CTA', v: '正方形 accent 按钮 · 单字符' },
-        { k: 'NO FAVICON', v: '保持极简' },
+        { k: 'CHROME', v: 'three dots + tab row + URL bar · all hairline' },
+        { k: 'URL', v: 'Geist Mono · no https:// prefix' },
+        { k: 'CTA', v: 'square accent button · single character' },
+        { k: 'NO FAVICON', v: 'keep it minimal' },
       ]} />
     </SubSec>
   );
@@ -121,7 +121,7 @@ function Browser() {
 /* ---------- D · Code Editor ---------- */
 function CodeEditor() {
   return (
-    <SubSec name="代码 · Code Editor" tag="SYNTAX HIGHLIGHTED">
+    <SubSec name="Code · Code Editor" tag="SYNTAX HIGHLIGHTED">
       <Stage pattern="dot" label="● B-ROLL" labelR="03.D">
         <WindowChrome title="rag.py · python 3.12" sideBar>
           <pre className="mono" style={{ margin: 0, padding: '24px 28px', fontSize: 22, lineHeight: 1.55, color: 'var(--fg)' }}>
@@ -136,9 +136,9 @@ function CodeEditor() {
       </Stage>
       <Params rows={[
         { k: 'PALETTE', v: 'keyword=accent · string=fg-2 · comment=fg-3 italic' },
-        { k: 'GUTTER', v: '行号 mono · fg-3 · 1ch 右对齐' },
-        { k: 'HOT LINE', v: '当前讲解行：左侧 2px accent 竖条' },
-        { k: 'SIDEBAR', v: '可选文件树 · 32px 宽' },
+        { k: 'GUTTER', v: 'line numbers mono · fg-3 · 1ch right-aligned' },
+        { k: 'HOT LINE', v: 'current teaching line: 2px accent bar on the left' },
+        { k: 'SIDEBAR', v: 'optional file tree · 32px wide' },
       ]} />
     </SubSec>
   );
@@ -160,7 +160,7 @@ function Co({ children }) { return <span style={{ color: 'var(--fg-3)', fontStyl
 /* ---------- E · API call ---------- */
 function ApiCall() {
   return (
-    <SubSec name="API 调用 · Request / Response" tag="REST · JSON">
+    <SubSec name="API Call · Request / Response" tag="REST · JSON">
       <Stage pattern="dot" label="● B-ROLL" labelR="03.E">
         <div style={{ position: 'absolute', inset: '12% 8%', display: 'grid', gridTemplateColumns: '1fr 40px 1fr', alignItems: 'stretch', gap: 0 }}>
           <Panel verb="POST" path="/v1/messages" tone="req">
@@ -174,16 +174,16 @@ function ApiCall() {
           </div>
           <Panel verb="200" path="ok · 1.2KB" tone="res">
             <PanelLine k='"id"'      v='"msg_01H…"' />
-            <PanelLine k='"content"' v='"RAG = 开卷考试 …"' accent />
+            <PanelLine k='"content"' v='"RAG = open-book exam …"' accent />
             <PanelLine k='"stop"'    v='"end_turn"' />
           </Panel>
         </div>
       </Stage>
       <Params rows={[
-        { k: 'LAYOUT', v: '左请求 · 中延迟 · 右响应' },
+        { k: 'LAYOUT', v: 'request left · latency center · response right' },
         { k: 'VERB', v: 'POST = accent · 200 = green · err = red' },
-        { k: 'KEY-VAL', v: '键 fg-3 · 值 fg / accent' },
-        { k: 'LATENCY', v: '中间显示真实毫秒数（教学可信感）' },
+        { k: 'KEY-VAL', v: 'keys fg-3 · values fg / accent' },
+        { k: 'LATENCY', v: 'show real milliseconds in the center (teaching credibility)' },
       ]} />
     </SubSec>
   );
@@ -212,7 +212,7 @@ function PanelLine({ k, v, accent }) {
 /* ---------- F · Dashboard ---------- */
 function Dashboard() {
   return (
-    <SubSec name="仪表盘 · Dashboard" tag="LIVE METRICS">
+    <SubSec name="Dashboard · Live Metrics" tag="LIVE METRICS">
       <Stage pattern="graph" label="● B-ROLL" labelR="03.F">
         <div style={{ position: 'absolute', inset: '12% 6%', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateRows: 'auto 1fr', gap: 14 }}>
           <KPI label="LATENCY · p50" v="312" unit="ms" />
@@ -228,10 +228,10 @@ function Dashboard() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'KPI CARD', v: '巨数字 + 单位 + 标签三件套' },
-        { k: 'HOT CARD', v: '一张卡左上 accent 角标（讲解焦点）' },
-        { k: 'SPARKLINE', v: 'hairline · 单 accent 高亮点' },
-        { k: 'LIVE TAG', v: '右上 accent 圆点 + LIVE caps' },
+        { k: 'KPI CARD', v: 'big number + unit + label trio' },
+        { k: 'HOT CARD', v: 'one card gets accent corner badge (teaching focus)' },
+        { k: 'SPARKLINE', v: 'hairline · single accent highlight point' },
+        { k: 'LIVE TAG', v: 'accent dot top-right + LIVE caps' },
       ]} />
     </SubSec>
   );

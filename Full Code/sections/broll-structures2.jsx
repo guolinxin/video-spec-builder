@@ -1,35 +1,35 @@
 /* ================================================================
-   sections/broll-structures2.jsx — 08 · C 类 · 关系结构 7 款
+   sections/broll-structures2.jsx — 08 · Category C · Relational Structures (7 variants)
    tree · mindmap · matrix-2x2 · venn · layered-stack ·
    hub-spoke · grid-map
    ================================================================ */
 
 function Structures2Section() {
   return (
-    <Section id="structures2" num="08" title="B-roll · 关系结构"
-      desc="讲<b>层级 · 分类 · 定位 · 重叠</b>时用。共用语法：<em>hairline 边 + 形状即语义</em>（树=层级 / 矩阵=定位 / Venn=交集 / Stack=堆叠）。">
+    <Section id="structures2" num="08" title="B-roll · Relational Structures"
+      desc="Use for <b>hierarchy · classification · positioning · overlap</b>. Shared syntax: <em>hairline edges + shape-as-semantic</em> (tree = hierarchy / matrix = positioning / Venn = intersection / stack = layering).">
       <TreeChart /><MindMap /><Matrix2x2 /><VennDiagram />
       <LayeredStack /><HubSpoke /><GridMap />
     </Section>
   );
 }
 
-/* ── C6 · 树 / 组织图 ── */
+/* ── C6 · Tree / Org Chart ── */
 function TreeChart() {
   return (
-    <SubSec name="C6 · 树 · Tree / Taxonomy" tag="HIERARCHICAL CLASSIFICATION">
+    <SubSec name="C6 · Tree · Tree / Taxonomy" tag="HIERARCHICAL CLASSIFICATION">
       <Stage pattern="dot" label="● B-ROLL · STRUCT" labelR="08.C6">
         <div style={{ position: 'absolute', top: '6%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>LLM TAXONOMY</div>
-          <div className="cn" style={{ fontSize: 26, fontWeight: 800, marginTop: 4 }}>生成式模型的分类</div>
+          <div className="cn" style={{ fontSize: 26, fontWeight: 800, marginTop: 4 }}>Taxonomy of Generative Models</div>
         </div>
         <svg viewBox="0 0 1400 580" preserveAspectRatio="xMidYMid meet" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           <FNode x={600} y={120} w={200} h={64} label="LLM" sub="ROOT" hot />
           {[
-            { x: 120,  l: 'Encoder',    s: 'BERT 类' },
-            { x: 460,  l: 'Decoder',    s: 'GPT 类', hot: true },
-            { x: 800,  l: 'Encoder-Decoder', s: 'T5 类' },
-            { x: 1140, l: 'MoE',        s: '稀疏激活' },
+            { x: 120,  l: 'Encoder',    s: 'BERT family' },
+            { x: 460,  l: 'Decoder',    s: 'GPT family', hot: true },
+            { x: 800,  l: 'Encoder-Decoder', s: 'T5 family' },
+            { x: 1140, l: 'MoE',        s: 'Sparse activation' },
           ].map((n, i) => (
             <React.Fragment key={i}>
               <line x1={700} y1={184} x2={n.x + 140} y2={300} stroke={n.hot ? 'var(--accent)' : 'var(--line-2)'} strokeWidth="1.5" />
@@ -49,33 +49,33 @@ function TreeChart() {
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'LAYOUT', v: '上下三层 · 根 → 类 → 实例' },
-        { k: 'EDGE', v: '直线连接 · 主分支 accent' },
-        { k: 'NODE', v: '层级越深 · 矩形越小' },
+        { k: 'LAYOUT', v: 'Three tiers top-to-bottom · root → category → instance' },
+        { k: 'EDGE', v: 'Straight connectors · primary branch accent' },
+        { k: 'NODE', v: 'Deeper levels · smaller rectangles' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── C7 · 思维导图 ── */
+/* ── C7 · Mind Map ── */
 function MindMap() {
   const branches = [
-    { angle: -150, l: '数据准备', sub: ['清洗', '标注', '增广'] },
-    { angle:  -90, l: '模型训练', sub: ['超参', '损失', '调度'], hot: true },
-    { angle:  -30, l: '评估', sub: ['离线', '在线', 'A/B'] },
-    { angle:   30, l: '部署', sub: ['编排', '监控'] },
-    { angle:   90, l: '反馈', sub: ['用户', '指标', '回流'], hot: true },
-    { angle:  150, l: '安全', sub: ['对齐', '红队'] },
+    { angle: -150, l: 'Data Prep', sub: ['Cleaning', 'Labeling', 'Augmentation'] },
+    { angle:  -90, l: 'Model Training', sub: ['Hyperparams', 'Loss', 'Scheduler'], hot: true },
+    { angle:  -30, l: 'Evaluation', sub: ['Offline', 'Online', 'A/B'] },
+    { angle:   30, l: 'Deployment', sub: ['Orchestration', 'Monitoring'] },
+    { angle:   90, l: 'Feedback', sub: ['Users', 'Metrics', 'Loopback'], hot: true },
+    { angle:  150, l: 'Safety', sub: ['Alignment', 'Red Team'] },
   ];
   const cx = 700, cy = 320, r1 = 220, r2 = 360;
   const polar = (a, r) => [cx + r * Math.cos(a * Math.PI / 180), cy + r * Math.sin(a * Math.PI / 180)];
   return (
-    <SubSec name="C7 · 思维导图 · Mind Map" tag="RADIAL DECOMPOSITION">
+    <SubSec name="C7 · Mind Map" tag="RADIAL DECOMPOSITION">
       <Stage pattern="dot" label="● B-ROLL · STRUCT" labelR="08.C7">
         <svg viewBox="0 0 1400 640" preserveAspectRatio="xMidYMid meet" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           {/* center */}
           <circle cx={cx} cy={cy} r="64" fill="var(--accent)" />
-          <text x={cx} y={cy + 6} textAnchor="middle" fontFamily="var(--f-cn)" fontSize="20" fontWeight="800" fill="var(--bg)">ML 系统</text>
+          <text x={cx} y={cy + 6} textAnchor="middle" fontFamily="var(--f-cn)" fontSize="20" fontWeight="800" fill="var(--bg)">ML System</text>
           {branches.map((b, i) => {
             const [x1, y1] = polar(b.angle, r1);
             return (
@@ -99,18 +99,18 @@ function MindMap() {
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'CENTER', v: '实心 accent 圆 · 主题字反色' },
-        { k: 'BRANCH', v: '一级文字粗 800 · 二级 14px' },
-        { k: 'ANGLE', v: '主分支均匀放射 · 子分支微角度偏移' },
+        { k: 'CENTER', v: 'Solid accent circle · inverted theme text' },
+        { k: 'BRANCH', v: 'Primary text weight 800 · secondary 14px' },
+        { k: 'ANGLE', v: 'Primary branches evenly radial · sub-branches with slight angle offset' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── C8 · 2x2 矩阵 ── */
+/* ── C8 · 2×2 Matrix ── */
 function Matrix2x2() {
   const items = [
-    { qx: 0, qy: 0, x: 22, y: 28, l: '研究模型' },
+    { qx: 0, qy: 0, x: 22, y: 28, l: 'Research Models' },
     { qx: 1, qy: 0, x: 78, y: 22, l: 'GPT-4', hot: true },
     { qx: 1, qy: 0, x: 68, y: 38, l: 'Claude', hot: true },
     { qx: 0, qy: 1, x: 28, y: 72, l: 'GPT-3.5' },
@@ -118,7 +118,7 @@ function Matrix2x2() {
     { qx: 1, qy: 1, x: 82, y: 62, l: 'Gemini' },
   ];
   return (
-    <SubSec name="C8 · 2x2 矩阵 · Matrix" tag="POSITIONING / QUADRANTS">
+    <SubSec name="C8 · 2×2 Matrix · Matrix" tag="POSITIONING / QUADRANTS">
       <Stage pattern="grid" label="● B-ROLL · STRUCT" labelR="08.C8">
         <div style={{ position: 'absolute', inset: '8% 8% 8% 8%' }}>
           {/* axes */}
@@ -144,58 +144,58 @@ function Matrix2x2() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'AXES', v: '十字 hairline · 四角注象限名' },
-        { k: 'POINT', v: '色块 + 标签 · 重点项 accent + 800' },
-        { k: 'STAR', v: '理想象限角落加 ★ 提示' },
+        { k: 'AXES', v: 'Cross hairlines · quadrant names in corners' },
+        { k: 'POINT', v: 'Color block + label · highlighted items accent + 800' },
+        { k: 'STAR', v: '★ marker in ideal quadrant corner' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── C9 · Venn 图 ── */
+/* ── C9 · Venn Diagram ── */
 function VennDiagram() {
   return (
-    <SubSec name="C9 · Venn 图" tag="INTERSECTION / UNION">
+    <SubSec name="C9 · Venn Diagram" tag="INTERSECTION / UNION">
       <Stage pattern="dot" label="● B-ROLL · STRUCT" labelR="08.C9">
         <div style={{ position: 'absolute', top: '8%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>AI ENGINEER · SKILL OVERLAP</div>
-          <div className="cn" style={{ fontSize: 26, fontWeight: 800, marginTop: 4 }}>三角交集即"AI 工程师"</div>
+          <div className="cn" style={{ fontSize: 26, fontWeight: 800, marginTop: 4 }}>The triple intersection defines "AI Engineer"</div>
         </div>
         <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid meet" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           <circle cx="500" cy="340" r="200" fill="var(--accent)" fillOpacity="0.18" stroke="var(--accent)" strokeWidth="1.5" />
           <circle cx="700" cy="340" r="200" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" />
           <circle cx="600" cy="180" r="200" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" />
-          <text x="600" y="80" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="22" fontWeight="800" fill="var(--fg)">软件工程</text>
-          <text x="340" y="380" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="22" fontWeight="800" fill="var(--accent)">ML 知识</text>
-          <text x="860" y="380" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="22" fontWeight="800" fill="var(--fg)">产品直觉</text>
+          <text x="600" y="80" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="22" fontWeight="800" fill="var(--fg)">Software Engineering</text>
+          <text x="340" y="380" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="22" fontWeight="800" fill="var(--accent)">ML Knowledge</text>
+          <text x="860" y="380" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="22" fontWeight="800" fill="var(--fg)">Product Intuition</text>
           {/* center intersection */}
           <circle cx="600" cy="300" r="6" fill="var(--accent)" />
           <text x="600" y="290" textAnchor="middle" fontFamily="var(--f-mono)" fontSize="12" letterSpacing="0.16em" fill="var(--accent)">★ INTERSECTION</text>
-          <text x="600" y="330" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="20" fontWeight="800" fill="var(--fg)">AI 工程师</text>
+          <text x="600" y="330" textAnchor="middle" fontFamily="var(--f-cn)" fontSize="20" fontWeight="800" fill="var(--fg)">AI Engineer</text>
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'CIRCLE', v: '半透明填充 · hairline 描边' },
-        { k: 'HIGHLIGHT', v: '主圈 accent 18% · 其它白 6%' },
-        { k: 'INTERSECT', v: '交集中心 ★ + 名词 (整图灵魂)' },
+        { k: 'CIRCLE', v: 'Semi-transparent fill · hairline stroke' },
+        { k: 'HIGHLIGHT', v: 'Primary circle accent 18% · others white 6%' },
+        { k: 'INTERSECT', v: 'Intersection center ★ + noun (visual focal point)' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── C10 · 分层堆栈 ── */
+/* ── C10 · Layered Stack ── */
 function LayeredStack() {
   const layers = [
     { l: 'L7 · UI',       sub: 'React · Vue', },
     { l: 'L6 · API',      sub: 'REST · GraphQL · WS' },
-    { l: 'L5 · 业务',     sub: '编排 / Agent / 工作流', hot: true },
-    { l: 'L4 · 模型',     sub: 'LLM · Vision · Audio', hot: true },
-    { l: 'L3 · 数据',     sub: 'Vector / Cache / DB' },
-    { l: 'L2 · 计算',     sub: 'GPU · CPU · K8s' },
-    { l: 'L1 · 硬件',     sub: 'H100 / TPU / 网络' },
+    { l: 'L5 · Business', sub: 'Orchestration / Agent / Workflow', hot: true },
+    { l: 'L4 · Model',    sub: 'LLM · Vision · Audio', hot: true },
+    { l: 'L3 · Data',     sub: 'Vector / Cache / DB' },
+    { l: 'L2 · Compute',  sub: 'GPU · CPU · K8s' },
+    { l: 'L1 · Hardware', sub: 'H100 / TPU / Network' },
   ];
   return (
-    <SubSec name="C10 · 分层堆栈 · Layered Stack" tag="ARCHITECTURE LAYERS">
+    <SubSec name="C10 · Layered Stack" tag="ARCHITECTURE LAYERS">
       <Stage pattern="dot" label="● B-ROLL · STRUCT" labelR="08.C10">
         <div style={{ position: 'absolute', top: '6%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>AI APP · 7-LAYER STACK</div>
@@ -221,9 +221,9 @@ function LayeredStack() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'STACK', v: '上窄下宽视觉错觉 · 实际等高更稳' },
-        { k: 'L 编号', v: '左侧 mono · 从上往下递减' },
-        { k: 'FOCUS', v: '当前讨论层 · 边框 accent' },
+        { k: 'STACK', v: 'Top-narrow / bottom-wide visual illusion · equal height is more stable' },
+        { k: 'L LABEL', v: 'Left mono · descending top to bottom' },
+        { k: 'FOCUS', v: 'Current discussion layer · accent border' },
       ]} />
     </SubSec>
   );
@@ -261,15 +261,15 @@ function HubSpoke() {
         </svg>
       </Stage>
       <Params rows={[
-        { k: 'HUB', v: '中心实心 accent 圆 80px' },
-        { k: 'SPOKE', v: '6 个方向 · 主连虚线 + 重点实线' },
-        { k: 'RULE', v: 'Hub 永远在视觉中心' },
+        { k: 'HUB', v: 'Central solid accent circle 80px' },
+        { k: 'SPOKE', v: 'Six directions · primary dashed + highlighted solid' },
+        { k: 'RULE', v: 'Hub always at visual center' },
       ]} />
     </SubSec>
   );
 }
 
-/* ── C12 · 网格地图 ── */
+/* ── C12 · Grid Map ── */
 function GridMap() {
   // 8x5 cluster grid with active/idle/error states
   const cols = 12, rows = 6;
@@ -283,11 +283,11 @@ function GridMap() {
   }
   const colorMap = { active: 'var(--accent)', idle: 'rgba(255,255,255,.16)', error: 'var(--red)' };
   return (
-    <SubSec name="C12 · 网格地图 · Grid Map" tag="CLUSTER TOPOLOGY">
+    <SubSec name="C12 · Grid Map" tag="CLUSTER TOPOLOGY">
       <Stage pattern="grid" label="● B-ROLL · STRUCT" labelR="08.C12">
         <div style={{ position: 'absolute', top: '6%', left: '6%' }}>
           <div className="meta" style={{ color: 'var(--accent)' }}>GPU CLUSTER · 72 NODES</div>
-          <div className="cn" style={{ fontSize: 26, fontWeight: 800, marginTop: 4 }}>实时拓扑视图</div>
+          <div className="cn" style={{ fontSize: 26, fontWeight: 800, marginTop: 4 }}>Real-Time Topology View</div>
         </div>
         <div style={{ position: 'absolute', top: '6%', right: '6%', display: 'flex', gap: 18 }}>
           {[{ s: 'ACTIVE', c: colorMap.active, n: 32 }, { s: 'IDLE', c: colorMap.idle, n: 38 }, { s: 'ERROR', c: colorMap.error, n: 2 }].map(L => (
@@ -309,9 +309,9 @@ function GridMap() {
         </div>
       </Stage>
       <Params rows={[
-        { k: 'GRID', v: '12×6 单元格 · 间距 8px' },
-        { k: 'STATE', v: '色映射：active accent · idle 16%白 · error red' },
-        { k: 'ANIM', v: 'active 单元呼吸 pulse · 错位 delay' },
+        { k: 'GRID', v: '12×6 cells · 8px gap' },
+        { k: 'STATE', v: 'Color mapping: active accent · idle 16% white · error red' },
+        { k: 'ANIM', v: 'Active cells pulse · staggered delay' },
       ]} />
     </SubSec>
   );

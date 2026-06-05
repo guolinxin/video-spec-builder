@@ -1,106 +1,106 @@
 ---
 name: workflow-iteration
-description: 迭代模式工作流。用户修改已有 video-spec.md 时使用。
+description: Iteration mode workflow. Used when the user modifies an existing video-spec.md.
 ---
 
-# 迭代模式工作流
+# Iteration Mode Workflow
 
-[触发条件]
-    用户在已有 video-spec.md 的项目里提出修改 / 新增 / 调整 / 替换 / 风格变更。
+[Trigger]
+    User requests a change / addition / adjustment / replacement / style shift in a project that already has video-spec.md.
 
-[工作流]
-    接住需求 → 判断变更深度 → 按深度追问 → 冲突检测 → 更新 spec → 告诉用户
+[Workflow]
+    Catch the request → assess change depth → probe by depth → conflict check → update spec → tell user
 
-[顶层规则]
-    - 无缝衔接，不开场白，不重新跑 Phase 1-5
-    - 直接读现有 spec，接住需求，按变更深度追问
-    - 不打断用户工作流
-    - 组合变更（一次包含多个层级）按最重的处理
-
----
-
-## 重度变更
-
-[触发条件]
-    涉及 Phase 1 必问项变更 / 整体节奏类型变更 / 受众或核心信息变更。
-
-[硬指标]
-    能回答"这个变更怎么影响整支视频"——为什么改 / 影响哪些场景 / 整体节奏怎么变 / 原素材还能用吗 / 核心信息要不要跟着改。
-
-[围栏]
-    - 不接受"全部重做"——这是 0-1 模式，应该归档旧 spec
-    - 必须二次确认（先生成"预计改动总览"让用户确认 OK 再动 spec 文件）
-
-[完成后衔接文案]
-    ✓ "改动总览我先列出来——[受影响 Scene 列表 + 整体节奏变化 + 素材增删]。你确认 OK 我再动 spec 文件。"
+[Top-level rules]
+    - Seamless handoff — no opening spiel, don't re-run Phase 1–5
+    - Read existing spec, catch the request, probe by change depth
+    - Don't interrupt the user's workflow
+    - Combined changes (multiple layers at once) → handle at the heaviest depth
 
 ---
 
-## 中度变更
+## Major Change
 
-[触发条件]
-    加新场景 / 删场景 / 替换组件 / 大段重排。
+[Trigger]
+    Phase 1 must-ask items change / overall pacing type changes / audience or core message changes.
 
-[硬指标]
-    能回答"具体改成什么样 + 与前后镜头怎么衔接"——改哪个 Scene / 改成什么组件 / 文案 / 时长 / 转场要不要跟着改。
+[Hard criteria]
+    Can answer "how does this change affect the whole video" — why change / which scenes affected / how overall pacing shifts / can original assets still be used / does core message need to change.
 
-[围栏]
-    - 不允许悄悄改其他 Scene（只改用户指定的）
-    - 时长变了必须重新核对总时长与节奏档位
-    - 用户卡住时给 2-3 个具体方案 + 优劣，不开放问
+[Fences]
+    - Reject "redo everything" — that's 0-to-1 mode; archive the old spec instead
+    - Must confirm twice (produce a "expected change overview" for user OK before touching the spec file)
 
-[完成后衔接文案]
-    ✓ "Scene 3 换成 `aroll.timeline-card`，时长从 2s 拉到 3s，前一镜头转场改成淡入。总时长 +1s。这样改我去动文件。"
-
----
-
-## 轻度变更
-
-[触发条件]
-    调整旁白 / 屏显文案 / 改 accent 色 / 改装饰层 / 时长 ±0.5s 内。
-
-[硬指标]
-    确认理解正确——改什么 / 改成什么。
-
-[围栏]
-    - 不优化用户已确认的文案（除非明确要求）
-    - 不改 markdown 结构
-
-[完成后衔接文案]
-    ✓ "accent 色从 #FF6A00 改成 #FF8C42，其他不动。"
+[Transition copy after completion]
+    ✓ "Here's the change overview first — [affected Scenes + overall pacing shift + asset add/remove]. I'll update the spec file once you confirm."
 
 ---
 
-## [冲突检测]
+## Medium Change
 
-加载现有 video-spec.md，新需求如果与现有内容冲突，必须直接指出 + 给方案让用户选。
+[Trigger]
+    Add scene / delete scene / replace component / large reorder.
 
-[常见冲突类型]
-    - 节奏冲突（总时长超 / 不够）
-    - 组件冲突（与已选场景类型组合不符）
-    - 素材冲突（依赖的素材原 spec 没有）
-    - 转场冲突（触发硬规则，如反白闪屏 ≤ 2 次、Shader 转场每 3 Scene ≤ 1 次）
-    - 核心信息冲突（新内容稀释 takeaway）
+[Hard criteria]
+    Can answer "exactly what it becomes + how it connects to neighbors" — which Scene / which component / copy / duration / whether transitions need updating.
 
-[停止追问的标准]
-    - 能直接动手改 video-spec.md，不需要再猜或假设
-    - 改完之后用户不会说"不是这个意思"
+[Fences]
+    - Don't silently change other Scenes (only what the user specified)
+    - If duration changes, re-check total runtime against pacing tier
+    - If user is stuck, offer 2–3 concrete options with pros/cons — no open-ended questions
 
----
-
-## [更新文档]
-
-[纪律]
-    - 在原 spec 上精确修改（不另存新文件）
-    - 不改文档 markdown 结构（标题层级 / 列表风格）
-    - 不删除用户的注释 / 备注
-    - 改了分镜表 → 用 `references/spec-rules.md` 的字段约束和 [交付前自检清单] 重新核对
-      （组件 ID 真实性 / 总时长误差 / 反白闪屏额度 / 转场字段齐全）
+[Transition copy after completion]
+    ✓ "Scene 3 becomes `aroll.timeline-card`, duration 2s → 3s, previous shot transition to fade-in. Total +1s. I'll update the file if that works."
 
 ---
 
-## [完成后告诉用户]
+## Minor Change
 
-    video-spec.md 已更新。
-    - 改动总览：[哪些 Scene / 总时长怎么变 / 素材新增项]
-    - 如果影响渲染，输入 /hyperframes 重新生成视频
+[Trigger]
+    Adjust narration / on-screen copy / accent color / decoration layer / duration ±0.5s.
+
+[Hard criteria]
+    Confirm understanding — what to change / change to what.
+
+[Fences]
+    - Don't "improve" copy the user already approved (unless they ask)
+    - Don't change markdown structure
+
+[Transition copy after completion]
+    ✓ "Accent color #FF6A00 → #FF8C42; everything else unchanged."
+
+---
+
+## [Conflict Detection]
+
+Load existing video-spec.md. If the new request conflicts with existing content, call it out and offer options.
+
+[Common conflict types]
+    - Pacing conflict (total duration over / under)
+    - Component conflict (doesn't match chosen scene type mix)
+    - Asset conflict (dependency not in original spec)
+    - Transition conflict (hard rules, e.g. inversion flash ≤ 2, shader transition ≤ 1 per 3 Scenes)
+    - Core message conflict (new content dilutes takeaway)
+
+[Stop probing when]
+    - You can edit video-spec.md directly without guessing
+    - After the edit, the user won't say "that's not what I meant"
+
+---
+
+## [Update Document]
+
+[Discipline]
+    - Edit the original spec precisely (don't save a new file)
+    - Don't change markdown structure (heading levels / list style)
+    - Don't delete user comments / notes
+    - If shot list changed → re-run `references/spec-rules.md` field constraints and [pre-delivery checklist]
+      (component ID validity / total duration error / inversion flash budget / transition fields complete)
+
+---
+
+## [Tell user when done]
+
+    video-spec.md updated.
+    - Change overview: [which Scenes / how total duration changed / new assets]
+    - If rendering is affected, run /hyperframes to regenerate the video

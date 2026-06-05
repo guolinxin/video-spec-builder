@@ -1,10 +1,10 @@
 ---
 name: Spec Mono
 colors:
-  primary: "#000000"        # 纯黑底
-  on-primary: "#FFFFFF"     # 纯白前景
-  surface: "#0A0A0A"        # 卡片表面
-  accent: "#FFFFFF"         # 单 accent · 默认纯白(Grok mono)· 可覆盖成任意 hex
+  primary: "#000000"        # Pure black background
+  on-primary: "#FFFFFF"     # Pure white foreground
+  surface: "#0A0A0A"        # Card surface
+  accent: "#FFFFFF"         # Single accent · default pure white (Grok mono) · can be overridden to any hex
 typography:
   hero:
     fontFamily: Barlow Semi Condensed
@@ -63,82 +63,80 @@ motion:
 
 # Spec Mono
 
-视觉语言借鉴 **SpaceX 发射页 × xAI/Grok × X(Twitter)**。源自一套 Claude Design
-产出的设计系统(原始产出归档在 `assets/`)。
+Visual language draws from **SpaceX launch pages × xAI/Grok × X (Twitter)**. Derived from a design system produced by Claude Design (original output archived in `assets/`).
 
-配套文件:
-- `tokens.css` —— 可复用 CSS(变量 + spec-sheet 装饰类 + 入场 keyframes),写镜头时直接抄。
-- `spec-mono-components.md` —— 69 个组件的逐个细规格,做具体镜头时查。
+Companion files:
+- `tokens.css` —— Reusable CSS (variables + spec-sheet decorative classes + entrance keyframes); copy directly when writing shots.
+- `spec-mono-components.md` —— Per-component specs for all 69 components; consult when building specific shots.
 
 ## Overview
 
-像航天任务控制台,不像 PPT。冷静、锋利、工程感。信息靠**字重悬崖、留白、
-1px hairline、mono caps 注脚**说话 —— 不靠颜色堆砌、不靠阴影发光、不靠装饰插画。
+Like a mission control console, not a slide deck. Cool, sharp, engineering-grade. Information speaks through **weight cliffs, white space, 1px hairlines, and mono-caps footnotes** —— not color stacking, glow/shadow, or decorative illustration.
 
-**适合**:技术教程、产品演示、AI / 开发者向、数据密集型内容。
-**不适合**:面向大众的轻松 / 温暖 / 活泼内容 —— 那类换主题,别硬套。
+**Best for**: technical tutorials, product demos, AI / developer-facing, data-dense content.
+**Not for**: casual / warm / playful mass-market content —— switch themes for those; don't force-fit.
 
 ## Colors
 
-纯黑白底子,对比 21:1(WCAG AAA)。
+Pure black-and-white base with 21:1 contrast (WCAG AAA).
 
-- `primary #000000` —— 纯黑场景底。
-- `on-primary #FFFFFF` —— 纯白主文字。次级文字用白色降透明度:次级 66%、注脚 42%、极弱 18%。**层级靠透明度,不靠新颜色。**
-- `surface #0A0A0A` —— 卡片 / 面板表面。再抬一层用 `#141414`。
-- `accent` —— **整套系统唯一的用色**。默认纯白(Grok 式纯单色)。可覆盖成任意 hex(如 SpaceX 仪表绿 `#00E07A`);无论换成什么,**一屏只允许出现一处 accent**。
-- hairline 边线:`rgba(255,255,255,0.08)` 默认 / `0.16` 强 / `0.28` 最强。
-- 状态色仅用于数据图表:绿 `#00E07A`、红 `#FF3333`、黄 `#FFC700`。正文 / 标题 / 装饰一律不用。
+- `primary #000000` —— Pure black scene background.
+- `on-primary #FFFFFF` —— Pure white primary text. Secondary text uses reduced white opacity: secondary 66%, caption 42%, very faint 18%. **Hierarchy via opacity, not new colors.**
+- `surface #0A0A0A` —— Card / panel surface. Next elevation level uses `#141414`.
+- `accent` —— **The only color variable in the entire system**. Default pure white (Grok-style pure mono). Can be overridden to any hex (e.g. SpaceX instrument green `#00E07A`); whatever the value, **only one accent may appear on screen at a time**.
+- Hairline borders: `rgba(255,255,255,0.08)` default / `0.16` strong / `0.28` strongest.
+- Status colors for data charts only: green `#00E07A`, red `#FF3333`, yellow `#FFC700`. Never used in body copy, headings, or decoration.
 
 ## Typography
 
-| 角色 | 字体 | 用途 |
+| Role | Font | Use |
 |---|---|---|
-| hero | Barlow Semi Condensed 700 | 海报大字 · 章节大标题 |
-| stat | Barlow Semi Condensed 700 | 大数字(tabular-nums) |
-| body | Space Grotesk 400 | 正文 · 中英文标题 |
-| label | JetBrains Mono 500 | 编号 · 时间码 · 任务码 · 注脚 |
-| quote | Instrument Serif 400 italic | 斜体强调字 · 引用块 · 等式运算符 |
+| hero | Barlow Semi Condensed 700 | Poster-scale type · chapter headings |
+| stat | Barlow Semi Condensed 700 | Large numbers (tabular-nums) |
+| body | Space Grotesk 400 | Body copy · Chinese/English headings |
+| label | JetBrains Mono 500 | Index numbers · timecodes · mission codes · footnotes |
+| quote | Instrument Serif 400 italic | Italic emphasis · pull quotes · equation operators |
 
-- 中文用 **Source Han Sans SC(思源黑体)**,字重 400 / 700 / 900。
-  (注:HyperFrames 字体规范禁用 Noto Sans 拉丁族;思源黑体 = Noto Sans SC 中文变体,是本主题刻意选定的 CJK 字体,保留。)
-- **字重悬崖**:只用 `400 / 600 / 700 / 800`,**跳过 500**。相邻层级故意拉开两档。
-- **字距**:hero / stat 大字 `-0.03 ~ -0.04em`;body `-0.025em → 0`;label mono caps `0.18 ~ 0.22em`;任务字串(`SCN-03` / `T-MINUS`)`0.32em`。
-- **行高**:标题 `0.86 ~ 1.0`,正文 `1.55 ~ 1.7`。
-- **招牌动作**:一句几何 sans 里挑 **1 个关键词**换 `quote` 斜体衬线 + accent 色做强调。整句斜体只用于引用块。
+- Chinese uses **Source Han Sans SC**, weights 400 / 700 / 900.
+  (Note: HyperFrames font rules disallow Noto Sans Latin families; Source Han Sans SC = Noto Sans SC Chinese variant — this theme deliberately selects it as the CJK font; keep it.)
+- **Weight cliff**: use only `400 / 600 / 700 / 800`, **skip 500**. Adjacent tiers intentionally skip two steps apart.
+- **Letter-spacing**: hero / stat large type `-0.03 ~ -0.04em`; body `-0.025em → 0`; label mono caps `0.18 ~ 0.22em`; mission strings (`SCN-03` / `T-MINUS`) `0.32em`.
+- **Line height**: headings `0.86 ~ 1.0`, body `1.55 ~ 1.7`.
+- **Signature move**: pick **one keyword** in a geometric sans line and swap to `quote` italic serif + accent color for emphasis. Full-line italic only for pull quotes.
 
 ## Elevation
 
-**全程 flat —— 0 阴影。** 任何元素都不用 box-shadow / drop-shadow。
+**Flat throughout —— 0 shadow.** No element uses box-shadow / drop-shadow.
 
-深度只靠两样东西:**1px hairline 边框** + **表面色阶**(`#000000` → `#0A0A0A` → `#141414`)。
-强调靠换色和字号悬崖,绝不靠发光 / 投影。
+Depth comes from only two things: **1px hairline borders** + **surface elevation steps** (`#000000` → `#0A0A0A` → `#141414`).
+Emphasis via color swap and size cliffs — never glow / drop shadow.
 
 ## Components
 
-下列是常用范式的概括。**每个组件的精确规格(描边宽度、比例、布局)见 `spec-mono-components.md`** —— 做具体镜头时查那份。复用 CSS 见 `tokens.css`。
+Below is a summary of common patterns. **Exact per-component specs (stroke width, proportions, layout) live in `spec-mono-components.md`** —— consult that when building specific shots. Reusable CSS in `tokens.css`.
 
-- **卡片 / 面板**:`{surface}` 底 + 1px hairline 边 + `rounded.lg (8px)`。可在四角贴十字针脚(`.cross`,12px 臂 · 1px 描边)。padding 用 `spacing.xl`。
-- **字幕高亮**:逐词字幕,默认 42% 白,念到的词换 `{accent}` + 3px accent 底线扫入,念过的词回纯白。无底色块。
-- **大数字**:Barlow Semi Condensed · `{accent}` · tabular-nums;单位缩到 0.32em、纯白、上偏。
-- **引用块**:Instrument Serif italic;一个关键词换 `{accent}`;巨型左引号 opacity 0.18 当装饰。
-- **反白闪屏**:`{primary}` ↔ 纯白用 `steps(1)` 瞬切,6-12 帧,**每支视频 ≤ 2 次**。
-- **装饰层(atmosphere)**:场景背景三选一 —— `dot-grid` / `hairline-rules` / `scan-lines`,一个场景最多 1 种;边角用 `registration-marks`(十字针脚)+ mono caps 任务编号。装饰是工程图味,不是花边,不叠加。
-- **图标**:Lucide 图标集,描边默认 1.5px(与 hairline 等重),颜色 `on-primary` 66%,被强调才 accent。
+- **Cards / panels**: `{surface}` background + 1px hairline border + `rounded.lg (8px)`. Optional corner registration crosses (`.cross`, 12px arms · 1px stroke). Padding uses `spacing.xl`.
+- **Subtitle highlight**: word-by-word subtitles, default 42% white, spoken word switches to `{accent}` + 3px accent underline sweep-in, spoken words return to pure white. No background block.
+- **Big numbers**: Barlow Semi Condensed · `{accent}` · tabular-nums; unit scaled to 0.32em, pure white, shifted up.
+- **Pull quote**: Instrument Serif italic; one keyword switches to `{accent}`; giant left quote mark at opacity 0.18 as decoration.
+- **Inversion flash**: `{primary}` ↔ pure white via `steps(1)` instant cut, 6–12 frames, **≤ 2 times per video**.
+- **Atmosphere layer**: scene background — pick one of `dot-grid` / `hairline-rules` / `scan-lines`, max 1 per scene; corners use `registration-marks` (cross hairs) + mono-caps mission index. Decoration reads as engineering drawing, not ornament — don't stack.
+- **Icons**: Lucide icon set, default 1.5px stroke (matches hairline weight), color `on-primary` 66%, accent only when emphasized.
 
 ## Do's and Don'ts
 
 **Do**
-- 纯黑底 + 纯白字,层级靠透明度与字号悬崖。
-- 一屏只用一处 accent —— 它永远代表"此刻的焦点"。
-- 1px hairline、`rounded.sm (2px)` 默认圆角、8-pt 间距栅格。
-- 数字一律 `font-variant-numeric: tabular-nums`。
-- 入场用 `expo.out`,位移 8-16px,每个元素都从不可见动画进场。
+- Pure black background + pure white text; hierarchy via opacity and size cliffs.
+- One accent per screen —— it always means "the current focal point."
+- 1px hairlines, `rounded.sm (2px)` default radius, 8-pt spacing grid.
+- Numbers always use `font-variant-numeric: tabular-nums`.
+- Entrance uses `expo.out`, 8–16px displacement, every element animates in from invisible.
 
 **Don't**
-- ❌ 不用阴影 / 发光 / 投影(0 阴影是铁律)。
-- ❌ 不用渐变 —— 唯一例外:面积图填充 `accent 42% → 0%`。
-- ❌ 不用装饰插画 / 手绘人物(章节封面插画除外)。
-- ❌ 一屏不出现第二处 accent 色。
-- ❌ 不用 2px 描边、不用胶囊全圆角、不用 32/48/56 这类非 8-pt 间距。
-- ❌ 不用回弹(bounce)缓动 —— 唯一例外:贴纸式标签的弹入。
-- ❌ 字重不用 500(破坏对比悬崖)。
+- ❌ No shadows / glow / drop shadow (0 shadow is non-negotiable).
+- ❌ No gradients —— sole exception: area chart fill `accent 42% → 0%`.
+- ❌ No decorative illustration / hand-drawn figures (chapter cover illustrations excepted).
+- ❌ No second accent color on screen.
+- ❌ No 2px strokes, no pill/full-round corners, no non–8-pt spacing like 32/48/56.
+- ❌ No bounce easing —— sole exception: sticker-style label pop-in.
+- ❌ Don't use weight 500 (breaks the contrast cliff).
