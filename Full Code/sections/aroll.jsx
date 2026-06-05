@@ -251,13 +251,16 @@ function Crosses() {
 }
 
 function UseCase({ label, body }) {
+  // `body` is repo-authored copy with optional <em> emphasis; recolor the
+  // emphasis inline, then hand it to the shared trusted-input boundary.
+  const html = body.replace(/<em>(.*?)<\/em>/g, '<em style="color:var(--accent);font-style:normal">$1</em>');
   return (
     <div style={{
       background: 'var(--bg-card)', border: '1px solid var(--line)',
       borderRadius: 8, padding: '18px 20px',
     }}>
       <div className="mono" style={{ fontSize: 11, letterSpacing: '0.2em', color: 'var(--accent)', marginBottom: 10 }}>{label}</div>
-      <div className="cn" style={{ fontSize: 13, color: 'var(--fg-2)', lineHeight: 1.6 }} dangerouslySetInnerHTML={{ __html: body.replace(/<em>(.*?)<\/em>/g, '<em style="color:var(--accent);font-style:normal">$1</em>') }} />
+      <div className="cn" style={{ fontSize: 13, color: 'var(--fg-2)', lineHeight: 1.6 }} dangerouslySetInnerHTML={trustedHTML(html)} />
     </div>
   );
 }

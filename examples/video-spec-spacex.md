@@ -48,7 +48,7 @@ Please generate a video according to the following script. Below is the script a
 - Pacing baseline: ~9s average per shot, but deliberately uneven—hook ~5s/shot to grab attention, narrative 8–12s, climax "return → hover → catch → hold" cuts to 2–7s, hover beat deliberately sparse. Narration ~560 words (English); climax deliberately drains narration so the picture speaks
 
 
-## 4. Visual Standards
+## 4. Visual Guidelines
 
 - Visual theme: Shadow Cut (dark and sharp · film-noir feel, best fit for "calm historical narration")
 - Accent color: #FF6B3D (orange, echoing SpaceX flame red—warmer than Shadow Cut default blood red, more "taxi")
@@ -62,7 +62,7 @@ Please generate a video according to the following script. Below is the script a
 
 | Type | Name | Path / Notes |
 |---|---|---|
-| Narration script | script.txt | See each Scene's "Narration copy" field in § 6 storyboard; ~560 words total |
+| Narration script | script.txt | See each Scene's "Narration copy" field in § 6 shot list; ~560 words total |
 | Annotation data | inline | All on-screen label values (rocket dimensions / speed / altitude / timecodes / serial numbers) are inline in each Scene's visual description |
 
 ### Assets to Generate
@@ -110,12 +110,12 @@ Please generate a video according to the following script. Below is the script a
   Acceptance criteria: < 1s/clip (boom may be 2s) · crisp highs · CC0
 
 
-## 6. Storyboard
+## 6. Shot List
 
 ### Scene 01 · 0.0s–5.0s · hook · Cold open
 
 - Type: B-roll · real footage dominant
-- Components: Real footage full-screen + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "October 2024. A 122-meter tower used two mechanical arms to catch a 70-meter rocket—in midair."
 - On-screen copy: No subtitle bar. On-screen labels: leader from tower body "Launch tower · 122 m", leader from booster "Super Heavy · 70 m", top-right timecode "2024.10"
 - Expected content: No explanation, no setup—drop the film's most stunning image (Mechazilla catching the booster) straight on the viewer
@@ -130,7 +130,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 02 · 5.0s–10.0s · hook · Rewind 22 years
 
 - Type: B-roll · real footage rapid montage + labels
-- Components: Real footage rapid montage + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "Twenty-two years ago, the company that built this rocket couldn't even keep one alive long enough to reach the sky."
 - On-screen copy: Three rockets in sequence with labels "Falcon 1 · 2008 · 21 m" → "Falcon 9 · 2015 · 70 m" → "Starship · 2024 · 121 m"
 - Expected content: Use the three-rocket size ladder to establish "how far 22 years went" in half a second
@@ -145,7 +145,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 03 · 10.0s–15.0s · hook · Pose the thesis
 
 - Type: B-roll · big-type poster
-- Components: broll-hero.big-type
+- Component: broll-hero.big-type
 - Narration copy: "In those 22 years, SpaceX really did one thing—turn rockets into taxis."
 - On-screen copy: Hero type "Turning rockets into taxis"; "taxis" in accent color
 - Expected content: Establish the film's core metaphor as the title, the yardstick for the next 6 beats
@@ -160,7 +160,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 04 · 15.0s–23.0s · foundation · Falcon 1 fourth flight
 
 - Type: B-roll + A-roll subtitle overlay + labels
-- Components: aroll.subtitle-highlight (main line + real footage background) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.subtitle-highlight
 - Narration copy: "September 28, 2008, Falcon 1's fourth test flight. The first three—all blew up. The money in the company's account—burned through."
 - On-screen copy: Karaoke word-by-word highlight on full narration; on-screen labels: top-left timestamp "2008.09.28 · Kwajalein", mid-frame "Flight 4" pop next to rocket, "First 3 ✗ ✗ ✗" three red X stamps
 - Expected content: Establish 2008 = SpaceX's "taxi rolls off the line day"—and that it almost didn't survive (three failures + money gone)
@@ -175,7 +175,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 05 · 23.0s–30.0s · foundation · The orbit moment
 
 - Type: B-roll + labels
-- Components: Real footage (orbit / Earth arc) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "Nine minutes and thirty-one seconds later, it reached orbit. SpaceX became the first private company to put a liquid rocket into space. But that was only the day the taxi rolled off the line."
 - On-screen copy: Large timer label pops upper-center "T+09:31 · Orbit"; smaller label below "First private liquid rocket to orbit"
 - Expected content: Anchor the historical "orbit success" moment with a specific timecode (9 minutes 31 seconds)
@@ -190,7 +190,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 06 · 30.0s–40.0s · recovery · Seven years and the 2015 launch
 
 - Type: B-roll + A-roll subtitle overlay + labels
-- Components: aroll.subtitle-highlight (main line + real footage background) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.subtitle-highlight
 - Narration copy: "For the next seven years, SpaceX worked on something everyone said was impossible—making the first stage fly home after the job. December 21, 2015, Falcon 9 delivered eleven Orbcomm satellites to orbit."
 - On-screen copy: Karaoke subtitles; on-screen labels: top-left timestamp "2015.12.21", payload label "11 × ORBCOMM" on Falcon 9 fairing position
 - Expected content: Set up the 2015 recovery mission—specific date + payload, establish expectation "this launch is coming home"
@@ -205,7 +205,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 07 · 40.0s–48.0s · recovery · Back down at Landing Zone 1
 
 - Type: B-roll · real footage dominant + labels
-- Components: Real footage (LZ-1 landing) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "Then the first stage turned around and settled back onto Landing Zone 1."
 - On-screen copy: On-screen labels: descent speed readout decreases with footage "Speed ↓ 320 → 0 km/h", leader to ground landing point "Landing Zone 1" tag, at touchdown "First land recovery" stamp
 - Expected content: Pair the counterintuitive "rocket flies back and lands" image with speed readout so viewers feel controlled deceleration
@@ -220,7 +220,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 08 · 48.0s–55.0s · recovery · Musk quote
 
 - Type: B-roll · pull quote block
-- Components: broll-hero.pull-quote
+- Component: broll-hero.pull-quote
 - Narration copy: "Musk shouted it on the spot—no one had ever brought an orbital-class booster back intact."
 - On-screen copy: Pull-quote block "No one has ever brought an orbital class booster back intact." — Elon Musk, 2015
 - Expected content: Use Musk's original English line to underscore the historical weight of the moment
@@ -235,7 +235,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 09 · 55.0s–67.0s · reuse · B1021 refurbished and flown again
 
 - Type: B-roll + A-roll subtitle overlay + typewriter + labels
-- Components: aroll.subtitle-highlight (main line + real footage background) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.subtitle-highlight
 - Narration copy: "But getting it back was only the first half. The real milestone came March 30, 2017. Booster B1021—it had flown CRS-8 in 2016—this time refurbished, refueled, re-ignited, and sent SES-10 to orbit."
 - On-screen copy: Karaoke subtitles; ~61s typewriter prints reuse timeline "B1021 · 2016 CRS-8 ──→ 2017 SES-10"; "B1021" label leader on booster body in frame
 - Expected content: Clarify "the same physical rocket ran two fares"—B1021 serial + timeline of two missions
@@ -250,7 +250,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 10 · 67.0s–75.0s · reuse · The same rocket (emphasis pause)
 
 - Type: B-roll · big-type emphasis
-- Components: broll-hero.big-type
+- Component: broll-hero.big-type
 - Narration copy: "The same rocket. A second fare."
 - On-screen copy: Hero type lands in two beats "The same rocket" → "2nd flight", "2nd" in accent color
 - Expected content: Isolate the film's "reuse" pivot in one emphasis shot
@@ -265,7 +265,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 11 · 75.0s–88.0s · economics · Expendable rockets and the taxi analogy
 
 - Type: B-roll · abstract analogy
-- Components: broll-abstract.analogy
+- Component: broll-abstract.analogy
 - Narration copy: "That flight rewrote launch economics. For sixty years, every rocket was single-use. Picture this: you hail a cab, the driver drops you off, then drives the whole car into the river and blows it up."
 - On-screen copy: Analogy diagram—left "rocket" icon + right "taxi" icon linked by equals; on "drives into the river and blows up" taxi icon falls below waterline, bursts
 - Expected content: Use the absurd "cab into the river" analogy so viewers instantly grasp how wasteful expendable rockets are
@@ -280,7 +280,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 12 · 88.0s–100.0s · economics · Data reveal
 
 - Type: B-roll · data-driven
-- Components: broll-charts.bar-chart
+- Component: broll-charts.bar-chart
 - Narration copy: "After reuse, Falcon 9 launch cost dropped by more than half. Today SpaceX launches over a hundred times a year—most of global commercial launch."
 - On-screen copy: Bar chart—left group "Traditional rocket · expendable" vs "Falcon 9 · reusable" cost bars (latter half height); right group "SpaceX annual launches 2010 → 2024", 2 to 100+; bottom-right source "SpaceX official launch records · 2010–2024"
 - Expected content: Land "reuse = economic disruption" with real bar chart data
@@ -295,7 +295,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 13 · 100.0s–108.0s · climax · More than landing
 
 - Type: B-roll + A-roll subtitle overlay + labels
-- Components: aroll.subtitle-highlight (main line + real footage background) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.subtitle-highlight
 - Narration copy: "But Musk wasn't satisfied with 'fly up, come back down.' He wanted—fly up, catch it directly. October 13, 2024, Starship's fifth test flight."
 - On-screen copy: Karaoke subtitles; "catch it directly" four characters marker sweep heavy; top-left timestamp "2024.10.13 · Starship IFT-5"
 - Expected content: Establish climax thesis—"landing" isn't enough, target is "catch"
@@ -310,7 +310,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 14 · 108.0s–117.0s · climax · Super Heavy return
 
 - Type: B-roll · real footage dominant + labels
-- Components: Real footage (Super Heavy return) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "Super Heavy lifted off, went around Earth, then turned back toward Starbase's launch tower. Note—it has no landing legs."
 - On-screen copy: On-screen labels: altitude readout "Altitude ↓", speed readout sync decrease; on "Note—it has no landing legs", leader to where landing legs would be on booster bottom, pop label "No landing legs"
 - Expected content: Establish spatial "it's flying back toward the tower", hook with "no landing legs" label—it must be caught, no other out
@@ -325,7 +325,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 15 · 117.0s–124.0s · climax · Seven seconds hover (negative space)
 
 - Type: B-roll · real footage dominant + labels (deliberately sparse shot)
-- Components: Real footage (hover) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "Hover. Seven seconds."
 - On-screen copy: Minimal hover timer slightly below center, "01" to "07", one tick per second, accent color
 - Expected content: Push film tension to peak—via "nearly drained narration + one ticking timer" breath-held effect
@@ -340,7 +340,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 16 · 124.0s–130.0s · climax · Chopsticks close (impact + hold)
 
 - Type: B-roll · real footage dominant + labels
-- Components: Real footage (chopstick close + hold) + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "The tower's two mechanical arms—closed."
 - On-screen copy: At close instant center frame "Caught" stamp slams in; during hold quiet corner float "Super Heavy · Caught"
 - Expected content: Pay off all setup—chopsticks close, catch booster, "taxi drives itself back to the station" metaphor lands here
@@ -355,7 +355,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 17 · 130.0s–145.0s · paradigm · Why no landing legs
 
 - Type: B-roll · abstract contrast + labels
-- Components: broll-abstract.versus + aroll.keyword-sticker (annotation layer)
+- Component: broll-abstract.versus
 - Narration copy: "Why no landing legs? With wheels, it's a car; without them, it's just a rocket. Musk never wanted a recoverable rocket—he wanted a machine that refuels and flies again like an airliner."
 - On-screen copy: Versus card first half—left "Recoverable rocket", right "Refuel-and-fly-again machine"; on "with wheels it's a car" pop contrast label
 - Expected content: Translate climax visual shock into an idea—Musk pursued not recovery but "airline-grade refly"
@@ -370,7 +370,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 18 · 145.0s–160.0s · paradigm · Two paradigms
 
 - Type: B-roll · abstract contrast
-- Components: broll-abstract.versus
+- Component: broll-abstract.versus
 - Narration copy: "Falcon 9 is a taxi that ran two fares. Starship is a taxi that drove itself back to the station. These are two completely different paradigms."
 - On-screen copy: Versus card final state—left "Falcon 9" + sub "Taxi, two fares" (gray), right "Starship" + sub "Drives itself back to the station" (accent), center "vs"
 - Expected content: Use versus component to show "Falcon 9 and Starship are two paradigms, not iteration" at a glance
@@ -385,7 +385,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 19 · 160.0s–172.0s · close · 22-year timeline
 
 - Type: B-roll · real footage rapid montage + labels
-- Components: Real footage rapid montage + aroll.keyword-sticker (annotation layer)
+- Component: aroll.keyword-sticker
 - Narration copy: "2002 to 2024, twenty-two years. From a small rocket that could barely reach orbit, to a tower that can catch a booster in midair."
 - On-screen copy: Bottom timeline "2002 ●········● 2024", 4 nodes (2008 / 2015 / 2017 / 2024) light in sequence with narration, small label pop per node
 - Expected content: Collapse film's 4 nodes into one 22-year timeline, structural memory anchor
@@ -400,7 +400,7 @@ Please generate a video according to the following script. Below is the script a
 ### Scene 20 · 172.0s–180.0s · close · Hero type echo
 
 - Type: B-roll · big-type poster
-- Components: broll-hero.big-type (echoes Scene 03)
+- Component: broll-hero.big-type (echoes Scene 03)
 - Narration copy: "SpaceX didn't invent the rocket. It simply—turned rockets into taxis."
 - On-screen copy: Hero type "Turning rockets into taxis", this time "taxis" largest, dominant; above timeline "2002 ········· 2024" (22 dots); bottom small type #SpaceX
 - Expected content: Close with hero type echoing hook + 22-dot timeline, nail core message as one screenshot-worthy line
@@ -439,7 +439,7 @@ Please generate a video according to the following script. Below is the script a
   - 127.0s · thump.wav (Scene 16 chopstick close, followed by 0.3s full silence) · volume 0.7
 
 
-## 8. References & Anti-patterns
+## 8. References & Counter-examples
 
 - Positive references:
   - Johnny Harris (YouTube)—9/10 like his "real footage + on-screen annotation layer + leaders to specific locations" information layering. 1/10 different: labels more restrained, not full-screen HUD, max 3 on screen at once

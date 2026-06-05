@@ -83,9 +83,9 @@ function FoundType() {
           <div className="cn" style={{ fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.5 }}>Condensed numerals · poster display · Pragmatica Cond substitute (SpaceX launch pages)</div>
         </div>
         <div style={{ background: 'var(--bg-card)', padding: 28 }}>
-          <div className="meta" style={{ marginBottom: 14 }}>CJK · Source Han Sans</div>
+          <div className="meta" style={{ marginBottom: 14 }}>CJK · Noto Sans SC</div>
           <div className="cn" style={{ fontSize: 56, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: 10 }}>Video Components</div>
-          <div className="cn" style={{ fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.5 }}>Primary CJK typeface<br/>weights = <span className="mono">400 / 500 / 700 / 900</span></div>
+          <div className="cn" style={{ fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.5 }}>Primary CJK typeface (Source Han Sans SC = Noto Sans SC)<br/>weights = <span className="mono">400 / 600 / 700 / 800</span></div>
         </div>
       </div>
 
@@ -101,16 +101,16 @@ function FoundType() {
         <Ramp size={32} weight={700} ls="-0.012em" label="H2 · SANS 32 / 700">Section title · sans 800</Ramp>
         <Ramp size={22} weight={600} ls="-0.005em" label="H3 · SANS 22 / 600">Card title · sans 600</Ramp>
         <Ramp size={15} weight={400} ls="0" label="BODY · SANS 15 / 400">Body copy. Keep it light — let contrast between black background and white type carry hierarchy.</Ramp>
-        <Ramp size={11} weight={500} ls="0.22em" caps label="MONO · 11 / 0.22em">SPEC · MISSION · T-MINUS</Ramp>
+        <Ramp size={11} weight={600} ls="0.22em" caps label="MONO · 11 / 0.22em">SPEC · MISSION · T-MINUS</Ramp>
       </div>
 
       <Params rows={[
-        { k: 'WEIGHT RULE', v: 'Use only <b style="color: var(--accent)">400 / 600 / 700</b>, skip 500' },
+        { k: 'WEIGHT RULE', v: 'Use only <b style="color: var(--accent)">400 / 600 / 700 / 800</b>, skip 500' },
         { k: 'TRACKING', v: 'cond -0.03em · sans -0.025 → 0 · mono caps 0.22em' },
         { k: 'LINE HEIGHT', v: 'headlines 0.86-1.0 · body 1.55-1.7' },
         { k: 'MONO USAGE', v: 'IDs · timestamps · mission codes · T-MINUS' },
         { k: 'COND USAGE', v: 'poster display · big numbers · section headlines' },
-        { k: 'CJK STACK', v: 'Source Han Sans → PingFang → HarmonyOS' },
+        { k: 'CJK STACK', v: 'Noto Sans SC → PingFang → HarmonyOS' },
       ]} />
     </SubSec>
   );

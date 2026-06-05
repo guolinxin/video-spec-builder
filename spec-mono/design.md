@@ -94,11 +94,11 @@ Pure black-and-white base with 21:1 contrast (WCAG AAA).
 | hero | Barlow Semi Condensed 700 | Poster-scale type · chapter headings |
 | stat | Barlow Semi Condensed 700 | Large numbers (tabular-nums) |
 | body | Space Grotesk 400 | Body copy · Chinese/English headings |
-| label | JetBrains Mono 500 | Index numbers · timecodes · mission codes · footnotes |
+| label | JetBrains Mono 600 | Index numbers · timecodes · mission codes · footnotes |
 | quote | Instrument Serif 400 italic | Italic emphasis · pull quotes · equation operators |
 
-- Chinese uses **Source Han Sans SC**, weights 400 / 700 / 900.
-  (Note: HyperFrames font rules disallow Noto Sans Latin families; Source Han Sans SC = Noto Sans SC Chinese variant — this theme deliberately selects it as the CJK font; keep it.)
+- Chinese uses **Source Han Sans SC**, weights `400 / 600 / 700 / 800` (same weight cliff as the Latin stack below).
+  (Note: HyperFrames font rules disallow Noto Sans Latin families; Source Han Sans SC = Noto Sans SC Chinese variant — this theme deliberately selects it as the CJK font and the CSS ships it under the family name `Noto Sans SC`; keep it.)
 - **Weight cliff**: use only `400 / 600 / 700 / 800`, **skip 500**. Adjacent tiers intentionally skip two steps apart.
 - **Letter-spacing**: hero / stat large type `-0.03 ~ -0.04em`; body `-0.025em → 0`; label mono caps `0.18 ~ 0.22em`; mission strings (`SCN-03` / `T-MINUS`) `0.32em`.
 - **Line height**: headings `0.86 ~ 1.0`, body `1.55 ~ 1.7`.

@@ -404,3 +404,17 @@
 /* bracket wrap · [KEYWORD] */
 .bracket::before { content: "["; color: var(--accent); margin-right: 6px; }
 .bracket::after  { content: "]"; color: var(--accent); margin-left: 6px; }
+
+/* ================================================================
+   showDeco = false → strip the spec-sheet decoration / atmosphere layer
+   (driven by the "Decorative elements" tweak on .shell)
+   ================================================================ */
+.shell--no-deco .cross,
+.shell--no-deco .tick-rule,
+.shell--no-deco .dot-pulse,
+.shell--no-deco .idx::before,
+.shell--no-deco .eyebrow::before { display: none; }
+.shell--no-deco .stage--dotgrid,
+.shell--no-deco .stage--graph { background-image: none; }
+.shell--no-deco .hero::before,
+.shell--no-deco .hero::after { content: none; }

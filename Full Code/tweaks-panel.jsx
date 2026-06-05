@@ -313,10 +313,10 @@ function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
 
 // ── Layout helpers ──────────────────────────────────────────────────────────
 
-function TweakSection({ label, children }) {
+function TweakSection({ label, title, children }) {
   return (
     <>
-      <div className="twk-sect">{label}</div>
+      <div className="twk-sect">{label ?? title}</div>
       {children}
     </>
   );

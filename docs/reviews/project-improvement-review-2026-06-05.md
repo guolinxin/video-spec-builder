@@ -35,6 +35,25 @@ Every finding below was re-checked against the current tracked files. All issues
 | P2 | Validation rules manual only | Confirmed | No test/lint/validation/CI config; `workflow-0-1.md` requires manual checklist + real IDs + 0.1s timing. |
 | P3 | Repository roles mixed | Confirmed | README tree omits `Full Code/` despite referencing it earlier. |
 
+## Resolution Status (2026-06-05)
+
+All findings were addressed in source after validation. Summary of changes:
+
+| # | Finding | Resolution | Files changed |
+|---|---|---|---|
+| P0 | Installability not verifiable | Added `package.json` with an `npm run verify` script plus two checkers; README now documents the verify path and repo layout. | `package.json`, `scripts/validate-repo.js`, `scripts/validate-spec.js`, `README.md` |
+| P1 | Example spec ≠ template contract | Heading changed to `## 6. Shot List`; all 20 shots now use a singular `- Component:` with one real catalog ID; `§4`/`§8` headings aligned to the template. Now passes the new spec validator. | `examples/video-spec-spacex.md` |
+| P1 | `TweakSection` prop mismatch | Call sites switched to `label=`; `TweakSection` also accepts `title` as an alias for resilience. | `Full Code/app.jsx`, `Full Code/tweaks-panel.jsx` |
+| P1 | Unused tweak state | Removed `density`; wired `showDeco` to a `.shell--no-deco` class with CSS that hides the decoration layer. | `Full Code/app.jsx`, `Full Code/styles.css` |
+| P1 | README overpromises localization | Link relabeled to "中文说明 (this project is maintained in English)". | `README.md` |
+| P2 | README placeholder/external assets | Dead `preview.png` placeholder comment removed; added a text description of Spec Mono so the preview is useful even if the attachment 404s. | `README.md` |
+| P2 | Font guidance inconsistent | CJK labels aligned to the canonical `Noto Sans SC` family (Source Han equivalence noted); weight ramps reconciled to `400 / 600 / 700 / 800` across `design.md` and `foundation.jsx`; removed stray 500 usages. | `spec-mono/design.md`, `Full Code/sections/foundation.jsx` |
+| P2 | `dangerouslySetInnerHTML` boundary | Added a documented `trustedHTML()` trusted-input boundary helper and routed all three call sites through it. | `Full Code/app.jsx`, `Full Code/sections/aroll.jsx` |
+| P2 | Validation rules manual only | Added executable `validate-repo` and `validate-spec` checkers behind `npm run verify`. | `scripts/`, `package.json` |
+| P3 | Repository roles mixed | Added `Full Code/` to the README tree and a "Repository roles" section classifying every part of the repo. | `README.md` |
+
+Verification: `npm run verify` passes (`repo check OK — all 16 required files present`; `spec check OK — examples/video-spec-spacex.md: 20 shots, all component IDs valid`). A negative test confirmed the spec checker flags the old `## 6. Storyboard` heading, plural `- Components:`, and unknown IDs.
+
 ## Findings
 
 ### P0 - Installability Is Not Verifiable From This Repository
@@ -261,27 +280,27 @@ Recommended improvement:
 
 ## Recommended Roadmap
 
-### First Pass
+### First Pass (done 2026-06-05)
 
-1. Fix the `TweakSection` prop mismatch.
-2. Remove or wire `density` and `showDeco`.
-3. Rewrite `examples/video-spec-spacex.md` to match the current template.
-4. Update README tree to include or intentionally exclude `Full Code/`.
-5. Replace the Chinese README link wording or add a real Chinese README.
+1. [x] Fix the `TweakSection` prop mismatch.
+2. [x] Remove or wire `density` and `showDeco`.
+3. [x] Rewrite `examples/video-spec-spacex.md` to match the current template.
+4. [x] Update README tree to include or intentionally exclude `Full Code/`.
+5. [x] Replace the Chinese README link wording or add a real Chinese README.
 
 ### Second Pass
 
-1. Add a `scripts/validate-spec.js` checker for examples and generated specs.
-2. Add a `scripts/validate-repo.js` checker for required package files and reference links.
-3. Add a minimal package or skill metadata file matching the distribution channel.
-4. Add CI that runs the validators.
+1. [x] Add a `scripts/validate-spec.js` checker for examples and generated specs.
+2. [x] Add a `scripts/validate-repo.js` checker for required package files and reference links.
+3. [x] Add a minimal package or skill metadata file matching the distribution channel (`package.json`).
+4. [ ] Add CI that runs the validators.
 
 ### Third Pass
 
-1. Convert raw HTML string rendering in `Full Code/` to structured JSX where practical.
-2. Add a local Spec Mono preview asset.
-3. Normalize font naming across `design.md`, `tokens.css`, and the full-code export.
-4. Split runtime docs from design-system docs if the repo keeps growing.
+1. [x] Convert raw HTML string rendering in `Full Code/` to a documented trusted-input boundary (`trustedHTML`); full structured-JSX conversion remains optional.
+2. [ ] Add a local Spec Mono preview asset (`spec-mono/preview.png`).
+3. [x] Normalize font naming across `design.md`, `tokens.css`, and the full-code export.
+4. [ ] Split runtime docs from design-system docs if the repo keeps growing.
 
 ## Suggested Validation Commands
 

@@ -1,6 +1,6 @@
 <img width="2172" height="724" alt="ChatGPT Image May 16, 2026, 10_46_58 PM" src="https://github.com/user-attachments/assets/7820d93e-84b6-4e09-904c-9567c6595c57" />
 
-**English** · [Chinese README path](README.zh.md)
+**English** · [中文说明 (this project is maintained in English)](README.zh.md)
 
 # video-spec-builder
 
@@ -166,8 +166,7 @@ Drop a finished `design.md` into the video project root and the theme is live.
 
 Writing a `design.md` from scratch takes some work, so I made one ahead of time and put it in this repo. It's called **Spec Mono**: pure black and white, the geometric, restrained, engineered look of SpaceX × Grok. It's done — use it as is.
 
-<!-- placeholder: drop the Spec Mono preview image at spec-mono/preview.png, then uncomment the line below -->
-<!-- ![Spec Mono preview](spec-mono/preview.png) -->
+In words, in case the preview below doesn't load: pure black (`#000000`) background, pure white type, a single swappable accent color (default white), geometric condensed numerals, hairline 1px borders, zero shadows, and spec-sheet decoration (corner registration crosses, tick rulers, mission-code labels).
 
 Download to see the complete design [Video Component Library v2 · Silicon Valley Dark Tech.pdf](https://github.com/user-attachments/files/27866436/v2.pdf)
 <img width="1020" height="1440" alt="Video Component Library v2 · Silicon Valley Dark Tech" src="https://github.com/user-attachments/assets/bef576da-73ba-4bad-a9c4-3c673e652eaa" />
@@ -191,6 +190,9 @@ video-spec-builder/
 ├── SKILL.md                  the skill's main file — the AI reads this first
 ├── README.md                 project readme
 ├── LICENSE
+├── package.json              repo metadata + `npm run verify` structure check
+├── scripts/
+│   └── validate-repo.js      checks required skill files exist and are wired up
 ├── references/               reference docs on questioning, shot breakdown, pacing — loaded as needed
 │   ├── workflow-0-1.md
 │   ├── workflow-iteration.md
@@ -204,11 +206,29 @@ video-spec-builder/
 │   └── video-spec-template.md    output template for video-spec.md
 ├── examples/
 │   └── video-spec-spacex.md      a complete video-spec example
-└── spec-mono/                    the bundled custom theme, Spec Mono
-    ├── design.md
+├── spec-mono/                    the bundled custom theme, Spec Mono
+│   ├── design.md
+│   ├── tokens.css
+│   └── spec-mono-components.md
+└── Full Code/                    non-runtime reference export of the v2 component library (React/CSS)
+    ├── app.jsx
+    ├── styles.css
     ├── tokens.css
-    └── spec-mono-components.md
+    ├── tweaks-panel.jsx
+    └── sections/
 ```
+
+## Repository roles
+
+Not every file in this repo is installed or rendered. Here is what each part is for:
+
+- **Skill runtime** — `SKILL.md`. This is what the agent reads and follows; it is the only file that drives behavior at conversation time.
+- **Authoring references** — `references/`. Loaded on demand by the skill while questioning and drafting; not user-facing.
+- **Output template** — `templates/video-spec-template.md`. The skeleton the skill fills in to produce `video-spec.md`.
+- **Example** — `examples/video-spec-spacex.md`. A complete, contract-conformant sample spec to learn from and copy.
+- **Optional theme** — `spec-mono/`. The Spec Mono custom theme (`design.md` + `tokens.css` + per-component spec). Copy into a video project root only if you want this look.
+- **Non-runtime reference export** — `Full Code/`. The full React/CSS implementation of the v2 component library, distilled into `spec-mono/`. It is a design reference, not shipped with the skill and not read at render time. The folder name contains a space because it mirrors the original export.
+- **Packaging / checks** — `package.json`, `scripts/`. Local structure verification (`npm run verify`); not part of the rendered output.
 
 ## License
 

@@ -4,6 +4,17 @@
 
 const { useState, useEffect, useRef } = React;
 
+/* ----------------------------------------------------------------
+   trustedHTML — explicit trusted-input boundary for dangerouslySetInnerHTML.
+   Every string routed through here is authored inside this repo (section
+   copy, parameter values, <em> emphasis markup) and is never user- or
+   network-supplied. If this library is ever pointed at external/user
+   content, sanitize it (e.g. with DOMPurify) BEFORE it reaches this point.
+   ---------------------------------------------------------------- */
+function trustedHTML(html) {
+  return { __html: html };
+}
+
 const SECTIONS = [
   { id: 'foundation', num: '00', name: 'Visual Foundation', Comp: () => <FoundationSection /> },
   { id: 'aroll',      num: '01', name: 'A-roll',  Comp: () => <ARollSection /> },
@@ -21,7 +32,6 @@ const SECTIONS = [
 /* ---------- Tweaks defaults ---------- */
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "#FFFFFF",
-  "density": "comfortable",
   "showDeco": true
 }/*EDITMODE-END*/;
 
@@ -70,7 +80,7 @@ function Section({ id, num, title, desc, children }) {
     <section className="section" id={id} data-screen-label={`${num} ${title}`}>
       <div className="section__num"><span>SECTION {num}</span></div>
       <h2 className="section__title cn">{title}</h2>
-      <p className="section__desc cn" dangerouslySetInnerHTML={{ __html: desc }} />
+      <p className="section__desc cn" dangerouslySetInnerHTML={trustedHTML(desc)} />
       {children}
     </section>
   );
@@ -95,7 +105,7 @@ function Params({ rows }) {
       {rows.map((r, i) => (
         <div className="param" key={i}>
           <div className="param__k">{r.k}</div>
-          <div className="param__v" dangerouslySetInnerHTML={{ __html: r.v }} />
+          <div className="param__v" dangerouslySetInnerHTML={trustedHTML(r.v)} />
         </div>
       ))}
     </div>
@@ -140,7 +150,7 @@ function App() {
   }, []);
 
   return (
-    <div className="shell">
+    <div className={`shell ${t.showDeco ? '' : 'shell--no-deco'}`}>
       <Nav active={active} />
       <Hero />
       {SECTIONS.map(s => (
@@ -160,7 +170,7 @@ function App() {
       </footer>
 
       <TweaksPanel title="Tweaks">
-        <TweakSection title="Accent">
+        <TweakSection label="Accent">
           <TweakColor
             label="Primary color"
             value={t.accent}
@@ -168,7 +178,7 @@ function App() {
             options={['#FFFFFF', '#FF6B3D', '#1D9BF0', '#E8C547', '#00E0FF', '#FF3333']}
           />
         </TweakSection>
-        <TweakSection title="Layout">
+        <TweakSection label="Layout">
           <TweakToggle
             label="Decorative elements (corner marks · ticks · grid)"
             value={t.showDeco}
@@ -181,6 +191,6 @@ function App() {
 }
 
 /* expose for inter-script use */
-Object.assign(window, { Section, SubSec, Params, Stage });
+Object.assign(window, { Section, SubSec, Params, Stage, trustedHTML });
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
