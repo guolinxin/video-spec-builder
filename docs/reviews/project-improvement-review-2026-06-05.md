@@ -58,7 +58,7 @@ Verification: `npm run verify` passes (`repo check OK — all 16 required files 
 
 ### P0 - Installability Is Not Verifiable From This Repository
 
-The README claims installation through `npx skills add feicaiclub/video-spec-builder` and project/global skill installation paths, but the repository has no visible package manifest or skills package metadata beyond `SKILL.md`.
+The README claims installation through `npx skills add guolinxin/video-spec-builder` and project/global skill installation paths, but the repository has no visible package manifest or skills package metadata beyond `SKILL.md`.
 
 Evidence:
 

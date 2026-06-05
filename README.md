@@ -64,7 +64,7 @@ Before anything else, install two things: HyperFrames (the renderer, downstream)
 
 ```bash
 npx skills add heygen-com/hyperframes
-npx skills add feicaiclub/video-spec-builder
+npx skills add guolinxin/video-spec-builder
 ```
 
 Each command installs once and covers Codex, Claude Code, Cursor and the rest. You don't install separately for each tool.
@@ -72,7 +72,7 @@ Each command installs once and covers Codex, Claude Code, Cursor and the rest. Y
 Two scopes to know about. By default it installs into the current folder (project-level), so it only works in the project where you ran the command. If you make videos often, add `-g` to install globally, available everywhere:
 
 ```bash
-npx skills add feicaiclub/video-spec-builder -g
+npx skills add guolinxin/video-spec-builder -g
 ```
 
 Never used the `skills` CLI? Nothing to set up. `npx` pulls a copy just to run and leaves nothing behind. Needs Node 18 or newer.

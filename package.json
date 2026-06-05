@@ -4,7 +4,7 @@
   "description": "A skill that interrogates a fuzzy video idea into a shot-by-shot video-spec.md for HyperFrames rendering.",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/feicaiclub/video-spec-builder",
+  "homepage": "https://github.com/guolinxin/video-spec-builder",
   "scripts": {
     "verify": "node scripts/validate-repo.js && node scripts/validate-spec.js examples/video-spec-spacex.md",
     "validate:repo": "node scripts/validate-repo.js",
