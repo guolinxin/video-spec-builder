@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Spec Builder"
+  short_description: "Turn vague video ideas into shot-by-shot specs"
+  default_prompt: "Use $video-spec-builder to turn my video idea into a shot-by-shot video-spec.md."

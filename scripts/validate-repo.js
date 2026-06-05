@@ -15,6 +15,7 @@ const ROOT = path.resolve(__dirname, '..');
 // Files the skill cannot function without.
 const REQUIRED = [
   'SKILL.md',
+  'agents/openai.yaml',
   'README.md',
   'LICENSE',
   'templates/video-spec-template.md',

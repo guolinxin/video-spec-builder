@@ -12,6 +12,7 @@
   },
   "files": [
     "SKILL.md",
+    "agents/",
     "references/",
     "templates/",
     "examples/",
